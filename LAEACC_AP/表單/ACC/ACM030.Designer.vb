@@ -1,0 +1,200 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class ACM030
+    Inherits LAEACC_AP.fmBase1
+
+    'Form 覆寫 Dispose 以清除元件清單。
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    '為 Windows Form 設計工具的必要項
+    Private components As System.ComponentModel.IContainer
+
+    '注意:  以下為 Windows Form 設計工具所需的程序
+    '可以使用 Windows Form 設計工具進行修改。
+    '請不要使用程式碼編輯器進行修改。
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rdoPreview = New System.Windows.Forms.RadioButton()
+        Me.rdoPrint = New System.Windows.Forms.RadioButton()
+        Me.dtpDateS = New System.Windows.Forms.DateTimePicker()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.BtnPrint = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.StatusBar1 = New System.Windows.Forms.StatusBar()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.rdoPreview)
+        Me.GroupBox1.Controls.Add(Me.rdoPrint)
+        Me.GroupBox1.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(258, 145)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(312, 72)
+        Me.GroupBox1.TabIndex = 34
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "列印方式"
+        '
+        'rdoPreview
+        '
+        Me.rdoPreview.BackColor = System.Drawing.Color.Transparent
+        Me.rdoPreview.Font = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.rdoPreview.ForeColor = System.Drawing.Color.Green
+        Me.rdoPreview.Location = New System.Drawing.Point(168, 24)
+        Me.rdoPreview.Name = "rdoPreview"
+        Me.rdoPreview.Size = New System.Drawing.Size(112, 32)
+        Me.rdoPreview.TabIndex = 3
+        Me.rdoPreview.Text = "預覽列印"
+        Me.rdoPreview.UseVisualStyleBackColor = False
+        '
+        'rdoPrint
+        '
+        Me.rdoPrint.BackColor = System.Drawing.Color.Transparent
+        Me.rdoPrint.Checked = True
+        Me.rdoPrint.Font = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.rdoPrint.ForeColor = System.Drawing.Color.Green
+        Me.rdoPrint.Location = New System.Drawing.Point(40, 24)
+        Me.rdoPrint.Name = "rdoPrint"
+        Me.rdoPrint.Size = New System.Drawing.Size(112, 32)
+        Me.rdoPrint.TabIndex = 2
+        Me.rdoPrint.TabStop = True
+        Me.rdoPrint.Text = "直接列印"
+        Me.rdoPrint.UseVisualStyleBackColor = False
+        '
+        'dtpDateS
+        '
+        Me.dtpDateS.CalendarFont = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.dtpDateS.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.dtpDateS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDateS.Location = New System.Drawing.Point(346, 65)
+        Me.dtpDateS.Name = "dtpDateS"
+        Me.dtpDateS.Size = New System.Drawing.Size(120, 27)
+        Me.dtpDateS.TabIndex = 33
+        '
+        'Label18
+        '
+        Me.Label18.Font = New System.Drawing.Font("新細明體", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Green
+        Me.Label18.Location = New System.Drawing.Point(298, 9)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(256, 23)
+        Me.Label18.TabIndex = 32
+        Me.Label18.Text = "列印支出明細表"
+        '
+        'BtnPrint
+        '
+        Me.BtnPrint.BackColor = System.Drawing.Color.Red
+        Me.BtnPrint.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.BtnPrint.Location = New System.Drawing.Point(322, 249)
+        Me.BtnPrint.Name = "BtnPrint"
+        Me.BtnPrint.Size = New System.Drawing.Size(64, 33)
+        Me.BtnPrint.TabIndex = 31
+        Me.BtnPrint.Text = "列  印"
+        Me.BtnPrint.UseVisualStyleBackColor = False
+        '
+        'btnExit
+        '
+        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnExit.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.btnExit.Location = New System.Drawing.Point(434, 249)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 32)
+        Me.btnExit.TabIndex = 30
+        Me.btnExit.Text = "結束"
+        Me.btnExit.UseVisualStyleBackColor = False
+        '
+        'Label15
+        '
+        Me.Label15.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label15.Location = New System.Drawing.Point(266, 65)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(74, 24)
+        Me.Label15.TabIndex = 29
+        Me.Label15.Text = "列印年月"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'StatusBar1
+        '
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 603)
+        Me.StatusBar1.Name = "StatusBar1"
+        Me.StatusBar1.Size = New System.Drawing.Size(984, 8)
+        Me.StatusBar1.TabIndex = 28
+        Me.StatusBar1.Text = "StatusBar1"
+        '
+        'btnExport
+        '
+        Me.btnExport.BackColor = System.Drawing.Color.MediumPurple
+        Me.btnExport.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.btnExport.Location = New System.Drawing.Point(586, 241)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(80, 48)
+        Me.btnExport.TabIndex = 37
+        Me.btnExport.Text = "農委會報表列印"
+        Me.btnExport.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Green
+        Me.Label2.Location = New System.Drawing.Point(178, 105)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(448, 23)
+        Me.Label2.TabIndex = 36
+        Me.Label2.Text = "請先確定每個科目皆有預算數(accbg)"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label1.Location = New System.Drawing.Point(466, 65)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(104, 24)
+        Me.Label1.TabIndex = 35
+        Me.Label1.Text = "(只取年月)"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ACM030
+        '
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(984, 611)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.dtpDateS)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.BtnPrint)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.StatusBar1)
+        Me.Controls.Add(Me.btnExport)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Name = "ACM030"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents rdoPreview As System.Windows.Forms.RadioButton
+    Friend WithEvents rdoPrint As System.Windows.Forms.RadioButton
+    Friend WithEvents dtpDateS As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents BtnPrint As System.Windows.Forms.Button
+    Friend WithEvents btnExit As System.Windows.Forms.Button
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents StatusBar1 As System.Windows.Forms.StatusBar
+    Friend WithEvents btnExport As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+
+End Class

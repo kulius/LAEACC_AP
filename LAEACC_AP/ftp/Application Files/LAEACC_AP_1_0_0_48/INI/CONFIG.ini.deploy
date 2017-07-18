@@ -1,0 +1,80 @@
+;;特別聲明：本檔案內容請勿使用文書處理程式去自行修改內容,
+
+;;          否則可能會導致系統內檔案資料漏失!!
+
+;;
+
+;;本.INI為公用檔案,不因PCID不同而有所不同
+
+
+
+;;##購買授權##
+
+[SYSTEM]
+
+;SID：系統編號
+;NAME：系統名稱
+
+;VAR：購買版本
+
+SID=ACC20170103
+NAME=主計系統
+
+VAR=上線1.0
+
+
+
+
+
+
+;;##一般連結參數##
+
+[SET]
+##;;DNS=server=192.168.254.250;database=ERPALL;uid=erp;pwd=erp
+##;;DNS0=server=192.168.254.250;database=ERPALL;uid=erp;pwd=erp
+##;;DNS1=server=CYHT-KSGS\SQLEXPRESS;database=ERPALL;uid=erp;pwd=erp
+
+DNS=server=60.249.192.91;database=ERPALL;uid=erp;pwd=erp
+DNS0=server=60.249.192.91;database=ERPALL;uid=erp;pwd=erp
+DNS1=server=CYHT-KSGS\SQLEXPRESS;database=ERPALL;uid=erp;pwd=erp
+
+DNS_ACC=Server=KULIUSNB\SQL2012;Database=accdb_db;User ID=acc;Password=acc; Max Pool Size=99999;
+DNS_SYS=Server=KULIUSNB\SQL2012;Database=system_db;User ID=acc;Password=acc; Max Pool Size=99999;
+宸揚_ACC=Server=KULIUSNB\SQL2012;Database=accdb_db;User ID=acc;Password=acc; Max Pool Size=99999;
+宸揚_SYS=Server=KULIUSNB\SQL2012;Database=system_db;User ID=acc;Password=acc; Max Pool Size=99999;
+彰化_ACC=Server=192.168.1.192;Database=accdb;User ID=sa;Password=welcomechia; Max Pool Size=99999;
+彰化_SYS=Server=192.168.1.121;Database=system_db;User ID=acc;Password=acc; Max Pool Size=99999;
+台中_ACC=Server=KULIUSNB\SQL2012;Database=accdb_db;User ID=acc;Password=acc; Max Pool Size=99999;
+台中_SYS=Server=KULIUSNB\SQL2012;Database=system_db;User ID=acc;Password=acc; Max Pool Size=99999;
+桃園_ACC=Server=KULIUSNB\SQL2012;Database=accdb_db;User ID=acc;Password=acc; Max Pool Size=99999;
+桃園_SYS=Server=KULIUSNB\SQL2012;Database=system_db;User ID=acc;Password=acc; Max Pool Size=99999;
+台東_ACC=Server=KULIUSNB\SQL2012;Database=accdb_db;User ID=acc;Password=acc; Max Pool Size=99999;
+台東_SYS=Server=KULIUSNB\SQL2012;Database=system_db;User ID=acc;Password=acc; Max Pool Size=99999;
+
+
+##;;ReportDir=D:\wwwroot\陽成\陽成ERP_REPORT\
+##;;MachineFile=D:\個人\陽成\hunta
+##;;HeadFile=C:\Users\Administrator\Desktop\ERP企業資源規劃系統\其他資料\頭部記號
+
+
+ReportDir=\\192.168.254.250\共用區\陽成ERP_REPORT\
+MachineFile=\\192.168.254.250\hunta
+HeadFile=\\192.168.254.250\共用區\頭部記號
+
+
+;;##系統設計商##
+
+[BASIC]
+
+NAME=晨揚邱先生
+
+ADD=
+
+TEL=0919121022
+
+WEB=
+
+
+MAIL=kulius@msn.com
+DESCRIPTION=警告：本電腦程式著作受著作權法及國際公約之保護。未經授權擅自複製或散佈本電腦程式著作之全部或部份，將導致嚴厲的民事和刑事處分，且將被依法提起最大範圍的追訴。
+

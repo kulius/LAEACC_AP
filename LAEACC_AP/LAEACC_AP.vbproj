@@ -1,0 +1,1657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{275854B3-77C9-40C2-98D2-3370E3C44FC7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>LAEACC_AP.My.MyApplication</StartupObject>
+    <RootNamespace>LAEACC_AP</RootNamespace>
+    <AssemblyName>LAEACC_AP</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>ftp://61.221.242.57/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://61.221.242.57/</InstallUrl>
+    <ProductName>主計系統</ProductName>
+    <SuiteName>主計系統</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LAEACC_AP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LAEACC_AP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FF3F5773BED8BEE1E8D08629BD0423E64AC1BC17</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>laeacc_ap.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CHIA.CheckPrint, Version=1.1.5.29526, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>插件\CHIA.CheckPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="CHIA.Utility, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>插件\CHIA.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="JBC.FitPrint, Version=1.0.2198.32551, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>插件\JBC.FitPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="模組\ERP.vb" />
+    <Compile Include="模組\工具\PrintSlip.vb" />
+    <Compile Include="模組\工具\vbdataio.vb" />
+    <Compile Include="模組\工具\TransPara.vb" />
+    <Compile Include="模組\工具\INI.vb" />
+    <Compile Include="模組\控制項\RecMove.Designer.vb">
+      <DependentUpon>RecMove.vb</DependentUpon>
+    </Compile>
+    <Compile Include="模組\控制項\RecMove.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="模組\系統\SystemChecked.vb" />
+    <Compile Include="模組\系統\SystemControl.vb" />
+    <Compile Include="模組\系統\SystemValue.vb" />
+    <Compile Include="模組\資料\ADOODBC.vb" />
+    <Compile Include="模組\資料\DataChecked.vb" />
+    <Compile Include="模組\資料\variableChange.vb" />
+    <Compile Include="表單\ACCYEAR\ACY140.Designer.vb">
+      <DependentUpon>ACY140.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY140.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY130.Designer.vb">
+      <DependentUpon>ACY130.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY130.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13E.Designer.vb">
+      <DependentUpon>ACY13E.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13E.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13D.Designer.vb">
+      <DependentUpon>ACY13D.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13D.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY152.Designer.vb">
+      <DependentUpon>ACY152.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY152.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY151.Designer.vb">
+      <DependentUpon>ACY151.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY151.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY137.Designer.vb">
+      <DependentUpon>ACY137.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY137.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13.Designer.vb">
+      <DependentUpon>ACY13.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY122.Designer.vb">
+      <DependentUpon>ACY122.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY122.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY121.Designer.vb">
+      <DependentUpon>ACY121.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY121.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY117.Designer.vb">
+      <DependentUpon>ACY117.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY117.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY116.Designer.vb">
+      <DependentUpon>ACY116.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY116.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY114.Designer.vb">
+      <DependentUpon>ACY114.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY114.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY113.Designer.vb">
+      <DependentUpon>ACY113.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY113.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY111.Designer.vb">
+      <DependentUpon>ACY111.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY111.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13A.Designer.vb">
+      <DependentUpon>ACY13A.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY13A.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY050.Designer.vb">
+      <DependentUpon>ACY050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACP010.Designer.vb">
+      <DependentUpon>ACP010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACP010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY31102.Designer.vb">
+      <DependentUpon>ACY31102.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY31102.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY3.Designer.vb">
+      <DependentUpon>ACY3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY24.Designer.vb">
+      <DependentUpon>ACY24.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY24.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY221.Designer.vb">
+      <DependentUpon>ACY221.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY221.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY214.Designer.vb">
+      <DependentUpon>ACY214.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY214.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY213.Designer.vb">
+      <DependentUpon>ACY213.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY213.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY212.Designer.vb">
+      <DependentUpon>ACY212.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY212.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY180.Designer.vb">
+      <DependentUpon>ACY180.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY180.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY170.Designer.vb">
+      <DependentUpon>ACY170.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY170.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY040.Designer.vb">
+      <DependentUpon>ACY040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY030.Designer.vb">
+      <DependentUpon>ACY030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY020.Designer.vb">
+      <DependentUpon>ACY020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY010.Designer.vb">
+      <DependentUpon>ACY010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACY010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK130.Designer.vb">
+      <DependentUpon>ACBK130.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK130.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK120.Designer.vb">
+      <DependentUpon>ACBK120.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK120.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK110.Designer.vb">
+      <DependentUpon>ACBK110.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK110.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK090.Designer.vb">
+      <DependentUpon>ACBK090.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK090.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK080.Designer.vb">
+      <DependentUpon>ACBK080.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK080.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK070.Designer.vb">
+      <DependentUpon>ACBK070.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK070.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK060.Designer.vb">
+      <DependentUpon>ACBK060.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK060.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK050.Designer.vb">
+      <DependentUpon>ACBK050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK040.Designer.vb">
+      <DependentUpon>ACBK040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK030.Designer.vb">
+      <DependentUpon>ACBK030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK020.Designer.vb">
+      <DependentUpon>ACBK020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK010.Designer.vb">
+      <DependentUpon>ACBK010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACCYEAR\ACBK010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC220.Designer.vb">
+      <DependentUpon>AC220.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC220.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC210.Designer.vb">
+      <DependentUpon>AC210.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC210.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACF100.Designer.vb">
+      <DependentUpon>ACF100.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACF100.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACF070.Designer.vb">
+      <DependentUpon>ACF070.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACF070.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACF060.Designer.vb">
+      <DependentUpon>ACF060.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACF060.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACF050.Designer.vb">
+      <DependentUpon>ACF050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACF050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACF020.Designer.vb">
+      <DependentUpon>ACF020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACF020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC010.Designer.vb">
+      <DependentUpon>AC010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC030.Designer.vb">
+      <DependentUpon>AC030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC040.Designer.vb">
+      <DependentUpon>AC040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC050.Designer.vb">
+      <DependentUpon>AC050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC050R.Designer.vb">
+      <DependentUpon>AC050R.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC050R.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC080.Designer.vb">
+      <DependentUpon>AC080.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC080.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC100.Designer.vb">
+      <DependentUpon>AC100.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC100.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\AC150.Designer.vb">
+      <DependentUpon>AC150.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\AC150.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACCBG.Designer.vb">
+      <DependentUpon>ACCBG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACCBG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACCNAME.Designer.vb">
+      <DependentUpon>ACCNAME.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACCNAME.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACF010.Designer.vb">
+      <DependentUpon>ACF010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACF010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACF010D.Designer.vb">
+      <DependentUpon>ACF010D.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACF010D.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACFNO.Designer.vb">
+      <DependentUpon>ACFNO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACFNO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM100.Designer.vb">
+      <DependentUpon>ACM100.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM100.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM090.Designer.vb">
+      <DependentUpon>ACM090.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM090.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM080.Designer.vb">
+      <DependentUpon>ACM080.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM080.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM070.Designer.vb">
+      <DependentUpon>ACM070.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM070.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM060.Designer.vb">
+      <DependentUpon>ACM060.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM060.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM050.Designer.vb">
+      <DependentUpon>ACM050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM040.Designer.vb">
+      <DependentUpon>ACM040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM030.Designer.vb">
+      <DependentUpon>ACM030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM020.Designer.vb">
+      <DependentUpon>ACM020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\ACM010.Designer.vb">
+      <DependentUpon>ACM010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\ACM010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\PSNAME.Designer.vb">
+      <DependentUpon>PSNAME.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\PSNAME.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\ACC\PSFORM.Designer.vb">
+      <DependentUpon>PSFORM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\ACC\PSFORM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF020.Designer.vb">
+      <DependentUpon>BAILF020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF010.Designer.vb">
+      <DependentUpon>BAILF010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF040.Designer.vb">
+      <DependentUpon>BAILF040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF030.Designer.vb">
+      <DependentUpon>BAILF030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAILF030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL131.Designer.vb">
+      <DependentUpon>BAIL131.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL131.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL130.Designer.vb">
+      <DependentUpon>BAIL130.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL130.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL120.Designer.vb">
+      <DependentUpon>BAIL120.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL120.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL101.Designer.vb">
+      <DependentUpon>BAIL101.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL101.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL100.Designer.vb">
+      <DependentUpon>BAIL100.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL100.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL080.Designer.vb">
+      <DependentUpon>BAIL080.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL080.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL070.Designer.vb">
+      <DependentUpon>BAIL070.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL070.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL060.Designer.vb">
+      <DependentUpon>BAIL060.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL060.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL050.Designer.vb">
+      <DependentUpon>BAIL050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL040.Designer.vb">
+      <DependentUpon>BAIL040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL030.Designer.vb">
+      <DependentUpon>BAIL030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL021.Designer.vb">
+      <DependentUpon>BAIL021.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL021.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL020.Designer.vb">
+      <DependentUpon>BAIL020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL011.Designer.vb">
+      <DependentUpon>BAIL011.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL011.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL010.Designer.vb">
+      <DependentUpon>BAIL010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BAIL\BAIL010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG010BATCH.Designer.vb">
+      <DependentUpon>BG010BATCH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG010BATCH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG010.Designer.vb">
+      <DependentUpon>BG010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG060.Designer.vb">
+      <DependentUpon>BG060.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG060.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG050.Designer.vb">
+      <DependentUpon>BG050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG030.Designer.vb">
+      <DependentUpon>BG030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG020.Designer.vb">
+      <DependentUpon>BG020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGF010upd.Designer.vb">
+      <DependentUpon>BGF010upd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGF010upd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGP060.Designer.vb">
+      <DependentUpon>BGP060.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGP060.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGP050.Designer.vb">
+      <DependentUpon>BGP050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGP050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGP040.Designer.vb">
+      <DependentUpon>BGP040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGP040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGP030.Designer.vb">
+      <DependentUpon>BGP030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGP030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGP020.Designer.vb">
+      <DependentUpon>BGP020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGP020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ100.Designer.vb">
+      <DependentUpon>BGQ100.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ100.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ030.Designer.vb">
+      <DependentUpon>BGQ030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ020.Designer.vb">
+      <DependentUpon>BGQ020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BUD_AC150.Designer.vb">
+      <DependentUpon>BUD_AC150.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BUD_AC150.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGF050.Designer.vb">
+      <DependentUpon>BGF050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGF050.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGUSER.Designer.vb">
+      <DependentUpon>BGUSER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGUSER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG070.Designer.vb">
+      <DependentUpon>BG070.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG070.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGF010.Designer.vb">
+      <DependentUpon>BGF010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGF010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG888.Designer.vb">
+      <DependentUpon>BG888.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG888.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BG999.Designer.vb">
+      <DependentUpon>BG999.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BG999.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ010.Designer.vb">
+      <DependentUpon>BGQ010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGQ010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGP010.Designer.vb">
+      <DependentUpon>BGP010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGP010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BGP888.Designer.vb">
+      <DependentUpon>BGP888.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BGP888.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\UNITTABLE.Designer.vb">
+      <DependentUpon>UNITTABLE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\UNITTABLE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\BUD\BUD_ACCNAME.Designer.vb">
+      <DependentUpon>BUD_ACCNAME.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\BUD\BUD_ACCNAME.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\fmAbout.Designer.vb">
+      <DependentUpon>fmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\fmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\fmBase1.Designer.vb">
+      <DependentUpon>fmBase1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\fmBase1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\fmBase2.designer.vb">
+      <DependentUpon>fmBase2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\fmBase2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\fmLogin.Designer.vb">
+      <DependentUpon>fmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\fmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\fmMain.Designer.vb">
+      <DependentUpon>fmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\fmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\fmMenu.Designer.vb">
+      <DependentUpon>fmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\fmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY025.Designer.vb">
+      <DependentUpon>PAY025.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY025.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\CHF040.Designer.vb">
+      <DependentUpon>CHF040.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\CHF040.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\CHF030.Designer.vb">
+      <DependentUpon>CHF030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\CHF030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\CHF020.Designer.vb">
+      <DependentUpon>CHF020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\CHF020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\CHF010.Designer.vb">
+      <DependentUpon>CHF010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\CHF010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY120.Designer.vb">
+      <DependentUpon>PAY120.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY120.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY091.Designer.vb">
+      <DependentUpon>PAY091.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY091.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY090.Designer.vb">
+      <DependentUpon>PAY090.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY090.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY080.Designer.vb">
+      <DependentUpon>PAY080.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY080.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY070.Designer.vb">
+      <DependentUpon>PAY070.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY070.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY030.Designer.vb">
+      <DependentUpon>PAY030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY030.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAYTRAN.Designer.vb">
+      <DependentUpon>PAYTRAN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAYTRAN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY024.Designer.vb">
+      <DependentUpon>PAY024.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY024.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY023.Designer.vb">
+      <DependentUpon>PAY023.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY023.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY022.Designer.vb">
+      <DependentUpon>PAY022.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY022.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY021.Designer.vb">
+      <DependentUpon>PAY021.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY021.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY010.Designer.vb">
+      <DependentUpon>PAY010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY_ACF010.Designer.vb">
+      <DependentUpon>PAY_ACF010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY_ACF010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY_ACF020.Designer.vb">
+      <DependentUpon>PAY_ACF020.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY_ACF020.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PAY\PAY_PSNAME.Designer.vb">
+      <DependentUpon>PAY_PSNAME.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PAY\PAY_PSNAME.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUP.Designer.vb">
+      <DependentUpon>SYSGROUP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUPMENU.Designer.vb">
+      <DependentUpon>SYSGROUPMENU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUPMENU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUPUNIT.Designer.vb">
+      <DependentUpon>SYSGROUPUNIT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUPUNIT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUPUSER.Designer.vb">
+      <DependentUpon>SYSGROUPUSER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\SYS\SYSGROUPUSER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\SYS\SYSMENU.Designer.vb">
+      <DependentUpon>SYSMENU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\SYS\SYSMENU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\SYS\SYSUNIT.Designer.vb">
+      <DependentUpon>SYSUNIT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\SYS\SYSUNIT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\SYS\SYSUSER.Designer.vb">
+      <DependentUpon>SYSUSER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\SYS\SYSUSER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模組\控制項\RecMove.resx">
+      <DependentUpon>RecMove.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK010.resx">
+      <DependentUpon>ACBK010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK020.resx">
+      <DependentUpon>ACBK020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK030.resx">
+      <DependentUpon>ACBK030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK040.resx">
+      <DependentUpon>ACBK040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK050.resx">
+      <DependentUpon>ACBK050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK060.resx">
+      <DependentUpon>ACBK060.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK070.resx">
+      <DependentUpon>ACBK070.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK080.resx">
+      <DependentUpon>ACBK080.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK090.resx">
+      <DependentUpon>ACBK090.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK110.resx">
+      <DependentUpon>ACBK110.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK120.resx">
+      <DependentUpon>ACBK120.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACBK130.resx">
+      <DependentUpon>ACBK130.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACP010.resx">
+      <DependentUpon>ACP010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY010.resx">
+      <DependentUpon>ACY010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY020.resx">
+      <DependentUpon>ACY020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY030.resx">
+      <DependentUpon>ACY030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY040.resx">
+      <DependentUpon>ACY040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY050.resx">
+      <DependentUpon>ACY050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY111.resx">
+      <DependentUpon>ACY111.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY113.resx">
+      <DependentUpon>ACY113.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY114.resx">
+      <DependentUpon>ACY114.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY116.resx">
+      <DependentUpon>ACY116.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY117.resx">
+      <DependentUpon>ACY117.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY121.resx">
+      <DependentUpon>ACY121.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY122.resx">
+      <DependentUpon>ACY122.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY13.resx">
+      <DependentUpon>ACY13.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY130.resx">
+      <DependentUpon>ACY130.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY137.resx">
+      <DependentUpon>ACY137.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY13A.resx">
+      <DependentUpon>ACY13A.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY13D.resx">
+      <DependentUpon>ACY13D.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY13E.resx">
+      <DependentUpon>ACY13E.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY140.resx">
+      <DependentUpon>ACY140.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY151.resx">
+      <DependentUpon>ACY151.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY152.resx">
+      <DependentUpon>ACY152.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY170.resx">
+      <DependentUpon>ACY170.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY180.resx">
+      <DependentUpon>ACY180.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY212.resx">
+      <DependentUpon>ACY212.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY213.resx">
+      <DependentUpon>ACY213.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY214.resx">
+      <DependentUpon>ACY214.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY221.resx">
+      <DependentUpon>ACY221.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY24.resx">
+      <DependentUpon>ACY24.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY3.resx">
+      <DependentUpon>ACY3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACCYEAR\ACY31102.resx">
+      <DependentUpon>ACY31102.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC010.resx">
+      <DependentUpon>AC010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC030.resx">
+      <DependentUpon>AC030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC040.resx">
+      <DependentUpon>AC040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC050.resx">
+      <DependentUpon>AC050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC050R.resx">
+      <DependentUpon>AC050R.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC080.resx">
+      <DependentUpon>AC080.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC100.resx">
+      <DependentUpon>AC100.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC150.resx">
+      <DependentUpon>AC150.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC210.resx">
+      <DependentUpon>AC210.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\AC220.resx">
+      <DependentUpon>AC220.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACCBG.resx">
+      <DependentUpon>ACCBG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACCNAME.resx">
+      <DependentUpon>ACCNAME.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACF010.resx">
+      <DependentUpon>ACF010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACF010D.resx">
+      <DependentUpon>ACF010D.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACF020.resx">
+      <DependentUpon>ACF020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACF050.resx">
+      <DependentUpon>ACF050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACF060.resx">
+      <DependentUpon>ACF060.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACF070.resx">
+      <DependentUpon>ACF070.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACF100.resx">
+      <DependentUpon>ACF100.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACFNO.resx">
+      <DependentUpon>ACFNO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM010.resx">
+      <DependentUpon>ACM010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM020.resx">
+      <DependentUpon>ACM020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM030.resx">
+      <DependentUpon>ACM030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM040.resx">
+      <DependentUpon>ACM040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM050.resx">
+      <DependentUpon>ACM050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM060.resx">
+      <DependentUpon>ACM060.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM070.resx">
+      <DependentUpon>ACM070.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM080.resx">
+      <DependentUpon>ACM080.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\ACM100.resx">
+      <DependentUpon>ACM100.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\PSNAME.resx">
+      <DependentUpon>PSNAME.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\ACC\PSFORM.resx">
+      <DependentUpon>PSFORM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL010.resx">
+      <DependentUpon>BAIL010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL011.resx">
+      <DependentUpon>BAIL011.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL020.resx">
+      <DependentUpon>BAIL020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL021.resx">
+      <DependentUpon>BAIL021.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL030.resx">
+      <DependentUpon>BAIL030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL040.resx">
+      <DependentUpon>BAIL040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL050.resx">
+      <DependentUpon>BAIL050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL060.resx">
+      <DependentUpon>BAIL060.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL070.resx">
+      <DependentUpon>BAIL070.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL080.resx">
+      <DependentUpon>BAIL080.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL100.resx">
+      <DependentUpon>BAIL100.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL101.resx">
+      <DependentUpon>BAIL101.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL120.resx">
+      <DependentUpon>BAIL120.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL130.resx">
+      <DependentUpon>BAIL130.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAIL131.resx">
+      <DependentUpon>BAIL131.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAILF010.resx">
+      <DependentUpon>BAILF010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAILF020.resx">
+      <DependentUpon>BAILF020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAILF030.resx">
+      <DependentUpon>BAILF030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BAIL\BAILF040.resx">
+      <DependentUpon>BAILF040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG010BATCH.resx">
+      <DependentUpon>BG010BATCH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG020.resx">
+      <DependentUpon>BG020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG010.resx">
+      <DependentUpon>BG010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG030.resx">
+      <DependentUpon>BG030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG050.resx">
+      <DependentUpon>BG050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG060.resx">
+      <DependentUpon>BG060.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG070.resx">
+      <DependentUpon>BG070.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG888.resx">
+      <DependentUpon>BG888.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BG999.resx">
+      <DependentUpon>BG999.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGF010.resx">
+      <DependentUpon>BGF010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGF010upd.resx">
+      <DependentUpon>BGF010upd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGF050.resx">
+      <DependentUpon>BGF050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGP010.resx">
+      <DependentUpon>BGP010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGP020.resx">
+      <DependentUpon>BGP020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGP030.resx">
+      <DependentUpon>BGP030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGP040.resx">
+      <DependentUpon>BGP040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGP050.resx">
+      <DependentUpon>BGP050.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGP060.resx">
+      <DependentUpon>BGP060.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGP888.resx">
+      <DependentUpon>BGP888.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGQ010.resx">
+      <DependentUpon>BGQ010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGQ030.resx">
+      <DependentUpon>BGQ030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGQ100.resx">
+      <DependentUpon>BGQ100.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BGUSER.resx">
+      <DependentUpon>BGUSER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BUD_AC150.resx">
+      <DependentUpon>BUD_AC150.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\BUD_ACCNAME.resx">
+      <DependentUpon>BUD_ACCNAME.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\BUD\UNITTABLE.resx">
+      <DependentUpon>UNITTABLE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\fmAbout.resx">
+      <DependentUpon>fmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\fmBase1.resx">
+      <DependentUpon>fmBase1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\fmBase2.resx">
+      <DependentUpon>fmBase2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\fmLogin.resx">
+      <DependentUpon>fmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\fmMain.resx">
+      <DependentUpon>fmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\fmMenu.resx">
+      <DependentUpon>fmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\CHF010.resx">
+      <DependentUpon>CHF010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\CHF020.resx">
+      <DependentUpon>CHF020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\CHF030.resx">
+      <DependentUpon>CHF030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\CHF040.resx">
+      <DependentUpon>CHF040.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY010.resx">
+      <DependentUpon>PAY010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY021.resx">
+      <DependentUpon>PAY021.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY022.resx">
+      <DependentUpon>PAY022.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY023.resx">
+      <DependentUpon>PAY023.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY024.resx">
+      <DependentUpon>PAY024.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY025.resx">
+      <DependentUpon>PAY025.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY030.resx">
+      <DependentUpon>PAY030.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY070.resx">
+      <DependentUpon>PAY070.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY080.resx">
+      <DependentUpon>PAY080.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY090.resx">
+      <DependentUpon>PAY090.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY091.resx">
+      <DependentUpon>PAY091.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY120.resx">
+      <DependentUpon>PAY120.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAYTRAN.resx">
+      <DependentUpon>PAYTRAN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY_ACF010.resx">
+      <DependentUpon>PAY_ACF010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY_ACF020.resx">
+      <DependentUpon>PAY_ACF020.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PAY\PAY_PSNAME.resx">
+      <DependentUpon>PAY_PSNAME.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\SYS\SYSGROUP.resx">
+      <DependentUpon>SYSGROUP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\SYS\SYSGROUPMENU.resx">
+      <DependentUpon>SYSGROUPMENU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\SYS\SYSGROUPUNIT.resx">
+      <DependentUpon>SYSGROUPUNIT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\SYS\SYSGROUPUSER.resx">
+      <DependentUpon>SYSGROUPUSER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\SYS\SYSMENU.resx">
+      <DependentUpon>SYSMENU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\SYS\SYSUNIT.resx">
+      <DependentUpon>SYSUNIT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\SYS\SYSUSER.resx">
+      <DependentUpon>SYSUSER.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="INI\BASIC.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="INI\CONFIG.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="INI\VERIFY.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="插件\CHIA.CheckPrint.dll" />
+    <Content Include="插件\CHIA.Utility.dll" />
+    <Content Include="插件\FastReport.Bars.dll" />
+    <Content Include="插件\FastReport.dll" />
+    <Content Include="插件\FastReport.Editor.dll" />
+    <Content Include="插件\FastReport.Install.dll" />
+    <Content Include="插件\FastReport.VSDesign.dll" />
+    <Content Include="插件\FastReport.Web.dll" />
+    <Content Include="插件\JBC.FitPrint.dll" />
+    <None Include="laeacc_ap.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="表單\Z_共用\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="INI\BASIC.ini">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="INI\CONFIG.ini">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="INI\VERIFY.ini">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
