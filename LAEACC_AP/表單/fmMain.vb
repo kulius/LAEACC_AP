@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class fmMain
     Dim DNS As String = INI_Read("CONFIG", "SET", "DNS_SYS") 'DNS設定值
@@ -8,6 +9,7 @@ Public Class fmMain
     Dim bmS, bmT As BindingManagerBase
     Dim myDatasetS As DataSet
     Dim DNS_SYS As String = INI_Read("CONFIG", "SET", "DNS_SYS")
+    Dim DNS_ACC As String = INI_Read("CONFIG", "SET", "DNS_ACC")
     Dim 所屬單位 As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "RegisterUnit", Nothing)
 
 
@@ -66,6 +68,7 @@ Public Class fmMain
             strSQL = "   select DISTINCT c.s_system_id, d.s_system_name, d.sort "
             strSQL &= " from a_sys_nunit_item c "
             strSQL &= " INNER JOIN a_sys_name d ON d.s_system_id=c.s_system_id"
+            strSQL &= " order by d.sort"
         End If
 
         myDatasetS = openmember(DNS_SYS, "a_sys_name", strSQL)
@@ -100,21 +103,31 @@ Public Class fmMain
             AddHandler bt.Click, AddressOf Me.bt_Click
         Next
 
-        Dim bt1 As Button = New Button
-        bt1.Name = "ACC"
-        bt1.Text = "退撫會計"
-        bt1.Location = New System.Drawing.Point((x_pos * 1), (y_pos * 6))
-        bt1.Size = New System.Drawing.Size(220, 50)
-        Me.Panel1.Controls.Add(bt1)
-        AddHandler bt1.Click, AddressOf Me.bt_Click
+        If TransPara.TransP("isadmin") = "True" Then
+            Dim bt1 As Button = New Button
+            bt1.Name = "RunSQL"
+            bt1.Text = "執行SQL語法"
+            bt1.Location = New System.Drawing.Point((x_pos * 1), (y_pos * 6))
+            bt1.Size = New System.Drawing.Size(220, 50)
+            Me.Panel1.Controls.Add(bt1)
+            AddHandler bt1.Click, AddressOf Me.RunSQL_Click
+        End If
 
-        Dim bt2 As Button = New Button
-        bt2.Name = "PAY"
-        bt2.Text = "退撫出納"
-        bt2.Location = New System.Drawing.Point((x_pos * 2), (y_pos * 6))
-        bt2.Size = New System.Drawing.Size(220, 50)
-        Me.Panel1.Controls.Add(bt2)
-        AddHandler bt2.Click, AddressOf Me.bt_Click
+        'Dim bt1 As Button = New Button
+        'bt1.Name = "ACC"
+        'bt1.Text = "退撫會計"
+        'bt1.Location = New System.Drawing.Point((x_pos * 1), (y_pos * 6))
+        'bt1.Size = New System.Drawing.Size(220, 50)
+        'Me.Panel1.Controls.Add(bt1)
+        'AddHandler bt1.Click, AddressOf Me.bt_Click
+
+        'Dim bt2 As Button = New Button
+        'bt2.Name = "PAY"
+        'bt2.Text = "退撫出納"
+        'bt2.Location = New System.Drawing.Point((x_pos * 2), (y_pos * 6))
+        'bt2.Size = New System.Drawing.Size(220, 50)
+        'Me.Panel1.Controls.Add(bt2)
+        'AddHandler bt2.Click, AddressOf Me.bt_Click
 
 
 
@@ -146,6 +159,7 @@ Public Class fmMain
             INI_Write("CONFIG", "SET", "DNS_ACC", CHDNS_ACC)
         End If
 
+        DNS_ACC = INI_Read("CONFIG", "SET", "DNS_ACC")
 
         Me.MenuStrip.Items.Clear()
 
@@ -208,14 +222,63 @@ Public Class fmMain
             For ii = 0 To bmT.Count - 1
                 bmT.Position = ii
                 Dim submenu As ToolStripMenuItem = New ToolStripMenuItem
-                submenu.Name = bmT.Current("s_unitem_id")
-                submenu.Text = bmT.Current("s_item_name") + bmT.Current("s_unitem_id")
+                If IsDBNull(bmT.Current("custom_value")) Then
+                    submenu.Name = bmT.Current("s_unitem_id")
+                    submenu.Text = bmT.Current("s_item_name") + bmT.Current("s_unitem_id")
+                Else
+
+                    submenu.Name = bmT.Current("custom_value")
+                    submenu.Text = bmT.Current("s_item_name") + bmT.Current("custom_value")
+                End If
+                'submenu.Name = bmT.Current("s_unitem_id")
+                'submenu.Text = bmT.Current("s_item_name") + bmT.Current("s_unitem_id")
                 rootmenu.DropDownItems.Add(submenu)
                 AddHandler submenu.Click, AddressOf Menuitem_Click
             Next
 
             MenuStrip.Items.Add(rootmenu)
         Next
+    End Sub
+
+    Private Sub RunSQL_Click(sender As Object, e As EventArgs)
+
+        Dim path As String = Application.StartupPath + "\INI\Z01ACCTable.txt"
+        Dim objReader As New StreamReader(path)
+
+        Dim sLine As String = ""
+        Dim sSql As String = ""
+        'Do
+        '    sLine = objReader.ReadLine()
+        '    If Not sLine Is Nothing Then
+
+        '        If sLine.Trim = "GO" Then
+        '            runsql(DNS_ACC, sSql)
+        '            sSql = ""
+        '        Else
+        '            sSql = sSql + sLine + vbNewLine
+        '        End If
+        '    End If
+        'Loop Until sLine Is Nothing
+        objReader.Close()
+
+        path = Application.StartupPath + "\INI\Z02SYSTable.txt"
+        Dim objReader1 As New StreamReader(path)
+
+        sLine = ""
+        sSql = ""
+        Do
+            sLine = objReader1.ReadLine()
+            If Not sLine Is Nothing Then
+
+                If sLine.Trim = "GO" Then
+                    runsql(DNS_SYS, sSql)
+                    sSql = ""
+                Else
+                    sSql = sSql + sLine + vbNewLine
+                End If
+            End If
+        Loop Until sLine Is Nothing
+        objReader1.Close()
     End Sub
 
     '狀態列
@@ -265,6 +328,9 @@ Public Class fmMain
             Case "BUD_PSNAME"
                 strCreatedFromButton = "PSNAME"
         End Select
+
+
+
         Dim f As New Form
         f = DirectCast(CreateObjectInstance(strCreatedFromButton), Form)
         'f.MdiParent = Me

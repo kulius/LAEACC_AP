@@ -1569,6 +1569,12 @@
     <Content Include="INI\VERIFY.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="INI\Z01ACCTable.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="INI\Z02SYSTable.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="插件\CHIA.CheckPrint.dll" />
     <Content Include="插件\CHIA.Utility.dll" />
     <Content Include="插件\FastReport.Bars.dll" />
@@ -1595,6 +1601,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="表單\FUND\" />
     <Folder Include="表單\Z_共用\" />
   </ItemGroup>
   <ItemGroup>
