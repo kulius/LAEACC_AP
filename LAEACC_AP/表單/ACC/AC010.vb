@@ -1004,25 +1004,57 @@ Public Class AC010
 
     Private Sub txtAmt1_TextChanged(sender As Object, e As EventArgs) Handles txtAmt1.TextChanged
         '防呆
-        If txtAmt1.Text <> "" Then If IsNumeric(txtAmt1.Text.Replace(",", "")) = False Then Exit Sub
-
-
+        'If txtAmt1.Text <> "" Then If IsNumeric(txtAmt1.Text.Replace(",", "")) = False Then Exit Sub
     End Sub
     Private Sub txtAmt_TextChanged(sender As Object, e As EventArgs) Handles txtAmt2.TextChanged, txtAmt3.TextChanged, txtAmt4.TextChanged, txtAmt5.TextChanged, txtAmt6.TextChanged
         '防呆
-        If txtAmt2.Text <> "" Then If IsNumeric(txtAmt2.Text.Replace(",", "")) = False Then Exit Sub
-        If txtAmt3.Text <> "" Then If IsNumeric(txtAmt3.Text.Replace(",", "")) = False Then Exit Sub
-        If txtAmt4.Text <> "" Then If IsNumeric(txtAmt4.Text.Replace(",", "")) = False Then Exit Sub
-        If txtAmt5.Text <> "" Then If IsNumeric(txtAmt5.Text.Replace(",", "")) = False Then Exit Sub
-        If txtAmt6.Text <> "" Then If IsNumeric(txtAmt6.Text.Replace(",", "")) = False Then Exit Sub
+        'If txtAmt2.Text <> "" Then If IsNumeric(txtAmt2.Text.Replace(",", "")) = False Then Exit Sub
+        'If txtAmt3.Text <> "" Then If IsNumeric(txtAmt3.Text.Replace(",", "")) = False Then Exit Sub
+        'If txtAmt4.Text <> "" Then If IsNumeric(txtAmt4.Text.Replace(",", "")) = False Then Exit Sub
+        'If txtAmt5.Text <> "" Then If IsNumeric(txtAmt5.Text.Replace(",", "")) = False Then Exit Sub
+        'If txtAmt6.Text <> "" Then If IsNumeric(txtAmt6.Text.Replace(",", "")) = False Then Exit Sub
 
-        Dim intAmt As Double = 0
-        If txtAmt2.Text <> "" Then intAmt += txtAmt2.Text.Replace(",", "")
-        If txtAmt3.Text <> "" Then intAmt += txtAmt3.Text.Replace(",", "")
-        If txtAmt4.Text <> "" Then intAmt += txtAmt4.Text.Replace(",", "")
-        If txtAmt5.Text <> "" Then intAmt += txtAmt5.Text.Replace(",", "")
-        If txtAmt6.Text <> "" Then intAmt += txtAmt6.Text.Replace(",", "")
+        'Dim intAmt As Double = 0
+        'If txtAmt2.Text <> "" Then intAmt += txtAmt2.Text.Replace(",", "")
+        'If txtAmt3.Text <> "" Then intAmt += txtAmt3.Text.Replace(",", "")
+        'If txtAmt4.Text <> "" Then intAmt += txtAmt4.Text.Replace(",", "")
+        'If txtAmt5.Text <> "" Then intAmt += txtAmt5.Text.Replace(",", "")
+        'If txtAmt6.Text <> "" Then intAmt += txtAmt6.Text.Replace(",", "")
 
-        txtAmt1.Text = FormatNumber(intAmt, 2)
+        'txtAmt1.Text = FormatNumber(intAmt, 2)
+
+        'If sender.text <> "" Then
+        '    sender.text = FormatNumber(ValComa(sender.text), 2)
+        'End If
+    End Sub
+
+    Private Sub txtAmt2_Leave(sender As Object, e As EventArgs) Handles txtAmt6.Leave, txtAmt5.Leave, txtAmt4.Leave, txtAmt3.Leave, txtAmt2.Leave
+        If (Not IsNumeric(sender.text) Or ValComa(sender.text) < 0) And Trim(sender.text) <> "" Then
+            MsgBox("請輸入正數字")
+            sender.focus()
+        Else
+            If sender.text <> "" Then
+                sender.text = FormatNumber(ValComa(sender.text), 2)
+            End If
+            txtAmt1.Text = FormatNumber(ValComa(txtAmt2.Text) + ValComa(txtAmt3.Text) + ValComa(txtAmt4.Text) + ValComa(txtAmt5.Text) + ValComa(txtAmt6.Text), 2)
+        End If
+    End Sub
+
+    Private Sub txtQty2_Leave(sender As Object, e As EventArgs) Handles txtQty6.Leave, txtQty5.Leave, txtQty4.Leave, txtQty3.Leave, txtQty2.Leave
+        If (Not IsNumeric(sender.text) Or ValComa(sender.text) < 0) And Trim(sender.text) <> "" Then
+            MsgBox("請輸入正數字")
+            sender.focus()
+        Else
+            sender.text = Format(ValComa(sender.text), "###,###,###.######")
+        End If
+    End Sub
+
+    Private Sub txtCode2_Leave(sender As Object, e As EventArgs) Handles txtCode6.Leave, txtCode5.Leave, txtCode4.Leave, txtCode3.Leave, txtCode2.Leave
+        If Trim(sender.text) <> "" Then
+            If Not ((sender.text >= "1" And sender.text <= "4") Or sender.text = "A" Or sender.text = "E") Then
+                MsgBox("請輸入1-4,A,E 內容別代碼")
+                sender.focus()
+            End If
+        End If
     End Sub
 End Class
