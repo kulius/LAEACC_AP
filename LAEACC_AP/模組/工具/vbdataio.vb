@@ -10,15 +10,15 @@ Module vbdataio
     Dim ii As Integer, retstr As String
     Dim backstr As String
     Dim atp1, atp2 As Integer
-    Dim mastconn As String = INI_Read("CONFIG", "SET", "DNS_ACC")
+    'Dim mastconn As String = INI_Read("CONFIG", "SET", "DNS_ACC")
     Dim UpdSqlValue As String, InsField, InsValue As String
-    Dim DNS_ACC As String = INI_Read("CONFIG", "SET", "DNS_ACC")
+    'Dim DNS_ACC As String = INI_Read("CONFIG", "SET", "DNS_ACC")
 
 
 
     Function openmember(ByVal connstr As String, ByVal membername As String, ByVal sqlstr As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
         If InStr(UCase(sqlstr), "FROM") = 0 Then
             sqlstr = "select * from " & sqlstr
@@ -49,7 +49,7 @@ Module vbdataio
 
     Function openreader(ByVal connstr As String, ByVal sqlstr As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         If InStr(LCase(connstr), "provider") > 0 Then  'oledb
@@ -79,7 +79,7 @@ Module vbdataio
 
     Function updfunc(ByVal connstr As String, ByVal sqlstr As String, ByVal Parameters() As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         If InStr(LCase(connstr), "provider") > 0 Then  'oledb
@@ -122,7 +122,7 @@ Module vbdataio
 
     Function runsql(ByVal connstr As String, ByVal sqlstr As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         If InStr(LCase(connstr), "provider") > 0 Then  'oledb
@@ -230,7 +230,7 @@ Module vbdataio
 
     Function DlookUp(ByVal connstr As String, ByVal getfield As String, ByVal readtable As String, ByVal wherestr As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         sqlstr = "select " & getfield & " from " & readtable & " where " & wherestr
@@ -258,7 +258,7 @@ Module vbdataio
 
     Function Dmax(ByVal connstr As String, ByVal getfield As String, ByVal readtable As String, ByVal wherestr As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         sqlstr = "select max(" & getfield & ") as maxvalue  from " & readtable & IIf(wherestr <> "", " where " & wherestr, "")
@@ -286,7 +286,7 @@ Module vbdataio
 
     Function Dmin(ByVal connstr As String, ByVal getfield As String, ByVal readtable As String, ByVal wherestr As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         sqlstr = "select min(" & getfield & ") as maxvalue  from " & readtable & IIf(wherestr <> "", " where " & wherestr, "")
@@ -314,7 +314,7 @@ Module vbdataio
 
     Function Dcount(ByVal connstr As String, ByVal getfield As String, ByVal readtable As String, ByVal wherestr As String)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         sqlstr = "select count(" & getfield & ") as maxvalue  from " & readtable & IIf(wherestr <> "", " where " & wherestr, "")
@@ -488,7 +488,7 @@ Module vbdataio
 
     Function findrecpos(ByVal connstr, ByVal sqlstr, ByVal getfield, ByVal compstr)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         Dim existdata As Boolean, myreader
@@ -621,7 +621,7 @@ Module vbdataio
 
     Function RequireNO(ByVal connstr As String, ByVal noyear As Integer, ByVal kind As String)  '取用編號(取得號數控制檔的編號+1)
         If connstr = "" Then
-            connstr = DNS_ACC
+            connstr = fmMain.DNS_ACC
         End If
 
         Dim tempdataset As DataSet
@@ -629,7 +629,7 @@ Module vbdataio
         Dim cnt As Integer
         sqlstr = "SELECT cont_no FROM acfno WHERE accyear=" & noyear & " and kind='" & kind & "'"
         'MaxNo = Dmax(connstr, "cont_no", "acfno", "accyear=" & noyear & " and kind='" & kind & "'") '無號碼時　回應””
-        tempdataset = openmember(DNS_ACC, "acfno", sqlstr)
+        tempdataset = openmember(fmMain.DNS_ACC, "acfno", sqlstr)
 
         'If MaxNo = "" Then '空號
         If tempdataset.Tables("acfno").Rows.Count = 0 Then
@@ -651,7 +651,7 @@ Module vbdataio
         Dim tempdataset As DataSet
         Dim sqlstr As String
         sqlstr = "SELECT cont_no FROM acfno WHERE accyear=" & noyear & " and kind='" & kind & "'"
-        tempdataset = openmember(DNS_ACC, "acfno", sqlstr)
+        tempdataset = openmember(fmMain.DNS_ACC, "acfno", sqlstr)
         If tempdataset.Tables("acfno").Rows.Count = 0 Then
             If kind = "3" Or kind = "6" Then
                 Return 1
@@ -666,7 +666,7 @@ Module vbdataio
     Function PrintSlip(ByVal noyear As Integer, ByVal kind As String, ByVal no1 As Integer)  '列印傳票
         Dim sqlstr As String
         sqlstr = "insert into 印表控制 (報表類型, 條件, 申請時間) values ('傳票', 'accyear=" & noyear & ";kind=" & kind & ";no_1_no=" & no1 & "', { fn NOW() })"
-        retstr = runsql(mastconn, sqlstr) '寫入資料庫
+        retstr = runsql(fmMain.DNS_ACC, sqlstr) '寫入資料庫
         If retstr <> "sqlok" Then MsgBox("寫入印表控制資料庫錯誤" & sqlstr)
     End Function
 

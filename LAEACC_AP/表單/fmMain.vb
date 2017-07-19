@@ -9,7 +9,7 @@ Public Class fmMain
     Dim bmS, bmT As BindingManagerBase
     Dim myDatasetS As DataSet
     Dim DNS_SYS As String = INI_Read("CONFIG", "SET", "DNS_SYS")
-    Dim DNS_ACC As String = INI_Read("CONFIG", "SET", "DNS_ACC")
+    Public DNS_ACC As String
     Dim 所屬單位 As String = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "RegisterUnit", Nothing)
 
 
@@ -284,7 +284,7 @@ Public Class fmMain
     '狀態列
     Private Sub Timer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer.Tick
         txtDate.Text = NowDate() & "　" & NowTime() '小時鐘
-        If Me.MdiChildren.count = 0 Then
+        If Me.MdiChildren.Count = 0 Then
             Me.Panel1.Visible = True
         End If
     End Sub
@@ -327,6 +327,16 @@ Public Class fmMain
                 strCreatedFromButton = "BG030"
             Case "BUD_PSNAME"
                 strCreatedFromButton = "PSNAME"
+            Case "FAC010"
+                TransPara.TransP("ac010kind") = "開立傳票"
+            Case "FAC011"
+                TransPara.TransP("ac010kind") = "修改傳票"
+                strCreatedFromButton = "FAC010"
+            Case "FAC030"
+                TransPara.TransP("ac010kind") = "開立傳票"
+            Case "FAC031"
+                TransPara.TransP("ac010kind") = "修改傳票"
+                strCreatedFromButton = "FAC030"
         End Select
 
 

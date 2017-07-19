@@ -30,7 +30,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationRevision>32</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -929,6 +929,18 @@
     <Compile Include="表單\fmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="表單\FUND\FAC010.Designer.vb">
+      <DependentUpon>FAC010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\FUND\FAC010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\FUND\FAC030.Designer.vb">
+      <DependentUpon>FAC030.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\FUND\FAC030.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="表單\PAY\PAY025.Designer.vb">
       <DependentUpon>PAY025.vb</DependentUpon>
     </Compile>
@@ -1477,6 +1489,12 @@
     <EmbeddedResource Include="表單\fmMenu.resx">
       <DependentUpon>fmMenu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="表單\FUND\FAC010.resx">
+      <DependentUpon>FAC010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\FUND\FAC030.resx">
+      <DependentUpon>FAC030.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="表單\PAY\CHF010.resx">
       <DependentUpon>CHF010.vb</DependentUpon>
     </EmbeddedResource>
@@ -1583,7 +1601,9 @@
     <Content Include="插件\FastReport.Install.dll" />
     <Content Include="插件\FastReport.VSDesign.dll" />
     <Content Include="插件\FastReport.Web.dll" />
-    <Content Include="插件\JBC.FitPrint.dll" />
+    <Content Include="插件\JBC.FitPrint.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="laeacc_ap.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -1601,7 +1621,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="表單\FUND\" />
     <Folder Include="表單\Z_共用\" />
   </ItemGroup>
   <ItemGroup>
