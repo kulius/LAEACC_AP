@@ -38,8 +38,15 @@ Partial Class fmMain
         Me.txtUser = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.CBDefaultPrint = New System.Windows.Forms.ComboBox()
+        Me.CBShipPrint = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -136,12 +143,59 @@ Partial Class fmMain
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Panel1.Location = New System.Drawing.Point(0, 28)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1008, 261)
         Me.Panel1.TabIndex = 4
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.CBDefaultPrint)
+        Me.Panel2.Controls.Add(Me.CBShipPrint)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 186)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1008, 75)
+        Me.Panel2.TabIndex = 0
+        '
+        'CBDefaultPrint
+        '
+        Me.CBDefaultPrint.FormattingEnabled = True
+        Me.CBDefaultPrint.Location = New System.Drawing.Point(649, 9)
+        Me.CBDefaultPrint.Name = "CBDefaultPrint"
+        Me.CBDefaultPrint.Size = New System.Drawing.Size(332, 28)
+        Me.CBDefaultPrint.TabIndex = 3
+        '
+        'CBShipPrint
+        '
+        Me.CBShipPrint.FormattingEnabled = True
+        Me.CBShipPrint.Location = New System.Drawing.Point(188, 9)
+        Me.CBShipPrint.Name = "CBShipPrint"
+        Me.CBShipPrint.Size = New System.Drawing.Size(313, 28)
+        Me.CBShipPrint.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(507, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(121, 20)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "一般報表印表機"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(46, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(121, 20)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "傳票預設印表機"
         '
         'fmMain
         '
@@ -162,6 +216,9 @@ Partial Class fmMain
         Me.MenuStrip.PerformLayout()
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -180,4 +237,9 @@ Partial Class fmMain
     Friend WithEvents AC011 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AC031 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents CBDefaultPrint As System.Windows.Forms.ComboBox
+    Friend WithEvents CBShipPrint As System.Windows.Forms.ComboBox
 End Class

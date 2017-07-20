@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
+Imports System.Drawing.Printing
 
 Public Class fmMain
     Dim DNS As String = INI_Read("CONFIG", "SET", "DNS_SYS") 'DNS設定值
@@ -113,21 +114,15 @@ Public Class fmMain
             AddHandler bt1.Click, AddressOf Me.RunSQL_Click
         End If
 
-        'Dim bt1 As Button = New Button
-        'bt1.Name = "ACC"
-        'bt1.Text = "退撫會計"
-        'bt1.Location = New System.Drawing.Point((x_pos * 1), (y_pos * 6))
-        'bt1.Size = New System.Drawing.Size(220, 50)
-        'Me.Panel1.Controls.Add(bt1)
-        'AddHandler bt1.Click, AddressOf Me.bt_Click
 
-        'Dim bt2 As Button = New Button
-        'bt2.Name = "PAY"
-        'bt2.Text = "退撫出納"
-        'bt2.Location = New System.Drawing.Point((x_pos * 2), (y_pos * 6))
-        'bt2.Size = New System.Drawing.Size(220, 50)
-        'Me.Panel1.Controls.Add(bt2)
-        'AddHandler bt2.Click, AddressOf Me.bt_Click
+
+        '取得安裝於電腦上的所有印表機名稱，加入 ListBox (Name : lbInstalledPrinters) 中
+        For Each strPrinter As String In PrinterSettings.InstalledPrinters
+            Me.CBShipPrint.Items.Add(strPrinter)
+            Me.CBDefaultPrint.Items.Add(strPrinter)
+        Next
+        Me.CBShipPrint.SelectedIndex = Me.CBShipPrint.FindString(TransPara.TransP("ShipPrint"))
+        Me.CBDefaultPrint.SelectedIndex = Me.CBDefaultPrint.FindString(TransPara.TransP("DefaultPrint"))
 
 
 
@@ -284,7 +279,7 @@ Public Class fmMain
     '狀態列
     Private Sub Timer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer.Tick
         txtDate.Text = NowDate() & "　" & NowTime() '小時鐘
-        If Me.MdiChildren.Count = 0 Then
+        If Me.MdiChildren.Length = 0 Then
             Me.Panel1.Visible = True
         End If
     End Sub
@@ -365,4 +360,21 @@ Public Class fmMain
         Return obj
 
     End Function
+
+    
+
+    Private Sub CBShipPrint_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles CBShipPrint.SelectedIndexChanged, CBDefaultPrint.SelectedIndexChanged
+        If CType(sender, ComboBox).Name = "CBShipPrint" Then
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "ShipPrint", CType(sender, ComboBox).Text)
+            TransPara.TransP("ShipPrint") = CType(sender, ComboBox).Text
+        End If
+
+        If CType(sender, ComboBox).Name = "CBDefaultPrint" Then
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "DefaultPrint", CType(sender, ComboBox).Text)
+            TransPara.TransP("DefaultPrint") = CType(sender, ComboBox).Text
+        End If
+        'SetSysDefPrinter(CBShipPrint.Text) ' 設定系統預設印表機 
+        ' 或 SetAppDefPrinter("HP LaserJet 1100 (MS)") ' 設定應用程式預設印表機 
+        'MsgBox("您已將 " & CBShipPrint.Text & " 設為預設印表機ㄌ")
+    End Sub
 End Class

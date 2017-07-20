@@ -16,6 +16,8 @@ Public Class AC010
         'dtpDate.Format = DateTimePickerFormat.Custom
         'dtpDate.CustomFormat = String.Format("{0}/MM/dd", dtpDate.Value.AddYears(-1911).Year.ToString("00"))
 
+        SetSysDefPrinter(TransPara.TransP("ShipPrint"))
+
         ac010kind = TransPara.TransP("ac010kind")  '定開立傳票 or 修改傳票
         If ac010kind = "開立傳票" Then
             gbxModify.Visible = False

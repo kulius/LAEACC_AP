@@ -30,7 +30,7 @@ Partial Class fmBase1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(378, 370)
         Me.Font = New System.Drawing.Font("微軟正黑體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "fmBase1"
         Me.Text = "fmBase1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

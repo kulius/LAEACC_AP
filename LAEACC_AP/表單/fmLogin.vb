@@ -1,6 +1,7 @@
 ﻿
 Imports System.Data.SqlClient
 Imports System.IO
+Imports System.Drawing.Printing
 
 Public Class fmLogin
     Dim DNS_SYS As String = ""
@@ -80,6 +81,21 @@ Public Class fmLogin
             Else
                 所屬單位.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "RegisterUnit", Nothing)
             End If
+
+            Dim printDoc As New PrintDocument()
+            Dim sDefaultPrinter As String = printDoc.PrinterSettings.PrinterName '取得預設的印表機名稱
+
+            If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "UserPrint", Nothing) Is Nothing Then
+                My.Computer.Registry.SetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "UserPrint", sDefaultPrinter)
+                My.Computer.Registry.SetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "ShipPrint", sDefaultPrinter)
+                My.Computer.Registry.SetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "DefaultPrint", sDefaultPrinter)
+            Else
+                TransPara.TransP("UserPrint") = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "UserPrint", Nothing)
+                TransPara.TransP("ShipPrint") = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "ShipPrint", Nothing)
+                TransPara.TransP("DefaultPrint") = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\SOFTWARE\JBC\FitPrint", "DefaultPrint", Nothing)
+            End If
+
+
         End If
     End Sub
 
@@ -158,6 +174,12 @@ Public Class fmLogin
             TransPara.TransP("UserName") = objDR("name").ToString
             TransPara.TransP("Userunit") = Trim(objDR("unit_id").ToString)
             TransPara.TransP("UnitTitle") = dbGetSingleRow(DNS_SYS, "a_lae_unit", "s_unit_name", "default_value = 'Y'")
+
+            If rdoPrint.Checked Then
+                TransPara.TransP("Print") = "Print"
+            Else
+                TransPara.TransP("Print") = "Preview"
+            End If
 
 
             '定月報日期

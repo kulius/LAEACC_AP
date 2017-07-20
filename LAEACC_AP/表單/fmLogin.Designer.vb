@@ -40,19 +40,23 @@ Partial Class fmLogin
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rdoPrint = New System.Windows.Forms.RadioButton()
+        Me.rdoPreview = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtUser
         '
         Me.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtUser.Location = New System.Drawing.Point(208, 106)
+        Me.txtUser.Location = New System.Drawing.Point(208, 103)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(200, 22)
         Me.txtUser.TabIndex = 1
         '
         'txtPass
         '
-        Me.txtPass.Location = New System.Drawing.Point(208, 160)
+        Me.txtPass.Location = New System.Drawing.Point(208, 151)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPass.Size = New System.Drawing.Size(200, 22)
@@ -164,10 +168,44 @@ Partial Class fmLogin
         '
         Me.dtpDate.CalendarFont = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.dtpDate.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.dtpDate.Location = New System.Drawing.Point(208, 207)
+        Me.dtpDate.Location = New System.Drawing.Point(253, 184)
         Me.dtpDate.Name = "dtpDate"
-        Me.dtpDate.Size = New System.Drawing.Size(200, 27)
+        Me.dtpDate.Size = New System.Drawing.Size(155, 27)
         Me.dtpDate.TabIndex = 15
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rdoPreview)
+        Me.GroupBox1.Controls.Add(Me.rdoPrint)
+        Me.GroupBox1.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(199, 221)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(220, 44)
+        Me.GroupBox1.TabIndex = 16
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "傳票列印方式"
+        '
+        'rdoPrint
+        '
+        Me.rdoPrint.AutoSize = True
+        Me.rdoPrint.Checked = True
+        Me.rdoPrint.Location = New System.Drawing.Point(6, 20)
+        Me.rdoPrint.Name = "rdoPrint"
+        Me.rdoPrint.Size = New System.Drawing.Size(90, 20)
+        Me.rdoPrint.TabIndex = 0
+        Me.rdoPrint.TabStop = True
+        Me.rdoPrint.Text = "直接列印"
+        Me.rdoPrint.UseVisualStyleBackColor = True
+        '
+        'rdoPreview
+        '
+        Me.rdoPreview.AutoSize = True
+        Me.rdoPreview.Location = New System.Drawing.Point(109, 20)
+        Me.rdoPreview.Name = "rdoPreview"
+        Me.rdoPreview.Size = New System.Drawing.Size(90, 20)
+        Me.rdoPreview.TabIndex = 1
+        Me.rdoPreview.Text = "預覽列印"
+        Me.rdoPreview.UseVisualStyleBackColor = True
         '
         'fmLogin
         '
@@ -176,7 +214,8 @@ Partial Class fmLogin
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.CancelButton = Me.butExit
-        Me.ClientSize = New System.Drawing.Size(429, 303)
+        Me.ClientSize = New System.Drawing.Size(430, 309)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dtpDate)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CheckBox1)
@@ -197,6 +236,8 @@ Partial Class fmLogin
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "系統名稱"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -209,5 +250,8 @@ Partial Class fmLogin
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents dtpDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents rdoPreview As System.Windows.Forms.RadioButton
+    Friend WithEvents rdoPrint As System.Windows.Forms.RadioButton
 
 End Class

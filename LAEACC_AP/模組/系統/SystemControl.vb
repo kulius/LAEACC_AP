@@ -11,6 +11,7 @@ Imports System.IO
 Imports System.Collections.Generic
 Imports System.Security.Cryptography
 Imports System.Data.SqlClient
+Imports System.Drawing.Printing
 
 
 Module SystemControl
@@ -1173,5 +1174,33 @@ Module SystemControl
         End If
 
         Return Year3
+    End Function
+
+    Public Sub SetAppDefPrinter(ByVal strPrinterName As String)
+        Dim pd As New PrintDocument ' 宣告並初始化 PrintDocument 類別的新執行個體 
+        pd.PrinterSettings.PrinterName = strPrinterName ' 設定應用程式輸出印表機 
+    End Sub
+
+    ' 設定系統預設印表機 
+    Public Function SetSysDefPrinter(ByVal strPrinter As String) As Boolean
+        Dim objWshNet As Object
+        Dim pd As New PrintDocument ' 宣告並初始化 PrintDocument 類別的新執行個體 
+        Dim strOldPrinter As String
+        Try
+            objWshNet = CreateObject("WScript.Network") ' 建立 WSH 物件的 NetWork 類別 
+            strOldPrinter = pd.PrinterSettings.PrinterName ' 記錄舊的系統預設印表機名稱 
+            objWshNet.SetDefaultPrinter(strPrinter) ' 設定新的系統預設印表機 
+            pd.PrinterSettings.PrinterName = strPrinter ' 設定應用程式輸出印表機 
+            SetSysDefPrinter = pd.PrinterSettings.IsValid ' 判斷是否為有效印表機 
+            ' 若為無效印表機 , 則還原為舊的系統預設印表機 
+            If Not SetSysDefPrinter Then objWshNet.SetDefaultPrinter(strOldPrinter)
+        Catch exc As Exception ' 錯誤掌控 , 例外處理 
+            objWshNet.SetDefaultPrinter(strOldPrinter) ' 還原舊的系統預設印表機 
+            Return False
+        Finally
+            ' 釋放物件 
+            objWshNet = Nothing
+            pd = Nothing
+        End Try
     End Function
 End Module

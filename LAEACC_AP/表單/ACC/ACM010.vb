@@ -6,7 +6,7 @@ Public Class ACM010
     Dim confid, confunit As String, LoadAfter, Dirty As Boolean
     Dim SYear As Integer
     Dim myds As DataSet
-    Dim printer As FPPrinter = FPPrinter.SharedPrinter
+
 
     Private Sub ACM010_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         dtpDateS.Value = TransPara.TransP("LastDay")
@@ -109,8 +109,7 @@ Public Class ACM010
         Dim intR As Integer = 0  'control record number
         Dim strAccno As String
         Dim PageRow As Integer = 27  '每頁印27行
-
-
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印總分類帳彙總表")
         document.SetDefaultPageMargin(25, 10, 10, 10)   'left,top,right,bottom
         document.DefaultPageSettings.Landscape = True    '橫印
@@ -194,93 +193,12 @@ Public Class ACM010
         printer.IsAutoShowPrintDialog = True '自動顯示印表機設定對話盒
         If rdoPreview.Checked = True Then printer.IsAutoShowPrintPreviewDialog = True
 
-        'Dim control As Control
-        'For Each control In printer.PrintPreviewDialog.Controls
-        '    If (control.GetType Is GetType(ToolBar)) Then
-        '        Dim button As Button
-        '        Dim bar As ToolBar = DirectCast(control, ToolBar)
-        '        bar.Buttons.Item(0).Visible = False
-        '        Dim control2 As Control
-        '        For Each control2 In bar.Controls
-        '            If (control2.GetType Is GetType(Button)) Then
-        '                button = DirectCast(control2, Button)
-        '                Exit For
-        '            End If
-        '        Next
-        '        Dim button3 As New Button
-        '        Dim button7 As Button = button3
-        '        button7.Text = "列印"
-        '        button7.Width = button.Width
-        '        button7.Height = button.Height
-        '        button7.Left = button.Left
-        '        button7.Top = button.Top
-        '        button7.FlatStyle = button.FlatStyle
-        '        button7 = Nothing
-        '        Dim button2 As New Button
-        '        Dim button6 As Button = button2
-        '        button6.Text = "修改邊界"
-        '        button6.Width = (button.Width * 2)
-        '        button6.Height = button.Height
-        '        button6.Left = (button.Left + button3.Width)
-        '        button6.Top = button.Top
-        '        button6.FlatStyle = button.FlatStyle
-        '        button6 = Nothing
-        '        Dim button4 As New Button
-        '        Dim button5 As Button = button4
-        '        button5.Text = "版本"
-        '        button5.Width = button.Width
-        '        button5.Height = button.Height
-        '        button5.Left = ((button.Left + button3.Width) + button2.Width)
-        '        button5.Top = button.Top
-        '        button5.FlatStyle = button.FlatStyle
-        '        button5 = Nothing
-        '        button.Left = (button4.Left + button4.Width)
-        '        'AddHandler button3.Click, New EventHandler(AddressOf Me.PrintInPreviewWindow)
-        '        'AddHandler button2.Click, New EventHandler(AddressOf Me.ReviseMargin)
-        '        'AddHandler button4.Click, New EventHandler(AddressOf Me.ShowVersion)
-        '        bar.Controls.Add(button3)
-        '        bar.Controls.Add(button2)
-        '        bar.Controls.Add(button4)
-        '        printer.PrintPreviewDialog.CancelButton = button
-        '        Continue For
-        '    End If
-        '    If (control.GetType Is GetType(PrintPreviewControl)) Then
-        '        printer.PrintPreviewControl = DirectCast(control, PrintPreviewControl)
-        '    End If
-        'Next
-
-        Dim printPreviewButton As Button
-
-        printPreviewButton = New System.Windows.Forms.Button()
-        printPreviewButton.Location = New System.Drawing.Point(12, 12)
-        printPreviewButton.Size = New System.Drawing.Size(125, 23)
-        printPreviewButton.Text = "設定"
-        ClientSize = New System.Drawing.Size(292, 266)
-        printer.PrintPreviewControl.Controls.Add(printPreviewButton)
-        AddHandler printPreviewButton.Click, AddressOf Me.printPreviewButton_Click
-
-
-
-
         printer.Print()
 
         Me.Close()
     End Sub
 
-    Private Sub printPreviewButton_Click(ByVal sender As Object, _
-         ByVal e As EventArgs)
-        printer.IsAutoShowPrintDialog = True
-        printer.IsAutoShowPrintPreviewDialog = False
-        printer.IsAutoShowPageSetupDialog = True
-        printer.PageSetupDialog.ShowDialog()
-        'printer.PrintPreviewDialog.ShowDialog()
-        'printer.PrintDialog.ShowDialog()
 
-        'printer.PrintPreviewDialog = New PrintPreviewDialog
-        'Dim printPreviewDialog As PrintPreviewDialog = printer.PrintPreviewDialog
-        ' CType(printer.PrintPreviewDialog, System.Windows.Forms.PrintPreviewDialog).ShowDialog()
-
-    End Sub
 
 
     Private Sub btnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExit.Click
