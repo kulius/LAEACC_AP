@@ -1,4 +1,5 @@
-﻿Imports JBC.Printing
+﻿Imports CHIA.Utility
+Imports JBC.Printing
 Imports Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.CompilerServices
 Imports Microsoft.Win32
@@ -73,45 +74,11 @@ Public Class KPrint
         If (Me.PrintDialog.ShowDialog = DialogResult.OK) Then
 
         End If
-        'Catch exception1 As InvalidPrinterException
-        '    ProjectData.SetProjectError(exception1)
-        '    Dim exception As InvalidPrinterException = exception1
-        '    If Not Environment.UserInteractive Then
-        '        Throw exception
-        '    End If
-        '    Interaction.MsgBox(((("印表機名稱：" & Me.PrinterSettings.PrinterName.ToString & ChrW(13) & ChrW(10)) & "列印發生問題，可能原因如下：" & ChrW(13) & ChrW(10) & ChrW(13) & ChrW(10) & "1.沒有安裝任何印表機驅動程式" & ChrW(13) & ChrW(10)) & "2.指定的印表機名稱不存在" & ChrW(13) & ChrW(10) & "3.指定的印表機名稱其驅動程式損毀，請重新安裝" & ChrW(13) & ChrW(10)), 0, Nothing)
-        '    'Dim info As New LogInfo("", 1, "FPPrinter.PrintInPreviewWindow")
-        '    'ExceptionManager.Report(info, exception)
-        '    ProjectData.ClearProjectError()
-        'Catch exception3 As Win32Exception
-        '    ProjectData.SetProjectError(exception3)
-        '    Dim exception2 As Win32Exception = exception3
-        '    If Not Environment.UserInteractive Then
-        '        Throw exception2
-        '    End If
-        '    Interaction.MsgBox((("印表機名稱：" & Me.PrinterSettings.PrinterName.ToString & ChrW(13) & ChrW(10)) & "列印發生問題，可能是指定的印表機名稱其驅動程式損毀，請重新安裝！" & ChrW(13) & ChrW(10)), 0, Nothing)
-        '    'Dim info2 As New LogInfo("", 1, "FPPrinter.PrintInPreviewWindow")
-        '    'ExceptionManager.Report(info2, exception2)
-        '    ProjectData.ClearProjectError()
-        'End Try
-    End Sub
-
-    Private Sub SetPrintPage()
-        Select Case Me.mPD.PrinterSettings.PrintRange
-            Case PrintRange.AllPages
-                Me.IsPrintAllPages = True
-                Exit Select
-            Case PrintRange.SomePages
-                Me.AddPageNo(Me.mPD.PrinterSettings.FromPage, Me.mPD.PrinterSettings.ToPage, True)
-                Exit Select
-        End Select
     End Sub
 
 
 
 
-    Public mPD As PrintDocument
-    Private Shared DefaultPageSettings As PageSettings
-    Public Shared PrinterSettings As PrinterSettings
+   
     
 End Class

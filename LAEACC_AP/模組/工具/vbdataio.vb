@@ -708,20 +708,27 @@ Module vbdataio
                 End If
             Case Is = "D"
                 If FieldValue <> "" Then
-                    Select Case Mid(FieldValue, 1, 1)
-                        Case "1" '民國年
-                            InsField &= FieldName & ","
-                            InsValue &= "'" & strDateChinessToAD(strDateKindToDateKind(FieldValue, "/", "-")) & "',"
-                        Case "2" '西元年
-                            FieldValue = Replace(FieldValue, ".", "/")
-                            Dim yy As Integer, mmdd As String
-                            InsField &= FieldName & ","
-                            yy = Mid(FieldValue, 1, InStr(FieldValue, "/") - 1)
-                            If yy < 1000 Then yy = yy + 1911
-                            mmdd = Mid(FieldValue, InStr(FieldValue, "/"))
+                    FieldValue = Replace(FieldValue, ".", "/")
+                    Dim yy As Integer, mmdd As String
+                    InsField &= FieldName & ","
+                    yy = Mid(FieldValue, 1, InStr(FieldValue, "/") - 1)
+                    If yy < 1000 Then yy = yy + 1911
+                    mmdd = Mid(FieldValue, InStr(FieldValue, "/"))
+                    InsValue &= "'" & yy & mmdd & "',"
+                    'Select Case Mid(FieldValue, 1, 1)
+                    '    Case "1" '民國年
+                    '        InsField &= FieldName & ","
+                    '        InsValue &= "'" & strDateChinessToAD(strDateKindToDateKind(FieldValue, "/", "-")) & "',"
+                    '    Case "2" '西元年
+                    '        FieldValue = Replace(FieldValue, ".", "/")
+                    '        Dim yy As Integer, mmdd As String
+                    '        InsField &= FieldName & ","
+                    '        yy = Mid(FieldValue, 1, InStr(FieldValue, "/") - 1)
+                    '        If yy < 1000 Then yy = yy + 1911
+                    '        mmdd = Mid(FieldValue, InStr(FieldValue, "/"))
 
-                            InsValue &= "'" & yy & mmdd & "',"
-                    End Select
+                    '        InsValue &= "'" & yy & mmdd & "',"
+                    'End Select
                 End If
             Case Is = "N", "R"
                 If FieldValue <> "" Then
