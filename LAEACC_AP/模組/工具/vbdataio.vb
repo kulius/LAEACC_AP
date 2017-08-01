@@ -1,6 +1,7 @@
 ﻿
 Imports System.Data.OleDb
 Imports System.Data.SqlClient
+Imports System.IO
 
 Module vbdataio
     Dim sqlstr As String, mydataset As DataSet
@@ -994,5 +995,37 @@ Module vbdataio
                 End If
         End Select
     End Sub
+
+    Sub AppReport_Copy(ByVal strSysname As String, ByVal strReportName As String, ByVal strCopyPath As String)
+        Dim AppReportPath As String = Application.StartupPath & "\APP\" & strSysname & "\報表樣本\" & strReportName '*.ini檔案路徑
+        Dim Createpath As String = ""
+        Dim Createpath1 As String = ""
+        If strSysname = "bail" Then
+            Createpath = "c:\APP\" & strSysname & "\ReportData\"
+            Createpath1 = "c:\APP\" & strSysname & "\Report\"
+        Else
+            Createpath = "c:\APP\" & strSysname & "\報表樣本\"
+            Createpath1 = "c:\APP\" & strSysname & "\報表\"
+        End If
+        
+
+        If Not File.Exists(AppReportPath) Then
+            MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & AppReportPath)
+            Exit Sub
+        End If
+
+        If Directory.Exists(Createpath) = False Then
+            ' Create the directory.
+            Directory.CreateDirectory(Createpath)
+        End If
+
+        If Directory.Exists(Createpath1) = False Then
+            ' Create the directory.
+            Directory.CreateDirectory(Createpath1)
+        End If
+
+        FileCopy(AppReportPath, strCopyPath)
+    End Sub
+
 
 End Module

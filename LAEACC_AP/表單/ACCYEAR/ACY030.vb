@@ -58,8 +58,9 @@ Public Class ACY030
                 tt1 = "c:\App\acc\報表樣本\ACY030.xls"
                 tt2 = "c:\App\acc\報表\ACY030.xls"
                 If Not File.Exists(tt1) Then
-                    MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & tt1)
-                    Exit Sub
+                    AppReport_Copy("acc", "ACY030.xls", tt1)
+                    'MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & tt1)
+                    'Exit Sub
                 End If
                 FileCopy(tt1, tt2)    'copy tt1 to tt2
                 xlbooks = xlapp.Workbooks
@@ -153,7 +154,7 @@ Public Class ACY030
             If rdoPrint.Checked Then
                 xlbook.PrintOut()  '直接列印
             End If
-            Dim result3 As DialogResult = MessageBox.Show("列印完畢,已存入 " & tt2 & vbNewLine & "是否要幫您開啟此份報表?","", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)
+            Dim result3 As DialogResult = MessageBox.Show("列印完畢,已存入 " & tt2 & vbNewLine & "是否要幫您開啟此份報表?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
             If result3 = DialogResult.Yes Then
                 'If MessageBox.Show("列印完畢,已存入 " & tt2 & vbNewLine & "是否要幫您開啟此份報表?", "", MsgBoxStyle.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = MsgBoxResult.Yes Then
                 '不可用 Process.Start(tt2) 否則會造成用同一個excel process開啟報表,導致finally區段關閉excel.exe時會出現error
