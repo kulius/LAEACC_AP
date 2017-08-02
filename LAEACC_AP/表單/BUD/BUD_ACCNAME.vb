@@ -230,7 +230,7 @@ Public Class BUD_ACCNAME
             Exit Sub
         End If
         '列印
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As New FPDocument("會計科目列印")
         doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4
         doc.DefaultPageSettings.Landscape = False

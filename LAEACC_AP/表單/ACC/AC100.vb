@@ -55,7 +55,7 @@ Public Class AC100
         intEno1 = 0 : intEno1 = 0 : intEno1 = 0
         Dim tempDate As Date
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印日記帳")
         document.SetDefaultPageMargin(15, 15, 15, 10)    'left,top,right,botton
         document.DefaultPageSettings.PaperKind = Printing.PaperKind.A4   'b4:364*257 a4:210*297

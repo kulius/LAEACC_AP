@@ -62,7 +62,7 @@ Public Class ACBK050
             End If
         End If
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印收入明細分類帳 ")
         document.DefaultPageSettings.PaperKind = Printing.PaperKind.B4   'A3:420x297  B4:364X257
         document.DefaultPageSettings.Landscape = True    '橫印

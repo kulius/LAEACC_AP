@@ -153,7 +153,7 @@ Public Class AC080
         Dim retstr As String
         Dim pagerow As Integer = 27   '每頁27行
         txtNoD.Text = Val(txtNoD.Text) - 1
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印日計表")
         document.SetDefaultPageMargin(16, 5, 0, 10)    'left,top,right,botton
         document.DefaultPageSettings.Landscape = True    '橫印

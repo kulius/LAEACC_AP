@@ -821,7 +821,7 @@ Public Class AC010
 
     '列印收入傳票
     Private Sub PrintIncomeSlip(ByVal sYear As Integer, ByVal sKind As String, ByVal No1 As Integer, ByVal orgName As String, ByVal intCopy As Integer)
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As FPDocument
         Dim page As FPPage
         Dim intI, intJ As Integer

@@ -94,7 +94,7 @@ Public Class PAY080
         Dim tempDay As Date
         Dim tempMonth As Integer
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印存款明細分戶帳 ")
         document.DefaultPageSettings.PaperKind = Printing.PaperKind.B4   'B4:364X257  A3:420x297
         document.DefaultPageSettings.Landscape = True    '橫印

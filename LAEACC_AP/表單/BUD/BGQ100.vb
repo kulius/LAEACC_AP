@@ -169,7 +169,7 @@ Public Class BGQ100
         End If
 
         '列印
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As New FPDocument("推算簿列印")
         doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4
         doc.DefaultPageSettings.Landscape = True

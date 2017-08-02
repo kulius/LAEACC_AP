@@ -92,7 +92,7 @@ Public Class PAY091
         End With
         intR = 0
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印現金結存日報表")
         document.SetDefaultPageMargin(20, 0, 5, 5)   'left,top,right,botton
         document.DefaultPageSettings.Landscape = True    '橫印

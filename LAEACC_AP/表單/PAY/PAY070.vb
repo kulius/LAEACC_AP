@@ -90,7 +90,7 @@ Public Class PAY070
         Dim dayIncome, dayPay As Decimal
         Dim tempDate As Date
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印現金出納登記簿")
         document.SetDefaultPageMargin(30, 5, 20, 10)    'left,top,right,botton
         document.DefaultPageSettings.PaperKind = Printing.PaperKind.B4   '420x297

@@ -23,7 +23,7 @@ Public Class KPrint
     Public Sub New()
         MyBase.New()
 
-        Me.PrintPreviewDialog.Text = ("預覽列印-新版")
+        Me.PrintPreviewDialog.Text = ("預覽列印-測試中")
 
         Dim control As Control
         For Each control In Me.PrintPreviewDialog.Controls

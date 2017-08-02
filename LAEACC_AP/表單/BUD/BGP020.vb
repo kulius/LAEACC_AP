@@ -173,7 +173,7 @@ Public Class BGP020
         '取得印表機物件
         '在WinForm使用 FPPrinter.SharedPrinter 或是 New FPPrinter 來取得
         '在WebForm則建議使用 New FPPrinter 來取得,因為多人同時使用必須建立不同的印表機實體
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
 
         '新增一份列印文件,一份列印文件可以包含多個列印頁面
         '座標預設單位是公厘,預設列印模式是一般列印(非套表列印),預設是使用預設印表機列印,預設紙張是A4,預設來源紙匣是自動進紙

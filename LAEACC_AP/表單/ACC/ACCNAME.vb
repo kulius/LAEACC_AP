@@ -238,7 +238,7 @@ Public Class ACCNAME
             Exit Sub
         End If
         '列印
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As New FPDocument("會計科目列印")
         doc.SetDefaultPageMargin(10, 10, 10, 10)   'left,top,right,bottom
         doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4

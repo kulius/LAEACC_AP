@@ -45,7 +45,7 @@ Public Class BGP030
         sum2 = 0 : sum3 = 0 : sum4 = 0 : sum5 = 0
         Dim amt2, amt3, amt4, amt5 As Decimal
         amt2 = 0 : amt3 = 0 : amt4 = 0 : amt5 = 0
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As New FPDocument("預算執行統計表列印")
         doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4
         doc.DefaultPageSettings.Landscape = True

@@ -86,7 +86,7 @@ Public Class ACY130
 
     '列印轉帳傳票
     Private Sub PrintTransSlip(ByVal kind As String, ByVal sdate As Date, ByVal No1 As Integer, ByVal No2 As Integer, ByVal orgName As String)
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As FPDocument
         Dim page As FPPage
         Dim intI, intJ, I As Integer

@@ -72,7 +72,7 @@ Public Class ACM050
         Dim intR As Integer = 0  'control record number
         Dim strAccno As String
         Dim PageRow As Integer = 17  '每頁印27行
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("催 收 款 項 明 細 表")
         document.SetDefaultPageMargin(25, 10, 10, 10)   'left,top,right,bottom
         document.DefaultPageSettings.Landscape = True    '橫印

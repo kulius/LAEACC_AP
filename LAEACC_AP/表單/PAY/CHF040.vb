@@ -182,7 +182,7 @@ Public Class CHF040
     End Sub
 
     Private Sub Print_receive()
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印收據")
         '102/5/7修改彰化收據格式
         If TransPara.TransP("UnitTitle").indexof("彰化") > 0 Then

@@ -41,7 +41,7 @@ Public Class PAY120
         Dim intR As Integer = 0
         Dim pagerow As Integer = 45
         Dim tempKind As String = ""
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印沖收付數")
         document.SetDefaultPageMargin(6, 6, 10, 6)   'left,top,right,botton
         document.DefaultPageSettings.Landscape = False    '直印

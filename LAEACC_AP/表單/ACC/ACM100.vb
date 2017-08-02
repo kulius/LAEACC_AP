@@ -13,7 +13,7 @@ Public Class ACM100
         Dim SYear As Integer = GetYear(dtpDateS.Value)
 
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印月報封面")
         document.SetDefaultPageMargin(10, 10, 10, 10)   'left,top,right,bottom
         document.DefaultPageSettings.Landscape = True    '橫印

@@ -61,7 +61,7 @@ Public Class BGP888
         'SumAmt1 = 0 : SumAmt2 = 0
         'SubAmt1 = 0 : SubAmt2 = 0
 
-        ''Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        ''Dim printer = New KPrint
         ''Dim doc As New FPDocument("保留明細表列印")
         ''doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4
         ''doc.DefaultPageSettings.Landscape = True

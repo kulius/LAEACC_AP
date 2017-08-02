@@ -19,7 +19,7 @@ Public Class BGP040
         Dim retstr As String
         Dim totamt1 As Decimal = 0
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As New FPDocument("列印每日請購推算登記簿")
         doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4
         doc.DefaultPageSettings.Landscape = True

@@ -64,7 +64,7 @@ Public Class ACBK110
         Dim Eaccno As String = GetAccno(vxtEAccno.Text)  '訖印科目
         Dim tempMonth As Integer = 0
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印未完工程補助計畫明細帳")
         document.DefaultPageSettings.PaperKind = Printing.PaperKind.B4   'A3:420x297  B4:364X257
         document.DefaultPageSettings.Landscape = True    '橫印

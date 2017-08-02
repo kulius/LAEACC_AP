@@ -236,7 +236,7 @@ Public Class ACF050
         strD = "DEAMT" & Format(nudMM.Value, "00")
         strC = "CRAMT" & Format(nudMM.Value, "00")
         '列印
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As New FPDocument("會計科目餘額列印")
         doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4
         doc.DefaultPageSettings.Landscape = False

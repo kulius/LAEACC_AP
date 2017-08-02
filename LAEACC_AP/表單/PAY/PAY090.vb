@@ -159,7 +159,7 @@ Public Class PAY090
         Dim sqlstr, strbankname As String
         Dim pagerow As Integer = myDataSet.Tables("chf020").Rows.Count + 5 '銀行筆數要再加合計三行表頭二行,讓全部印在一頁
 
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim document As New FPDocument("列印現金結存日報表")
         document.SetDefaultPageMargin(20, 0, 5, 5)   'left,top,right,botton
         document.DefaultPageSettings.Landscape = True    '橫印

@@ -35,7 +35,7 @@ Public Class BGP010
         Dim retstr, strRemark, strAccno, strAccname As String
         Dim bgamt, used, unuse, TotUnuse, TotUsed, subUnuse, subUsed As Decimal
         Dim strFilter As String = Trim(txtFilter.Text)
-        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        Dim printer = New KPrint
         Dim doc As New FPDocument("推算簿列印")
         doc.DefaultPageSettings.PaperKind = Printing.PaperKind.A4
         doc.DefaultPageSettings.Landscape = True

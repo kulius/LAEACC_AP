@@ -95,7 +95,7 @@ Public Class ACM080
             Dim intR As Integer = 0  'control record number
             Dim strAccno As String
             Dim PageRow As Integer = 14  '每頁印14行
-            Dim printer As FPPrinter = FPPrinter.SharedPrinter
+            Dim printer = New KPrint
             Dim document As New FPDocument("固定資產增減表")
             document.SetDefaultPageMargin(25, 10, 10, 10)   'left,top,right,bottom
             document.DefaultPageSettings.Landscape = True    '橫印
