@@ -236,8 +236,9 @@ Public Class ACM010
                 tt1 = "c:\App\acc\報表樣本\ACM010.xls"
                 tt2 = "c:\App\acc\報表\ACM010.xls"
                 If Not File.Exists(tt1) Then
-                    MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & tt1)
-                    Exit Sub
+                    'MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & tt1)
+                    AppReport_Copy("acc", "ACM010.xls", tt1)
+                    'Exit Sub
                 End If
                 FileCopy(tt1, tt2)    'copy tt1 to tt2
                 xlapp = CreateObject("Excel.Application")

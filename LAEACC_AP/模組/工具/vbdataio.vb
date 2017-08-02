@@ -1,6 +1,7 @@
 ﻿
 Imports System.Data.OleDb
 Imports System.Data.SqlClient
+Imports System.IO
 
 Module vbdataio
     Dim sqlstr As String, mydataset As DataSet
@@ -708,20 +709,27 @@ Module vbdataio
                 End If
             Case Is = "D"
                 If FieldValue <> "" Then
-                    Select Case Mid(FieldValue, 1, 1)
-                        Case "1" '民國年
-                            InsField &= FieldName & ","
-                            InsValue &= "'" & strDateChinessToAD(strDateKindToDateKind(FieldValue, "/", "-")) & "',"
-                        Case "2" '西元年
-                            FieldValue = Replace(FieldValue, ".", "/")
-                            Dim yy As Integer, mmdd As String
-                            InsField &= FieldName & ","
-                            yy = Mid(FieldValue, 1, InStr(FieldValue, "/") - 1)
-                            If yy < 1000 Then yy = yy + 1911
-                            mmdd = Mid(FieldValue, InStr(FieldValue, "/"))
+                    FieldValue = Replace(FieldValue, ".", "/")
+                    Dim yy As Integer, mmdd As String
+                    InsField &= FieldName & ","
+                    yy = Mid(FieldValue, 1, InStr(FieldValue, "/") - 1)
+                    If yy < 1000 Then yy = yy + 1911
+                    mmdd = Mid(FieldValue, InStr(FieldValue, "/"))
+                    InsValue &= "'" & yy & mmdd & "',"
+                    'Select Case Mid(FieldValue, 1, 1)
+                    '    Case "1" '民國年
+                    '        InsField &= FieldName & ","
+                    '        InsValue &= "'" & strDateChinessToAD(strDateKindToDateKind(FieldValue, "/", "-")) & "',"
+                    '    Case "2" '西元年
+                    '        FieldValue = Replace(FieldValue, ".", "/")
+                    '        Dim yy As Integer, mmdd As String
+                    '        InsField &= FieldName & ","
+                    '        yy = Mid(FieldValue, 1, InStr(FieldValue, "/") - 1)
+                    '        If yy < 1000 Then yy = yy + 1911
+                    '        mmdd = Mid(FieldValue, InStr(FieldValue, "/"))
 
-                            InsValue &= "'" & yy & mmdd & "',"
-                    End Select
+                    '        InsValue &= "'" & yy & mmdd & "',"
+                    'End Select
                 End If
             Case Is = "N", "R"
                 If FieldValue <> "" Then
@@ -987,5 +995,37 @@ Module vbdataio
                 End If
         End Select
     End Sub
+
+    Sub AppReport_Copy(ByVal strSysname As String, ByVal strReportName As String, ByVal strCopyPath As String)
+        Dim AppReportPath As String = Application.StartupPath & "\APP\" & strSysname & "\報表樣本\" & strReportName '*.ini檔案路徑
+        Dim Createpath As String = ""
+        Dim Createpath1 As String = ""
+        If strSysname = "bail" Then
+            Createpath = "c:\APP\" & strSysname & "\ReportData\"
+            Createpath1 = "c:\APP\" & strSysname & "\Report\"
+        Else
+            Createpath = "c:\APP\" & strSysname & "\報表樣本\"
+            Createpath1 = "c:\APP\" & strSysname & "\報表\"
+        End If
+        
+
+        If Not File.Exists(AppReportPath) Then
+            MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & AppReportPath)
+            Exit Sub
+        End If
+
+        If Directory.Exists(Createpath) = False Then
+            ' Create the directory.
+            Directory.CreateDirectory(Createpath)
+        End If
+
+        If Directory.Exists(Createpath1) = False Then
+            ' Create the directory.
+            Directory.CreateDirectory(Createpath1)
+        End If
+
+        FileCopy(AppReportPath, strCopyPath)
+    End Sub
+
 
 End Module

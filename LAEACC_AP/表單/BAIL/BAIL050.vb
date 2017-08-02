@@ -219,6 +219,11 @@ Public Class BAIL050
             Try
                 tt1 = "c:\App\bail\ReportData\bailf050sample.xls" 'mypath + "\bailf050sample.xls"
                 tt2 = "c:\App\bail\Report\bailf050.xls" 'mypath + "\bailf050.xls"
+
+                If Not File.Exists(tt1) Then
+                    AppReport_Copy("bail", "bailf050sample.xls", tt1)
+                End If
+
                 FileCopy(tt1, tt2)
                 xlapp = CreateObject("Excel.Application")
                 xlapp.DisplayAlerts = False  '隱藏所有警告或確認訊息視窗,否則某些指令會失敗,譬如刪除工作表

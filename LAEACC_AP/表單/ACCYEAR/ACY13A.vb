@@ -202,8 +202,9 @@ EXITFOR:
                 tt1 = "c:\App\acc\報表樣本\ACY13A.xls"
                 tt2 = "c:\App\acc\報表\ACY13A.xls"
                 If Not File.Exists(tt1) Then
-                    MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & tt1)
-                    Exit Sub
+                    AppReport_Copy("acc", "ACY13A.xls", tt1)
+                    'MsgBox("找不到報表樣本，請洽資訊人員" & vbNewLine & tt1)
+                    'Exit Sub
                 End If
                 FileCopy(tt1, tt2)    'copy tt1 to tt2
                 xlapp = CreateObject("Excel.Application")
