@@ -17,7 +17,7 @@ Public Class ACBK080
         If myds.Tables("acf010s").Rows.Count > 0 Then
             nudEmonth.Value = Month(myds.Tables("acf010s").Rows(0).Item("date_2"))
             nudSmonth.Value = nudEmonth.Value
-            nudSyear.Value = Year(myds.Tables("acf010s").Rows(0).Item("date_2"))
+            nudSyear.Value = GetYear(myds.Tables("acf010s").Rows(0).Item("date_2"))
             nudEyear.Value = nudSyear.Value
         End If
         vxtSAccno.Text = "13101"    '起值

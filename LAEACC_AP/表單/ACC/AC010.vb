@@ -314,7 +314,7 @@ Public Class AC010
         If nz(tempdataset.Tables("accname").Rows(0).Item(0), "").ToString.Trim() <> "" Then
             sbank = nz(tempdataset.Tables("accname").Rows(0).Item(0), "").ToString.Trim()
         Else
-            sbank = dbGetSingleRow(DNS_ACC, "ACF010", "BANK", "ACCYEAR = '" & Now.Year - 1911 & "' AND DATE_1 = '" & NowDate() & " 00:00:00'", "autono DESC")
+            sbank = dbGetSingleRow(DNS_ACC, "ACF010", "BANK", "ACCYEAR = '" & GetYear(dtpDate.Value) & "'", "autono DESC")
         End If
         '科目未設銀行時,依app.config定義
         If Trim(sbank) = "" Then
@@ -515,7 +515,8 @@ Public Class AC010
 
         vxtAccno2.Text = vxtAccno1.Text.Trim() & Mid(vxtAccno2.Text.Trim(), 7, Len(vxtAccno2.Text.Trim()) - 6)
         txtRemark2.Text = txtRemark1.Text
-        If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+        'If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+        txtAmt2.Text = txtAmt1.Text
     End Sub
 
     Private Sub btnCopy5_Click(sender As Object, e As EventArgs) Handles btnCopy5.Click
@@ -537,7 +538,13 @@ Public Class AC010
         txtRemark4.Text = txtRemark1.Text
         txtRemark5.Text = txtRemark1.Text
         txtRemark6.Text = txtRemark1.Text
-        If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+        'If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+        txtAmt2.Text = txtAmt1.Text
+        txtAmt3.Text = txtAmt1.Text
+        txtAmt4.Text = txtAmt1.Text
+        txtAmt5.Text = txtAmt1.Text
+        txtAmt6.Text = txtAmt1.Text
+
     End Sub
 
 

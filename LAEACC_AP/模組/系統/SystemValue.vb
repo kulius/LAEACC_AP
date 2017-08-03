@@ -47,6 +47,17 @@ Module SystemValue
 
         Return strString
     End Function
+    'Function NowDate(Optional type As String = "AD") As String
+    '    FieldValue = Replace(FieldValue, ".", "/")
+    '    Dim yy As Integer, mmdd As String
+    '    InsField &= FieldName & ","
+    '    yy = Mid(FieldValue, 1, InStr(FieldValue, "/") - 1)
+    '    If yy < 1000 Then yy = yy + 1911
+    '    mmdd = Mid(FieldValue, InStr(FieldValue, "/"))
+    '    InsValue &= "'" & yy & mmdd & "',"
+    '    Return InsValue
+    'End Function
+    
 
     ''' <summary>
     ''' 時間(24小時制)(hh:mm:ss)
