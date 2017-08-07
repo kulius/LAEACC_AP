@@ -31,7 +31,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>40</ApplicationRevision>
+    <ApplicationRevision>54</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1065,6 +1065,31 @@
     <Compile Include="表單\PAY\PAY_PSNAME.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="表單\PGM\PGMGlobal.vb" />
+    <Compile Include="表單\PGM\PGMB010.Designer.vb">
+      <DependentUpon>PGMB010.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PGM\PGMB010.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PGM\PGMZDMForm.Designer.vb">
+      <DependentUpon>PGMZDMForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PGM\PGMZDMForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PGM\PGMB010_bak.Designer.vb">
+      <DependentUpon>PGMB010_bak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PGM\PGMB010_bak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="表單\PGM\ProgressForm.Designer.vb">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\PGM\ProgressForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="表單\SYS\SYSGROUP.Designer.vb">
       <DependentUpon>SYSGROUP.vb</DependentUpon>
     </Compile>
@@ -1559,6 +1584,18 @@
     <EmbeddedResource Include="表單\PAY\PAY_PSNAME.resx">
       <DependentUpon>PAY_PSNAME.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="表單\PGM\PGMB010.resx">
+      <DependentUpon>PGMB010.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PGM\PGMB010_bak.resx">
+      <DependentUpon>PGMB010_bak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PGM\PGMZDMForm.resx">
+      <DependentUpon>PGMZDMForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="表單\PGM\ProgressForm.resx">
+      <DependentUpon>ProgressForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="表單\SYS\SYSGROUP.resx">
       <DependentUpon>SYSGROUP.vb</DependentUpon>
     </EmbeddedResource>
@@ -1880,6 +1917,11 @@
     <Folder Include="表單\Z_共用\" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -1888,7 +1930,7 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
       <Visible>False</Visible>

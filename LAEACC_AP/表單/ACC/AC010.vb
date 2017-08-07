@@ -16,7 +16,7 @@ Public Class AC010
         'dtpDate.Format = DateTimePickerFormat.Custom
         'dtpDate.CustomFormat = String.Format("{0}/MM/dd", dtpDate.Value.AddYears(-1911).Year.ToString("00"))
 
-        SetSysDefPrinter(TransPara.TransP("ShipPrint"))
+
 
         ac010kind = TransPara.TransP("ac010kind")  '定開立傳票 or 修改傳票
         If ac010kind = "開立傳票" Then
@@ -828,7 +828,8 @@ Public Class AC010
 
     '列印收入傳票
     Private Sub PrintIncomeSlip(ByVal sYear As Integer, ByVal sKind As String, ByVal No1 As Integer, ByVal orgName As String, ByVal intCopy As Integer)
-        Dim printer = New KPrint
+        Dim printer As FPPrinter = FPPrinter.SharedPrinter
+        'Dim printer = New KPrint
         Dim doc As FPDocument
         Dim page As FPPage
         Dim intI, intJ As Integer
@@ -903,9 +904,15 @@ Public Class AC010
             Next
         End With
 
-        printer.Document = doc
-        If TransPara.TransP("Print") = "Preview" Then printer.IsAutoShowPrintPreviewDialog = True
-        printer.Print()
+        Try
+            printer.Document = doc
+            If TransPara.TransP("Print") = "Preview" Then printer.IsAutoShowPrintPreviewDialog = True
+            printer.Print()
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
     Private Sub btnOldNo_Click(sender As Object, e As EventArgs) Handles btnOldNo.Click
@@ -935,6 +942,7 @@ Public Class AC010
         End If
         If nz(tempdataset.Tables("ac010s").Rows(1)("chkno"), "") <> "" Then   '支票號寫在item='9'
             MsgBox("此傳票已開支票=" & tempdataset.Tables("ac010s").Rows(1)("chkno"))
+
             Exit Sub
         End If
         lblDate1.Text = tempdataset.Tables("ac010s").Rows(0)("date_1")         '製票日期

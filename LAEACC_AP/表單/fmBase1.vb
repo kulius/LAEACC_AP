@@ -6,6 +6,6 @@
     Public mastconn As String = INI_Read("CONFIG", "SET", "DNS_ACC")
 
     Private Sub fmBase1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SetSysDefPrinter(TransPara.TransP("DefaultPrint"))
+        'SetSysDefPrinter(TransPara.TransP("DefaultPrint"))
     End Sub
 End Class

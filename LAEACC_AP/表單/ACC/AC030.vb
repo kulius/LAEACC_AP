@@ -29,6 +29,9 @@ Public Class AC030
     Dim mastconn As String = INI_Read("CONFIG", "SET", "DNS_ACC")
     Private Sub AC010_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sDate = TransPara.TransP("UserDate")
+
+        'SetSysDefPrinter(TransPara.TransP("ShipPrint"))
+
         ac010kind = TransPara.TransP("ac010kind")  '定開立傳票 or 修改傳票
         sYear = GetYear(sDate)
         lblYear.Text = Format(sYear, "000")
@@ -771,6 +774,8 @@ Public Class AC030
 
     '列印收入傳票
     Private Sub PrintIncomeSlip(ByVal sYear As Integer, ByVal sKind As String, ByVal No1 As Integer, ByVal orgName As String, ByVal intCopy As Integer)
+        'Dim printer As FPPrinter = FPPrinter.SharedPrinter
+
         Dim printer = New KPrint
         Dim doc As FPDocument
         Dim page As FPPage
@@ -1096,7 +1101,7 @@ Public Class AC030
 
     '列印轉帳傳票
     Private Sub PrintTransSlip(ByVal sYear As Integer, ByVal No1 As Integer, ByVal orgName As String, ByVal intcopy As Integer)
-        Dim printer = New KPrint
+        Dim printer As FPPrinter = FPPrinter.SharedPrinter
         Dim doc As FPDocument
         Dim page As FPPage
         Dim intI, intJ, I As Integer

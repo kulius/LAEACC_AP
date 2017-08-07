@@ -279,7 +279,7 @@ Public Class fmMain
     '狀態列
     Private Sub Timer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer.Tick
         txtDate.Text = NowDate() & "　" & NowTime() '小時鐘
-        If Me.MdiChildren.Length = 0 Then
+        If Me.MdiChildren.count = 0 Then
             Me.Panel1.Visible = True
         End If
     End Sub
@@ -304,18 +304,23 @@ Public Class fmMain
         Dim sName = CType(sender, ToolStripMenuItem)
         'Dim obj As Object = Activator.CreateInstance(Type.GetType(sName.Name))
         'Dim f As Form = CType(obj, Form)
+        SetSysDefPrinter(TransPara.TransP("DefaultPrint"))
 
         Dim strCreatedFromButton As String = sName.Name
 
         Select Case sName.Name
             Case "AC010"
+                SetSysDefPrinter(TransPara.TransP("ShipPrint"))
                 TransPara.TransP("ac010kind") = "開立傳票"
             Case "AC011"
+                SetSysDefPrinter(TransPara.TransP("ShipPrint"))
                 TransPara.TransP("ac010kind") = "修改傳票"
                 strCreatedFromButton = "AC010"
             Case "AC030"
+                SetSysDefPrinter(TransPara.TransP("ShipPrint"))
                 TransPara.TransP("ac010kind") = "開立傳票"
             Case "AC031"
+                SetSysDefPrinter(TransPara.TransP("ShipPrint"))
                 TransPara.TransP("ac010kind") = "修改傳票"
                 strCreatedFromButton = "AC030"
             Case "BG0301"
