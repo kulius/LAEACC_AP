@@ -971,7 +971,7 @@ Public Class FAC030
 
     '列印轉帳傳票
     Private Sub PrintTransSlip(ByVal sYear As Integer, ByVal No1 As Integer, ByVal orgName As String)
-        Dim printer = New KPrint
+        Dim printer As FPPrinter = FPPrinter.SharedPrinter
         Dim doc As FPDocument
         Dim page As FPPage
         Dim intI, intJ, I As Integer
