@@ -329,6 +329,8 @@ Public Class AC010
         Select Case INI_Read("BASIC", "LOGIN", "FIRM")
             Case "石門"
                 cboBank.SelectedValue = IIf(sKind = "1", "30", "06") '銀行帳號
+            Case "苗栗"
+                cboBank.SelectedValue = IIf(sKind = "1", "02", "04") '銀行帳號
             Case "高雄"
                 cboBank.SelectedValue = "01"
             Case Else
@@ -824,6 +826,8 @@ Public Class AC010
                 txtNo.Focus()
             End If
         End If
+
+        TabControl1.SelectedIndex = 0
     End Sub
 
     '列印收入傳票
@@ -1072,6 +1076,21 @@ Public Class AC010
                 MsgBox("請輸入1-4,A,E 內容別代碼")
                 sender.focus()
             End If
+        End If
+    End Sub
+
+    Private Sub cboAccno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAccno.SelectedIndexChanged
+        If rdbFile3.Checked = True Then
+            Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+                Case "石門"
+                    cboBank.SelectedValue = IIf(sKind = "1", "30", "06") '銀行帳號
+                Case "苗栗"
+                    cboBank.SelectedValue = IIf(sKind = "1", "02", "04") '銀行帳號
+                Case "高雄"
+                    cboBank.SelectedValue = "01"
+                Case Else
+                    cboBank.SelectedValue = "01"
+            End Select
         End If
     End Sub
 End Class

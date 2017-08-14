@@ -1482,6 +1482,7 @@ Partial Class AC010
         Me.Name = "AC010"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "AC010"
+        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.gbxCreate.ResumeLayout(False)

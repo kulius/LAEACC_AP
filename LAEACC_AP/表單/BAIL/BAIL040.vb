@@ -58,11 +58,12 @@
         c1.DefaultValue = ""
         mydataset.Tables("bailf020").Columns.Add(c1)
 
-        Dim c2 As DataColumn = New DataColumn '退還日期
-        c2.DataType = System.Type.GetType("System.String")
+        Dim c2 As DataColumn = New DataColumn '退還
+        c2.DataType = System.Type.GetType("System.Boolean")
         c2.ColumnName = "refund"
-        c2.DefaultValue = ""
+        c2.DefaultValue = "false"
         mydataset.Tables("bailf020").Columns.Add(c2)
+
 
         For intI = 0 To (mydataset.Tables("bailf020").Rows.Count - 1)
             Select Case mydataset.Tables("bailf020").Rows(intI).Item("kind")
@@ -173,9 +174,13 @@
         selectedCell = dtg1.CurrentCell
         Dim selectedItem As Object
         If selectedCell.ColumnNumber = 0 Then
-            If dtg1.Item(selectedCell.RowNumber, 8) <> "" Then
-                dtg1.Item(selectedCell.RowNumber, selectedCell.ColumnNumber) = True
-            End If
+            Try
+                If dtg1.Item(selectedCell.RowNumber, 8) <> "" Then
+                    dtg1.Item(selectedCell.RowNumber, selectedCell.ColumnNumber) = True
+                End If
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 
@@ -184,9 +189,13 @@
         selectedCell = dtg1.CurrentCell
         Dim selectedItem As Object
         If selectedCell.ColumnNumber = 0 Then
-            If dtg1.Item(selectedCell.RowNumber, 8) <> "" Then
-                dtg1.Item(selectedCell.RowNumber, selectedCell.ColumnNumber) = True
-            End If
+            Try
+                If dtg1.Item(selectedCell.RowNumber, 8) <> "" Then
+                    dtg1.Item(selectedCell.RowNumber, selectedCell.ColumnNumber) = True
+                End If
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 
