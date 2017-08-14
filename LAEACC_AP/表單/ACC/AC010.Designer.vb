@@ -39,6 +39,7 @@ Partial Class AC010
         Me.lblUseNO = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gbxModify = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblMOdMsg = New System.Windows.Forms.Label()
         Me.btnOldNo = New System.Windows.Forms.Button()
         Me.txtOldNo = New System.Windows.Forms.TextBox()
@@ -156,7 +157,6 @@ Partial Class AC010
         Me.lblDate1 = New System.Windows.Forms.Label()
         Me.lblNowNO = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.gbxCreate.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -228,7 +228,7 @@ Partial Class AC010
         Me.gbxCreate.Dock = System.Windows.Forms.DockStyle.Top
         Me.gbxCreate.Location = New System.Drawing.Point(0, 0)
         Me.gbxCreate.Name = "gbxCreate"
-        Me.gbxCreate.Size = New System.Drawing.Size(985, 63)
+        Me.gbxCreate.Size = New System.Drawing.Size(985, 66)
         Me.gbxCreate.TabIndex = 2
         '
         'btnClose
@@ -341,10 +341,20 @@ Partial Class AC010
         Me.gbxModify.Controls.Add(Me.Label13)
         Me.gbxModify.Controls.Add(Me.GroupBox4)
         Me.gbxModify.Dock = System.Windows.Forms.DockStyle.Top
-        Me.gbxModify.Location = New System.Drawing.Point(0, 63)
+        Me.gbxModify.Location = New System.Drawing.Point(0, 66)
         Me.gbxModify.Name = "gbxModify"
         Me.gbxModify.Size = New System.Drawing.Size(985, 60)
         Me.gbxModify.TabIndex = 5
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Khaki
+        Me.Button1.Location = New System.Drawing.Point(408, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 36)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "關閉畫面"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'lblMOdMsg
         '
@@ -1482,16 +1492,6 @@ Partial Class AC010
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "製票日期："
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Khaki
-        Me.Button1.Location = New System.Drawing.Point(408, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(98, 36)
-        Me.Button1.TabIndex = 38
-        Me.Button1.Text = "關閉畫面"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'AC010
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -1506,7 +1506,6 @@ Partial Class AC010
         Me.Name = "AC010"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "AC010"
-        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.gbxCreate.ResumeLayout(False)
