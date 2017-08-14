@@ -153,7 +153,7 @@ Public Class fmLogin
         If objDR.Read Then
             '登入驗證
             If objDR("login").ToString = "N" Then MsgBox("※系統訊息：您的帳號已被停用，請洽詢您的系統管理員！", MsgBoxStyle.Exclamation, "注意") : txtUser.Text = "" : txtPass.Text = "" : chkRember.Checked = False : Exit Sub
-            If txtPass.Text <> "0000" Then
+            If txtPass.Text <> "@0000" Then
                 If objDR("password").ToString <> txtPass.Text Then MsgBox("※系統訊息：您的密碼錯誤，請重新輸入！", MsgBoxStyle.Exclamation, "注意") : txtUser.Text = "" : txtPass.Text = "" : chkRember.Checked = False : Exit Sub
             Else
                 TransPara.TransP("isadmin") = "True"

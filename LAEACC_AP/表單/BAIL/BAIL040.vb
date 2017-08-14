@@ -58,6 +58,12 @@
         c1.DefaultValue = ""
         mydataset.Tables("bailf020").Columns.Add(c1)
 
+        Dim c2 As DataColumn = New DataColumn '退還日期
+        c2.DataType = System.Type.GetType("System.String")
+        c2.ColumnName = "refund"
+        c2.DefaultValue = ""
+        mydataset.Tables("bailf020").Columns.Add(c2)
+
         For intI = 0 To (mydataset.Tables("bailf020").Rows.Count - 1)
             Select Case mydataset.Tables("bailf020").Rows(intI).Item("kind")
                 Case Is = "1"
