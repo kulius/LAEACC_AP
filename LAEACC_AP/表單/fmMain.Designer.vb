@@ -94,7 +94,7 @@ Partial Class fmMain
         'Timer
         '
         Me.Timer.Enabled = True
-        Me.Timer.Interval = 1000
+        Me.Timer.Interval = 100000
         '
         'txtDate
         '

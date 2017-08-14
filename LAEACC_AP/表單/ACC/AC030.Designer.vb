@@ -22,9 +22,10 @@ Partial Class AC030
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbxCreate = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.rdbFile3 = New System.Windows.Forms.RadioButton()
@@ -152,6 +153,7 @@ Partial Class AC030
         Me.lblDate1 = New System.Windows.Forms.Label()
         Me.lblNowNO = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxCreate.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -167,13 +169,24 @@ Partial Class AC030
         '
         'gbxCreate
         '
+        Me.gbxCreate.Controls.Add(Me.btnClose)
         Me.gbxCreate.Controls.Add(Me.btnSearch)
         Me.gbxCreate.Controls.Add(Me.GroupBox2)
         Me.gbxCreate.Dock = System.Windows.Forms.DockStyle.Top
         Me.gbxCreate.Location = New System.Drawing.Point(0, 0)
         Me.gbxCreate.Name = "gbxCreate"
-        Me.gbxCreate.Size = New System.Drawing.Size(985, 61)
+        Me.gbxCreate.Size = New System.Drawing.Size(985, 65)
         Me.gbxCreate.TabIndex = 2
+        '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.Khaki
+        Me.btnClose.Location = New System.Drawing.Point(377, 18)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(98, 36)
+        Me.btnClose.TabIndex = 5
+        Me.btnClose.Text = "關閉畫面"
+        Me.btnClose.UseVisualStyleBackColor = False
         '
         'btnSearch
         '
@@ -268,12 +281,13 @@ Partial Class AC030
         '
         'gbxModify
         '
+        Me.gbxModify.Controls.Add(Me.Button1)
         Me.gbxModify.Controls.Add(Me.lblMOdMsg)
         Me.gbxModify.Controls.Add(Me.btnOldNo)
         Me.gbxModify.Controls.Add(Me.txtOldNo)
         Me.gbxModify.Controls.Add(Me.Label13)
         Me.gbxModify.Dock = System.Windows.Forms.DockStyle.Top
-        Me.gbxModify.Location = New System.Drawing.Point(0, 61)
+        Me.gbxModify.Location = New System.Drawing.Point(0, 65)
         Me.gbxModify.Name = "gbxModify"
         Me.gbxModify.Size = New System.Drawing.Size(985, 55)
         Me.gbxModify.TabIndex = 5
@@ -409,9 +423,9 @@ Partial Class AC030
         'scuseamt
         '
         Me.scuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Format = "###,###,##0.##"
-        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "###,###,##0.##"
+        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle5
         Me.scuseamt.HeaderText = "金額"
         Me.scuseamt.Name = "scuseamt"
         Me.scuseamt.Width = 120
@@ -527,9 +541,9 @@ Partial Class AC030
         'dcuseamt
         '
         Me.dcuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Format = "###,###,##0.##"
-        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "###,###,##0.##"
+        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle6
         Me.dcuseamt.HeaderText = "金額"
         Me.dcuseamt.Name = "dcuseamt"
         '
@@ -1428,6 +1442,16 @@ Partial Class AC030
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "製票日期："
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Khaki
+        Me.Button1.Location = New System.Drawing.Point(281, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 36)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "關閉畫面"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'AC030
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -1590,4 +1614,6 @@ Partial Class AC030
     Friend WithEvents lblPage As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents lblDC As System.Windows.Forms.Label
+    Friend WithEvents btnClose As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

@@ -278,10 +278,10 @@ Public Class fmMain
 
     '狀態列
     Private Sub Timer_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer.Tick
-        txtDate.Text = NowDate() & "　" & NowTime() '小時鐘
-        If Me.MdiChildren.count = 0 Then
-            Me.Panel1.Visible = True
-        End If
+        'txtDate.Text = NowDate() & "　" & NowTime() '小時鐘
+        'If Me.MdiChildren.count = 0 Then
+        '    Me.Panel1.Visible = True
+        'End If
     End Sub
 #End Region
 
@@ -347,7 +347,7 @@ Public Class fmMain
         f.Show()
         f.StartPosition = Me.StartPosition
         f.Text = sName.Text
-        Me.Panel1.Visible = False
+        'Me.Panel1.Visible = False
 
     End Sub
     Public Function CreateObjectInstance(ByVal objectName As String) As Object
