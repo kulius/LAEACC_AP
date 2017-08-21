@@ -41,8 +41,8 @@ Partial Class fmLogin
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.rdoPrint = New System.Windows.Forms.RadioButton()
         Me.rdoPreview = New System.Windows.Forms.RadioButton()
+        Me.rdoPrint = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -134,7 +134,7 @@ Partial Class fmLogin
         '
         Me.所屬單位.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.所屬單位.FormattingEnabled = True
-        Me.所屬單位.Items.AddRange(New Object() {"彰化", "桃園", "台中", "台東", "高雄", "石門", "苗栗", "宸揚", "測試"})
+        Me.所屬單位.Items.AddRange(New Object() {"彰化", "桃園", "雲林", "台中", "台東", "高雄", "石門", "苗栗", "屏東", "花蓮", "北基", "嘉南", "宸揚", "測試"})
         Me.所屬單位.Location = New System.Drawing.Point(10, 184)
         Me.所屬單位.Name = "所屬單位"
         Me.所屬單位.Size = New System.Drawing.Size(121, 24)
@@ -185,6 +185,16 @@ Partial Class fmLogin
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "傳票列印方式"
         '
+        'rdoPreview
+        '
+        Me.rdoPreview.AutoSize = True
+        Me.rdoPreview.Location = New System.Drawing.Point(109, 20)
+        Me.rdoPreview.Name = "rdoPreview"
+        Me.rdoPreview.Size = New System.Drawing.Size(90, 20)
+        Me.rdoPreview.TabIndex = 1
+        Me.rdoPreview.Text = "預覽列印"
+        Me.rdoPreview.UseVisualStyleBackColor = True
+        '
         'rdoPrint
         '
         Me.rdoPrint.AutoSize = True
@@ -196,16 +206,6 @@ Partial Class fmLogin
         Me.rdoPrint.TabStop = True
         Me.rdoPrint.Text = "直接列印"
         Me.rdoPrint.UseVisualStyleBackColor = True
-        '
-        'rdoPreview
-        '
-        Me.rdoPreview.AutoSize = True
-        Me.rdoPreview.Location = New System.Drawing.Point(109, 20)
-        Me.rdoPreview.Name = "rdoPreview"
-        Me.rdoPreview.Size = New System.Drawing.Size(90, 20)
-        Me.rdoPreview.TabIndex = 1
-        Me.rdoPreview.Text = "預覽列印"
-        Me.rdoPreview.UseVisualStyleBackColor = True
         '
         'fmLogin
         '
