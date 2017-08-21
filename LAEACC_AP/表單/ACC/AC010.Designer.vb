@@ -22,8 +22,8 @@ Partial Class AC010
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rdbKind2 = New System.Windows.Forms.RadioButton()
@@ -514,9 +514,9 @@ Partial Class AC010
         'scuseamt
         '
         Me.scuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "###,###,##0.##"
-        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "###,###,##0.##"
+        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle1
         Me.scuseamt.HeaderText = "金額"
         Me.scuseamt.Name = "scuseamt"
         Me.scuseamt.Width = 120
@@ -632,9 +632,9 @@ Partial Class AC010
         'dcuseamt
         '
         Me.dcuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "###,###,##0.##"
-        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "###,###,##0.##"
+        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle2
         Me.dcuseamt.HeaderText = "金額"
         Me.dcuseamt.Name = "dcuseamt"
         '

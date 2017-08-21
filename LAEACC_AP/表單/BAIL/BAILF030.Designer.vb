@@ -587,23 +587,26 @@ Partial Class BAILF030
         '
         'RecMove1
         '
+        Me.RecMove1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.RecMove1.FilesPara = Nothing
         Me.RecMove1.GenInsFunc = "() values ()"
         Me.RecMove1.genupdfunc = ""
-        Me.RecMove1.Location = New System.Drawing.Point(82, 486)
+        Me.RecMove1.Location = New System.Drawing.Point(0, 505)
         Me.RecMove1.Name = "RecMove1"
         Me.RecMove1.Setds = Nothing
         Me.RecMove1.Setpos = 0
-        Me.RecMove1.Size = New System.Drawing.Size(696, 64)
+        Me.RecMove1.Size = New System.Drawing.Size(984, 84)
         Me.RecMove1.TabIndex = 15
         '
         'BAILF030
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.ClientSize = New System.Drawing.Size(984, 611)
         Me.Controls.Add(Me.RecMove1)
         Me.Controls.Add(Me.gpbInq)
         Me.Controls.Add(Me.StatusBar1)
         Me.Controls.Add(Me.TabControl1)
+        Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "BAILF030"
         Me.gpbInq.ResumeLayout(False)
         Me.gpbInq.PerformLayout()

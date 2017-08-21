@@ -514,38 +514,45 @@ Public Class AC010
     Private Sub btnCopy1_Click(sender As Object, e As EventArgs) Handles btnCopy1.Click
         'copy第一行 科目 摘要 金額 至第二行
         'If nz(vxtAccno2.Text.Trim(), "") = "" Then vxtAccno2.Text = vxtAccno1.Text.Trim()
+        If Trim(vxtAccno2.Text.Replace("-", "")) = "" Then vxtAccno2.Text = vxtAccno1.Text.Trim()
 
-        vxtAccno2.Text = vxtAccno1.Text.Trim() & Mid(vxtAccno2.Text.Trim(), 7, Len(vxtAccno2.Text.Trim()) - 6)
+        'vxtAccno2.Text = vxtAccno1.Text.Trim() & Mid(vxtAccno2.Text.Trim(), 7, Len(vxtAccno2.Text.Trim()) - 6)
         txtRemark2.Text = txtRemark1.Text
-        'If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
-        txtAmt2.Text = txtAmt1.Text
+        If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+        'txtAmt2.Text = txtAmt1.Text
     End Sub
 
     Private Sub btnCopy5_Click(sender As Object, e As EventArgs) Handles btnCopy5.Click
         'copy第一行 科目 摘要 金額 至第2,3,4,5,6行
-        'If nz(vxtAccno2.Text.Trim(), "") = "" Then vxtAccno2.Text = vxtAccno1.Text.Trim
-        'If nz(vxtAccno3.Text.Trim(), "") = "" Then vxtAccno3.Text = vxtAccno1.Text.Trim
-        'If nz(vxtAccno4.Text.Trim(), "") = "" Then vxtAccno4.Text = vxtAccno1.Text.Trim
-        'If nz(vxtAccno5.Text.Trim(), "") = "" Then vxtAccno5.Text = vxtAccno1.Text.Trim
-        'If nz(vxtAccno6.Text.Trim(), "") = "" Then vxtAccno6.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno2.Text.Replace("-", "")) = "" Then vxtAccno2.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno3.Text.Replace("-", "")) = "" Then vxtAccno3.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno4.Text.Replace("-", "")) = "" Then vxtAccno4.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno5.Text.Replace("-", "")) = "" Then vxtAccno5.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno6.Text.Replace("-", "")) = "" Then vxtAccno6.Text = vxtAccno1.Text.Trim
 
-        vxtAccno2.Text = vxtAccno1.Text.Trim & Mid(vxtAccno2.Text.Trim(), 7, Len(vxtAccno2.Text.Trim()) - 6)
-        vxtAccno3.Text = vxtAccno1.Text.Trim & Mid(vxtAccno3.Text.Trim(), 7, Len(vxtAccno3.Text.Trim()) - 6)
-        vxtAccno4.Text = vxtAccno1.Text.Trim & Mid(vxtAccno4.Text.Trim(), 7, Len(vxtAccno4.Text.Trim()) - 6)
-        vxtAccno5.Text = vxtAccno1.Text.Trim & Mid(vxtAccno5.Text.Trim(), 7, Len(vxtAccno5.Text.Trim()) - 6)
-        vxtAccno6.Text = vxtAccno1.Text.Trim & Mid(vxtAccno6.Text.Trim(), 7, Len(vxtAccno6.Text.Trim()) - 6)
+
+
+        'vxtAccno2.Text = vxtAccno1.Text.Trim & Mid(vxtAccno2.Text.Trim(), 7, Len(vxtAccno2.Text.Trim()) - 6)
+        'vxtAccno3.Text = vxtAccno1.Text.Trim & Mid(vxtAccno3.Text.Trim(), 7, Len(vxtAccno3.Text.Trim()) - 6)
+        'vxtAccno4.Text = vxtAccno1.Text.Trim & Mid(vxtAccno4.Text.Trim(), 7, Len(vxtAccno4.Text.Trim()) - 6)
+        'vxtAccno5.Text = vxtAccno1.Text.Trim & Mid(vxtAccno5.Text.Trim(), 7, Len(vxtAccno5.Text.Trim()) - 6)
+        'vxtAccno6.Text = vxtAccno1.Text.Trim & Mid(vxtAccno6.Text.Trim(), 7, Len(vxtAccno6.Text.Trim()) - 6)
 
         txtRemark2.Text = txtRemark1.Text
         txtRemark3.Text = txtRemark1.Text
         txtRemark4.Text = txtRemark1.Text
         txtRemark5.Text = txtRemark1.Text
         txtRemark6.Text = txtRemark1.Text
-        'If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
-        txtAmt2.Text = txtAmt1.Text
-        txtAmt3.Text = txtAmt1.Text
-        txtAmt4.Text = txtAmt1.Text
-        txtAmt5.Text = txtAmt1.Text
-        txtAmt6.Text = txtAmt1.Text
+        If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+        If ValComa(txtAmt3.Text) = 0 Then txtAmt3.Text = txtAmt1.Text
+        If ValComa(txtAmt4.Text) = 0 Then txtAmt4.Text = txtAmt1.Text
+        If ValComa(txtAmt5.Text) = 0 Then txtAmt5.Text = txtAmt1.Text
+        If ValComa(txtAmt6.Text) = 0 Then txtAmt6.Text = txtAmt1.Text
+        'txtAmt2.Text = txtAmt1.Text
+        'txtAmt3.Text = txtAmt1.Text
+        'txtAmt4.Text = txtAmt1.Text
+        'txtAmt5.Text = txtAmt1.Text
+        'txtAmt6.Text = txtAmt1.Text
 
     End Sub
 
@@ -1100,5 +1107,21 @@ Public Class AC010
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub vxtOther2_Leave(sender As Object, e As EventArgs) Handles vxtOther6.Leave, vxtOther5.Leave, vxtOther4.Leave, vxtOther3.Leave, vxtOther2.Leave
+        If Trim(nz(sender.text.Replace("-", ""), "")) = "" Then
+            Exit Sub
+        End If
+        Dim strAccno As String
+        sqlstr = "SELECT accname FROM accname WHERE ACCNO = '" & Trim(sender.text.Replace("-", "")) & "'"
+        tempdataset = openmember("", "accname", sqlstr)
+        If tempdataset.Tables("accname").Rows.Count <= 0 Then
+            MsgBox("無此科目")
+            sender.Focus()
+        Else
+            FindControl(Me, "lblOtherName" & Mid(sender.name, 9, 1)).Text = tempdataset.Tables("accname").Rows(0).Item(0)
+        End If
+        tempdataset = Nothing
     End Sub
 End Class

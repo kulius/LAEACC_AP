@@ -22,8 +22,8 @@ Partial Class AC030
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbxCreate = New System.Windows.Forms.Panel()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
@@ -35,6 +35,7 @@ Partial Class AC030
         Me.lblUseNO = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.gbxModify = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblMOdMsg = New System.Windows.Forms.Label()
         Me.btnOldNo = New System.Windows.Forms.Button()
         Me.txtOldNo = New System.Windows.Forms.TextBox()
@@ -153,7 +154,6 @@ Partial Class AC030
         Me.lblDate1 = New System.Windows.Forms.Label()
         Me.lblNowNO = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbxCreate.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -292,6 +292,16 @@ Partial Class AC030
         Me.gbxModify.Size = New System.Drawing.Size(985, 55)
         Me.gbxModify.TabIndex = 5
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Khaki
+        Me.Button1.Location = New System.Drawing.Point(281, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 36)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "關閉畫面"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'lblMOdMsg
         '
         Me.lblMOdMsg.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
@@ -423,9 +433,9 @@ Partial Class AC030
         'scuseamt
         '
         Me.scuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "###,###,##0.##"
-        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "###,###,##0.##"
+        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle1
         Me.scuseamt.HeaderText = "金額"
         Me.scuseamt.Name = "scuseamt"
         Me.scuseamt.Width = 120
@@ -541,9 +551,9 @@ Partial Class AC030
         'dcuseamt
         '
         Me.dcuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "###,###,##0.##"
-        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "###,###,##0.##"
+        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle2
         Me.dcuseamt.HeaderText = "金額"
         Me.dcuseamt.Name = "dcuseamt"
         '
@@ -1441,16 +1451,6 @@ Partial Class AC030
         Me.Label4.Size = New System.Drawing.Size(108, 16)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "製票日期："
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Khaki
-        Me.Button1.Location = New System.Drawing.Point(281, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(98, 36)
-        Me.Button1.TabIndex = 38
-        Me.Button1.Text = "關閉畫面"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'AC030
         '

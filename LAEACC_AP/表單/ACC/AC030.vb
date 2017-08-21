@@ -501,15 +501,13 @@ Public Class AC030
         Call enableOther()
     End Sub
 
-    Private Sub vxtAccno1_Leave(sender As Object, e As EventArgs) Handles vxtAccno6.Leave, vxtAccno5.Leave, vxtAccno4.Leave, vxtAccno3.Leave, vxtAccno2.Leave, vxtAccno1.Leave
 
-    End Sub
 
     Private Sub btnCopy1_Click(sender As Object, e As EventArgs) Handles btnCopy1.Click
         'copy第一行 科目 摘要 金額 至第二行
         'If nz(vxtAccno2.Text.Trim(), "") = "" Then vxtAccno2.Text = vxtAccno1.Text.Trim()
-
-        vxtAccno2.Text = vxtAccno1.Text.Trim()
+        If Trim(vxtAccno2.Text.Replace("-", "")) = "" Then vxtAccno2.Text = vxtAccno1.Text.Trim()
+        'vxtAccno2.Text = vxtAccno1.Text.Trim()
         txtRemark2.Text = txtRemark1.Text
         If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
     End Sub
@@ -522,17 +520,24 @@ Public Class AC030
         'If nz(vxtAccno5.Text.Trim(), "") = "" Then vxtAccno5.Text = vxtAccno1.Text.Trim
         'If nz(vxtAccno6.Text.Trim(), "") = "" Then vxtAccno6.Text = vxtAccno1.Text.Trim
 
-        vxtAccno2.Text = vxtAccno1.Text.Trim
-        vxtAccno3.Text = vxtAccno1.Text.Trim
-        vxtAccno4.Text = vxtAccno1.Text.Trim
-        vxtAccno5.Text = vxtAccno1.Text.Trim
-        vxtAccno6.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno2.Text.Replace("-", "")) = "" Then vxtAccno2.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno3.Text.Replace("-", "")) = "" Then vxtAccno3.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno4.Text.Replace("-", "")) = "" Then vxtAccno4.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno5.Text.Replace("-", "")) = "" Then vxtAccno5.Text = vxtAccno1.Text.Trim
+        If Trim(vxtAccno6.Text.Replace("-", "")) = "" Then vxtAccno6.Text = vxtAccno1.Text.Trim
+
         txtRemark2.Text = txtRemark1.Text
         txtRemark3.Text = txtRemark1.Text
         txtRemark4.Text = txtRemark1.Text
         txtRemark5.Text = txtRemark1.Text
         txtRemark6.Text = txtRemark1.Text
+        'If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+
         If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+        If ValComa(txtAmt3.Text) = 0 Then txtAmt3.Text = txtAmt1.Text
+        If ValComa(txtAmt4.Text) = 0 Then txtAmt4.Text = txtAmt1.Text
+        If ValComa(txtAmt5.Text) = 0 Then txtAmt5.Text = txtAmt1.Text
+        If ValComa(txtAmt6.Text) = 0 Then txtAmt6.Text = txtAmt1.Text
     End Sub
 
 
@@ -1307,5 +1312,44 @@ If lblDC.Text = "轉帳借方" Then
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub vxtOther2_Leave(sender As Object, e As EventArgs) Handles vxtOther6.Leave, vxtOther5.Leave, vxtOther4.Leave, vxtOther3.Leave, vxtOther2.Leave
+        If Trim(nz(sender.text.Replace("-", ""), "")) = "" Then
+            Exit Sub
+        End If
+        Dim strAccno As String
+        sqlstr = "SELECT accname FROM accname WHERE ACCNO = '" & Trim(sender.text.Replace("-", "")) & "'"
+        tempdataset = openmember("", "accname", sqlstr)
+        If tempdataset.Tables("accname").Rows.Count <= 0 Then
+            MsgBox("無此科目")
+            sender.Focus()
+        Else
+            FindControl(Me, "lblOtherName" & Mid(sender.name, 9, 1)).Text = tempdataset.Tables("accname").Rows(0).Item(0)
+        End If
+        tempdataset = Nothing
+    End Sub
+
+    Private Sub vxtAccno1_Leave(sender As Object, e As EventArgs) Handles vxtAccno6.Leave, vxtAccno5.Leave, vxtAccno4.Leave, vxtAccno3.Leave, vxtAccno2.Leave, vxtAccno1.Leave
+        If Trim(sender.text.Replace("-", "")) = "" Then
+            Exit Sub
+        End If
+        Dim strObjectName As String
+        sqlstr = "SELECT accname FROM accname WHERE ACCNO = '" & Trim(sender.text.Replace("-", "")) & "'"
+        tempdataset = openmember("", "accname", sqlstr)
+        If tempdataset.Tables("accname").Rows.Count <= 0 Then
+            MsgBox("無此科目")
+            sender.Focus()
+        Else
+            strObjectName = sender.name
+            FindControl(Me, "lblaccname" & Mid(strObjectName, 9, 1)).Text = tempdataset.Tables("accname").Rows(0).Item(0)
+        End If
+        '由第二項科目設定相關科目
+        If Mid(strObjectName, 9, 1) = "2" Then '由第二項科目設定
+            If Mid(sender.text.Replace("-", ""), 1, 5) = "31102" Then
+                Call enableOther()
+            End If
+        End If
+        tempdataset = Nothing
     End Sub
 End Class
