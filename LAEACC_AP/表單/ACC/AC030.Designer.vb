@@ -82,11 +82,11 @@ Partial Class AC030
         Me.btnPs3 = New System.Windows.Forms.Button()
         Me.btnPs2 = New System.Windows.Forms.Button()
         Me.btnPs1 = New System.Windows.Forms.Button()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblOtherName6 = New System.Windows.Forms.Label()
+        Me.lblOtherName5 = New System.Windows.Forms.Label()
+        Me.lblOtherName4 = New System.Windows.Forms.Label()
+        Me.lblOtherName3 = New System.Windows.Forms.Label()
+        Me.lblOtherName2 = New System.Windows.Forms.Label()
         Me.lblAccName6 = New System.Windows.Forms.Label()
         Me.lblAccName5 = New System.Windows.Forms.Label()
         Me.lblAccName4 = New System.Windows.Forms.Label()
@@ -592,11 +592,11 @@ Partial Class AC030
         Me.TabPage2.Controls.Add(Me.btnPs3)
         Me.TabPage2.Controls.Add(Me.btnPs2)
         Me.TabPage2.Controls.Add(Me.btnPs1)
-        Me.TabPage2.Controls.Add(Me.Label17)
-        Me.TabPage2.Controls.Add(Me.Label16)
-        Me.TabPage2.Controls.Add(Me.Label15)
-        Me.TabPage2.Controls.Add(Me.Label14)
-        Me.TabPage2.Controls.Add(Me.Label2)
+        Me.TabPage2.Controls.Add(Me.lblOtherName6)
+        Me.TabPage2.Controls.Add(Me.lblOtherName5)
+        Me.TabPage2.Controls.Add(Me.lblOtherName4)
+        Me.TabPage2.Controls.Add(Me.lblOtherName3)
+        Me.TabPage2.Controls.Add(Me.lblOtherName2)
         Me.TabPage2.Controls.Add(Me.lblAccName6)
         Me.TabPage2.Controls.Add(Me.lblAccName5)
         Me.TabPage2.Controls.Add(Me.lblAccName4)
@@ -803,50 +803,50 @@ Partial Class AC030
         Me.btnPs1.Text = "片"
         Me.btnPs1.UseVisualStyleBackColor = True
         '
-        'Label17
+        'lblOtherName6
         '
-        Me.Label17.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(461, 427)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(366, 20)
-        Me.Label17.TabIndex = 75
+        Me.lblOtherName6.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblOtherName6.ForeColor = System.Drawing.Color.Black
+        Me.lblOtherName6.Location = New System.Drawing.Point(461, 427)
+        Me.lblOtherName6.Name = "lblOtherName6"
+        Me.lblOtherName6.Size = New System.Drawing.Size(366, 20)
+        Me.lblOtherName6.TabIndex = 75
         '
-        'Label16
+        'lblOtherName5
         '
-        Me.Label16.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(461, 365)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(366, 20)
-        Me.Label16.TabIndex = 74
+        Me.lblOtherName5.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblOtherName5.ForeColor = System.Drawing.Color.Black
+        Me.lblOtherName5.Location = New System.Drawing.Point(461, 365)
+        Me.lblOtherName5.Name = "lblOtherName5"
+        Me.lblOtherName5.Size = New System.Drawing.Size(366, 20)
+        Me.lblOtherName5.TabIndex = 74
         '
-        'Label15
+        'lblOtherName4
         '
-        Me.Label15.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(461, 303)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(366, 20)
-        Me.Label15.TabIndex = 73
+        Me.lblOtherName4.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblOtherName4.ForeColor = System.Drawing.Color.Black
+        Me.lblOtherName4.Location = New System.Drawing.Point(461, 303)
+        Me.lblOtherName4.Name = "lblOtherName4"
+        Me.lblOtherName4.Size = New System.Drawing.Size(366, 20)
+        Me.lblOtherName4.TabIndex = 73
         '
-        'Label14
+        'lblOtherName3
         '
-        Me.Label14.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(461, 241)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(366, 20)
-        Me.Label14.TabIndex = 72
+        Me.lblOtherName3.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblOtherName3.ForeColor = System.Drawing.Color.Black
+        Me.lblOtherName3.Location = New System.Drawing.Point(461, 241)
+        Me.lblOtherName3.Name = "lblOtherName3"
+        Me.lblOtherName3.Size = New System.Drawing.Size(366, 20)
+        Me.lblOtherName3.TabIndex = 72
         '
-        'Label2
+        'lblOtherName2
         '
-        Me.Label2.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(461, 179)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(366, 20)
-        Me.Label2.TabIndex = 71
+        Me.lblOtherName2.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblOtherName2.ForeColor = System.Drawing.Color.Black
+        Me.lblOtherName2.Location = New System.Drawing.Point(461, 179)
+        Me.lblOtherName2.Name = "lblOtherName2"
+        Me.lblOtherName2.Size = New System.Drawing.Size(366, 20)
+        Me.lblOtherName2.TabIndex = 71
         '
         'lblAccName6
         '
@@ -1594,11 +1594,11 @@ Partial Class AC030
     Friend WithEvents btnF44 As System.Windows.Forms.Button
     Friend WithEvents btnF43 As System.Windows.Forms.Button
     Friend WithEvents btnF42 As System.Windows.Forms.Button
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblOtherName6 As System.Windows.Forms.Label
+    Friend WithEvents lblOtherName5 As System.Windows.Forms.Label
+    Friend WithEvents lblOtherName4 As System.Windows.Forms.Label
+    Friend WithEvents lblOtherName3 As System.Windows.Forms.Label
+    Friend WithEvents lblOtherName2 As System.Windows.Forms.Label
     Friend WithEvents btnPs6 As System.Windows.Forms.Button
     Friend WithEvents btnPs5 As System.Windows.Forms.Button
     Friend WithEvents btnPs4 As System.Windows.Forms.Button
