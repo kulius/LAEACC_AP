@@ -315,8 +315,8 @@ Public Class AC010
         tempdataset = openmember(DNS_ACC, "accname", sqlstr)
         If nz(tempdataset.Tables("accname").Rows(0).Item(0), "").ToString.Trim() <> "" Then
             sbank = nz(tempdataset.Tables("accname").Rows(0).Item(0), "").ToString.Trim()
-        Else
-            sbank = dbGetSingleRow(DNS_ACC, "ACF010", "BANK", "ACCYEAR = '" & GetYear(dtpDate.Value) & "'", "autono DESC")
+            'Else
+            '    sbank = dbGetSingleRow(DNS_ACC, "ACF010", "BANK", "ACCYEAR = '" & GetYear(dtpDate.Value) & "'", "autono DESC")
         End If
         '科目未設銀行時,依app.config定義
         If Trim(sbank) = "" Then
