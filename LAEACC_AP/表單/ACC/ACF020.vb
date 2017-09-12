@@ -20,9 +20,9 @@
 
         '彰化不要增修刪
         If TransPara.TransP("UnitTitle").indexof("彰化") >= 0 Then
-            '彰化只允許ch468 可modify
+            '彰化只允許ch418 可modify
             If UserId <> "0418" Then
-                RecMove1.Visible = False
+                GroupBox5.Visible = False
             End If
         End If
 
@@ -118,7 +118,7 @@
         lblOtheraccname.Text = " "
     End Sub
 
-    Sub transjob(ByVal JobName As String, ByVal JobPara As String) Handles RecMove1.TransJob
+    Sub transjob(ByVal JobName As String, ByVal JobPara As String)
         Dim LastPos As Integer = bm.Position
         Select Case JobName
             Case "刪除記錄"

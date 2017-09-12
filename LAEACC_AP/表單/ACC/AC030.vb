@@ -511,7 +511,12 @@ Public Class AC030
 
         vxtAccno2.Text = vxtAccno1.Text.Trim()
         txtRemark2.Text = txtRemark1.Text
-        If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+
+        Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+            Case "石門"
+            Case Else
+                txtAmt2.Text = txtAmt1.Text
+        End Select
     End Sub
 
     Private Sub btnCopy5_Click(sender As Object, e As EventArgs) Handles btnCopy5.Click
@@ -532,7 +537,16 @@ Public Class AC030
         txtRemark4.Text = txtRemark1.Text
         txtRemark5.Text = txtRemark1.Text
         txtRemark6.Text = txtRemark1.Text
-        If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+
+        Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+            Case "石門"
+            Case Else
+                txtAmt2.Text = txtAmt1.Text
+                txtAmt3.Text = txtAmt1.Text
+                txtAmt4.Text = txtAmt1.Text
+                txtAmt5.Text = txtAmt1.Text
+                txtAmt6.Text = txtAmt1.Text
+        End Select
     End Sub
 
 

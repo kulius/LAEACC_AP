@@ -129,12 +129,12 @@ Public Class BAILF020
                     RecMove1.GenUpdsql("date_s", dtpDateS.Text, "D")
                     RecMove1.GenUpdsql("date_e", dtpDateE.Text, "D")
                 Else                                  '履約品為保管品的期限
-                    If chk_dtpDateS.Checked = False Then
+                    If chk_dtpDateS.Checked = True Then
                         RecMove1.GenUpdsql("date_s", DBNull.Value, "D")
                     Else
                         RecMove1.GenUpdsql("date_s", dtpDateS.Text, "D")
                     End If
-                    If chk_dtpDateE.Checked = False Then
+                    If chk_dtpDateE.Checked = True Then
                         RecMove1.GenUpdsql("date_e", DBNull.Value, "D")
                     Else
                         RecMove1.GenUpdsql("date_e", dtpDateE.Text, "D")
@@ -187,12 +187,12 @@ Public Class BAILF020
                         RecMove1.GenInsSql("date_e", dtpDateE.Value.Date, "D")
 
                     Else                                  '履約品為保管品的期限
-                        If chk_dtpDateS.Checked = False Then
+                        If chk_dtpDateS.Checked = True Then
                             RecMove1.GenInsSql("date_s", DBNull.Value, "D")
                         Else
                             RecMove1.GenInsSql("date_s", dtpDateS.Text, "D")
                         End If
-                        If chk_dtpDateE.Checked = False Then
+                        If chk_dtpDateE.Checked = True Then
                             RecMove1.GenInsSql("date_e", DBNull.Value, "D")
                         Else
                             RecMove1.GenInsSql("date_e", dtpDateE.Text, "D")
@@ -215,12 +215,12 @@ Public Class BAILF020
                         RecMove1.GenInsSql("date_s", bm.Current("date_s"), "D")
                         RecMove1.GenInsSql("date_e", bm.Current("date_e"), "D")
                     Else                                '如為履約品為保管品的期限
-                        If chk_dtpDateS.Checked = False Then
+                        If chk_dtpDateS.Checked = True Then
                             RecMove1.GenInsSql("date_s", DBNull.Value, "D")
                         Else
                             RecMove1.GenInsSql("date_s", dtpDateS.Text, "D")
                         End If
-                        If chk_dtpDateE.Checked = False Then
+                        If chk_dtpDateE.Checked = True Then
                             RecMove1.GenInsSql("date_e", DBNull.Value, "D")
                         Else
                             RecMove1.GenInsSql("date_e", dtpDateE.Text, "D")
@@ -711,5 +711,4 @@ Public Class BAILF020
     Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
         TabControl1.SelectedIndex = 1
     End Sub
-
 End Class

@@ -197,6 +197,14 @@ Public Class fmLogin
                 End If
             End If
 
+
+            '因單位電腦原設定關係，需改變為西元曆
+            Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+                Case "彰化", "石門", "苗栗", "測試"
+                    Call EngCalendar() '將日曆改為西元年
+            End Select
+
+
             '異動後初始化
             'LastLoginDate() '最後一次登入記錄
             fmMain.Show() : Me.Hide()
@@ -214,13 +222,6 @@ Public Class fmLogin
         objCmd.Dispose() '手動釋放資源
         objCon.Dispose()
         objCon = Nothing '移除指標
-
-
-        '系統進入時，日曆類型處理
-        Select Case INI_Read("BASIC", "LOGIN", "FIRM")
-            Case "石門", "苗栗"
-                Call EngCalendar() '將日曆改為西元年
-        End Select
     End Sub
 
     '關閉

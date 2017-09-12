@@ -19,7 +19,6 @@ Partial Class ACF020
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RecMove1 = New LAEACC_AP.RecMove()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.rdbkind4 = New System.Windows.Forms.RadioButton()
@@ -115,6 +114,8 @@ Partial Class ACF020
         Me.txtQamt = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.RecMove1 = New LAEACC_AP.RecMove()
         Me.GroupBox2.SuspendLayout()
         CType(Me.nudYear, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -125,20 +126,8 @@ Partial Class ACF020
         Me.TabPage3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'RecMove1
-        '
-        Me.RecMove1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.RecMove1.FilesPara = Nothing
-        Me.RecMove1.GenInsFunc = "() values ()"
-        Me.RecMove1.genupdfunc = ""
-        Me.RecMove1.Location = New System.Drawing.Point(0, 560)
-        Me.RecMove1.Name = "RecMove1"
-        Me.RecMove1.Setds = Nothing
-        Me.RecMove1.Setpos = 0
-        Me.RecMove1.Size = New System.Drawing.Size(984, 29)
-        Me.RecMove1.TabIndex = 26
         '
         'btnExit
         '
@@ -293,7 +282,7 @@ Partial Class ACF020
         '
         'StatusBar1
         '
-        Me.StatusBar1.Location = New System.Drawing.Point(0, 589)
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 624)
         Me.StatusBar1.Name = "StatusBar1"
         Me.StatusBar1.Size = New System.Drawing.Size(984, 22)
         Me.StatusBar1.TabIndex = 16
@@ -318,7 +307,7 @@ Partial Class ACF020
         Me.TabControl1.Location = New System.Drawing.Point(13, 59)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(933, 497)
+        Me.TabControl1.Size = New System.Drawing.Size(933, 496)
         Me.TabControl1.TabIndex = 15
         '
         'TabPage1
@@ -329,7 +318,7 @@ Partial Class ACF020
         Me.TabPage1.Controls.Add(Me.Label18)
         Me.TabPage1.Location = New System.Drawing.Point(4, 26)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(925, 467)
+        Me.TabPage1.Size = New System.Drawing.Size(925, 466)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "多筆瀏覽"
         '
@@ -341,7 +330,7 @@ Partial Class ACF020
         Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
         Me.DataGrid1.Location = New System.Drawing.Point(0, 0)
         Me.DataGrid1.Name = "DataGrid1"
-        Me.DataGrid1.Size = New System.Drawing.Size(925, 467)
+        Me.DataGrid1.Size = New System.Drawing.Size(925, 466)
         Me.DataGrid1.TabIndex = 1
         Me.DataGrid1.TableStyles.AddRange(New System.Windows.Forms.DataGridTableStyle() {Me.DataGridTableStyle1})
         '
@@ -1079,11 +1068,34 @@ Partial Class ACF020
         Me.Label19.Text = "起號"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.RecMove1)
+        Me.GroupBox5.Location = New System.Drawing.Point(12, 559)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(933, 56)
+        Me.GroupBox5.TabIndex = 29
+        Me.GroupBox5.TabStop = False
+        '
+        'RecMove1
+        '
+        Me.RecMove1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.RecMove1.FilesPara = Nothing
+        Me.RecMove1.GenInsFunc = "() values ()"
+        Me.RecMove1.genupdfunc = ""
+        Me.RecMove1.Location = New System.Drawing.Point(3, 7)
+        Me.RecMove1.Margin = New System.Windows.Forms.Padding(7, 8, 7, 8)
+        Me.RecMove1.Name = "RecMove1"
+        Me.RecMove1.Setds = Nothing
+        Me.RecMove1.Setpos = 0
+        Me.RecMove1.Size = New System.Drawing.Size(927, 46)
+        Me.RecMove1.TabIndex = 29
+        '
         'ACF020
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
-        Me.ClientSize = New System.Drawing.Size(984, 611)
-        Me.Controls.Add(Me.RecMove1)
+        Me.ClientSize = New System.Drawing.Size(984, 646)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.nudYear)
@@ -1110,6 +1122,7 @@ Partial Class ACF020
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1209,6 +1222,7 @@ Partial Class ACF020
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents vxtOtheraccno As System.Windows.Forms.MaskedTextBox
     Friend WithEvents vxtaccno As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents RecMove1 As LAEACC_AP.RecMove
 
 End Class

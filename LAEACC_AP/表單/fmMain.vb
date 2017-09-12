@@ -129,12 +129,10 @@ Public Class fmMain
         FirstBt.PerformClick()
     End Sub
     Private Sub fmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        '系統進入時，日曆類型處理
+        '因單位電腦舊系統設定關係，需改變為民國年
         Select Case INI_Read("BASIC", "LOGIN", "FIRM")
-            Case "石門", "苗栗"
+            Case "彰化", "石門", "苗栗", "測試"
                 Call ChtCalendar() '將日曆改為民國年
-            Case Else
-                Call EngCalendar() '將日曆改為西元年
         End Select
 
         ComputerShutdown() '關閉電腦

@@ -109,6 +109,8 @@ Public Class AC010
 
             '產生預設值
             Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+                Case "彰化", "測試"
+                    cboBank.SelectedValue = IIf(sKind = "1", "04", "01") '銀行帳號
                 Case "石門"
                     cboBank.SelectedValue = IIf(sKind = "1", "30", "06") '銀行帳號
             End Select
@@ -518,7 +520,12 @@ Public Class AC010
         vxtAccno2.Text = vxtAccno1.Text.Trim() & Mid(vxtAccno2.Text.Trim(), 7, Len(vxtAccno2.Text.Trim()) - 6)
         txtRemark2.Text = txtRemark1.Text
         'If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
-        txtAmt2.Text = txtAmt1.Text
+
+        Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+            Case "石門"
+            Case Else
+                txtAmt2.Text = txtAmt1.Text
+        End Select
     End Sub
 
     Private Sub btnCopy5_Click(sender As Object, e As EventArgs) Handles btnCopy5.Click
@@ -541,12 +548,16 @@ Public Class AC010
         txtRemark5.Text = txtRemark1.Text
         txtRemark6.Text = txtRemark1.Text
         'If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
-        txtAmt2.Text = txtAmt1.Text
-        txtAmt3.Text = txtAmt1.Text
-        txtAmt4.Text = txtAmt1.Text
-        txtAmt5.Text = txtAmt1.Text
-        txtAmt6.Text = txtAmt1.Text
 
+        Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+            Case "石門"
+            Case Else
+                txtAmt2.Text = txtAmt1.Text
+                txtAmt3.Text = txtAmt1.Text
+                txtAmt4.Text = txtAmt1.Text
+                txtAmt5.Text = txtAmt1.Text
+                txtAmt6.Text = txtAmt1.Text
+        End Select
     End Sub
 
 
@@ -571,7 +582,16 @@ Public Class AC010
         Dim tempdataset As DataSet
 
         '防呆
-        If cboBank.SelectedValue = "" Then MsgBox("銀行帳號未選擇") : Exit Sub
+        If cboBank.SelectedValue = "" Then MsgBox("※銀行帳號未選擇※", MsgBoxStyle.Exclamation) : Exit Sub
+
+        If Replace(vxtAccno1.Text, "_", "") = "" Then MsgBox("※總帳科目，未輸入※", MsgBoxStyle.Exclamation) : Exit Sub
+        If txtRemark1.Text = "" Then MsgBox("※總帳摘要，未輸入※", MsgBoxStyle.Exclamation) : Exit Sub
+        If txtAmt1.Text = "" Then MsgBox("※總帳金額，未輸入※", MsgBoxStyle.Exclamation) : Exit Sub
+
+        If Replace(vxtAccno1.Text, "_", "") = "" Then MsgBox("※明細帳科目，未輸入※", MsgBoxStyle.Exclamation) : Exit Sub
+        If txtRemark2.Text = "" Then MsgBox("※明細帳摘要，未輸入※", MsgBoxStyle.Exclamation) : Exit Sub
+        If txtAmt2.Text = "" Then MsgBox("※明細帳金額，未輸入※", MsgBoxStyle.Exclamation) : Exit Sub
+
 
         '檢查資料
         SumAmt = 0

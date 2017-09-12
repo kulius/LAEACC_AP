@@ -817,7 +817,7 @@ Module vbdataio
         End Try
     End Sub
     Function GetAccno(ByVal Accno As String)
-        Return Trim(Accno.Replace("-", ""))
+        Return Trim(Accno.Replace("-", "")).ToString
     End Function
 
     Function QueryBGAmt(ByVal noyear As Integer, ByVal accno As String)  '查詢預算餘額(取得全年預算扣除(已請購+已開支)的餘額)

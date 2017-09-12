@@ -954,12 +954,14 @@ Partial Class BAILF020
         '
         'BAILF020
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(984, 611)
         Me.Controls.Add(Me.RecMove1)
         Me.Controls.Add(Me.StatusBar1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.gpbInq)
+        Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "BAILF020"
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)

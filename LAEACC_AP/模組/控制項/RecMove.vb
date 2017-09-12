@@ -271,22 +271,22 @@
 
             Case "T"
                 If nz(FieldValue, "") = "" Then
-                    UpdSqlValue &= FieldName & "= NULL ,"
+                    UpdSqlValue &= FieldName & "= '' ,"
                 Else
-                    UpdSqlValue &= FieldName & "='" & Replace(FieldValue, "'", "''") & "', "
+                    UpdSqlValue &= FieldName & "='" & Replace(FieldValue, "'", "''").ToString & "', "
                 End If
             Case "TU"
                 If nz(FieldValue, "") = "" Then
-                    UpdSqlValue &= FieldName & "= NULL ,"
+                    UpdSqlValue &= FieldName & "= '' ,"
                 Else
-                    UpdSqlValue &= FieldName & "=N'" & Replace(FieldValue, "'", "''") & "', "
+                    UpdSqlValue &= FieldName & "=N'" & Replace(FieldValue, "'", "''").ToString & "', "
                 End If
 
             Case "N", "R"
                 UpdSqlValue &= FieldName & "=" & FieldValue & ", "
             Case "D"
                 If IsDBNull(FieldValue) Then
-                    UpdSqlValue &= FieldName & "= NULL ,"
+                    UpdSqlValue &= FieldName & "= '' ,"
                 Else
                     atp = InStr(FieldValue, "/")
                     'yy = FieldValue.leftLeft(FieldValue, atp - 1)

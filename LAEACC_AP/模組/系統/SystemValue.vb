@@ -242,14 +242,18 @@ Module SystemValue
 #End Region
 
     Sub ChtCalendar() '設定系統月曆類型為民國年
-        SetLocaleInfo(GetSystemDefaultLCID, LOCALE_ICALENDARTYPE, "4")
-        'SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SSHORTDATE, "民國yyy年MM月dd日")
-        SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SDATE, "/") '設定日期分隔符號
-        'SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SLONGDATE, “ggyyyy’年’MM’月’dd’日'")     ‘設定完整日期樣式
+        If SetLocaleInfo(GetSystemDefaultLCID, LOCALE_ICALENDARTYPE, "4") <> 4 Then
+            SetLocaleInfo(GetSystemDefaultLCID, LOCALE_ICALENDARTYPE, "4")
+            'SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SSHORTDATE, "民國yyy年MM月dd日")
+            SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SDATE, "/") '設定日期分隔符號
+            'SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SLONGDATE, “ggyyyy’年’MM’月’dd’日'")     ‘設定完整日期樣式
+        End If
     End Sub
 
     Sub EngCalendar() '設定系統月曆類型為西元年
-        SetLocaleInfo(GetSystemDefaultLCID, LOCALE_ICALENDARTYPE, "1")
-        SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SSHORTDATE, "yyyy/MM/dd")
+        If SetLocaleInfo(GetSystemDefaultLCID, LOCALE_ICALENDARTYPE, "1") <> 1 Then
+            SetLocaleInfo(GetSystemDefaultLCID, LOCALE_ICALENDARTYPE, "1")
+            SetLocaleInfo(GetSystemDefaultLCID, LOCALE_SSHORTDATE, "yyyy/MM/dd")
+        End If
     End Sub
 End Module
