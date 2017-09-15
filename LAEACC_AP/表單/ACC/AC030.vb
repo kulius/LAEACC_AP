@@ -515,7 +515,8 @@ Public Class AC030
         Select Case INI_Read("BASIC", "LOGIN", "FIRM")
             Case "石門"
             Case Else
-                txtAmt2.Text = txtAmt1.Text
+                ' txtAmt2.Text = txtAmt1.Text
+                If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
         End Select
     End Sub
 
@@ -541,11 +542,11 @@ Public Class AC030
         Select Case INI_Read("BASIC", "LOGIN", "FIRM")
             Case "石門"
             Case Else
-                txtAmt2.Text = txtAmt1.Text
-                txtAmt3.Text = txtAmt1.Text
-                txtAmt4.Text = txtAmt1.Text
-                txtAmt5.Text = txtAmt1.Text
-                txtAmt6.Text = txtAmt1.Text
+                If ValComa(txtAmt2.Text) = 0 Then txtAmt2.Text = txtAmt1.Text
+                If ValComa(txtAmt3.Text) = 0 Then txtAmt3.Text = txtAmt1.Text
+                If ValComa(txtAmt4.Text) = 0 Then txtAmt4.Text = txtAmt1.Text
+                If ValComa(txtAmt5.Text) = 0 Then txtAmt5.Text = txtAmt1.Text
+                If ValComa(txtAmt6.Text) = 0 Then txtAmt6.Text = txtAmt1.Text
         End Select
     End Sub
 
@@ -1321,5 +1322,23 @@ If lblDC.Text = "轉帳借方" Then
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub vxtOther2_Leave(sender As Object, e As EventArgs) Handles vxtOther6.Leave, vxtOther5.Leave, vxtOther4.Leave, vxtOther3.Leave, vxtOther2.Leave
+        If Trim(nz(sender.text.Replace("-", ""), "")) = "" Then
+            Exit Sub
+        End If
+        'End If
+        Dim strObjectName, strAccno As String
+        sqlstr = "SELECT accname,bank FROM accname WHERE ACCNO = '" & Trim(sender.text.Replace("-", "")) & "'"
+        tempdataset = openmember(DNS_ACC, "accname", sqlstr)
+        If tempdataset.Tables("accname").Rows.Count <= 0 Then
+            MsgBox("無此科目")
+            sender.Focus()
+        Else
+            strObjectName = sender.name
+            FindControl(Me, "lblOtherName" & Mid(strObjectName, 9, 1)).Text = tempdataset.Tables("accname").Rows(0).Item(0)
+        End If
+        tempdataset = Nothing
     End Sub
 End Class
