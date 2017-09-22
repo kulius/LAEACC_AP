@@ -251,3 +251,106 @@ INSERT INTO a_sys_nunit_item VALUES ('FPAY_ACF010','FDP','S4','傳票總帳檔�
 INSERT INTO a_sys_nunit_item VALUES ('FPAY_ACF020','FDP','S4','傳票明細帳檔查詢','6','PAY_ACF020',null)
 GO
 
+--20170922 加入退撫會計及出納選單
+insert into a_sys_name values('BLA','輔健會計','12')
+GO
+
+DELETE a_sys_nunit where s_system_id='BLA'
+GO
+INSERT INTO a_sys_nunit VALUES ('S0','BLA','每日作業',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S1','BLA','月報表',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S2','BLA','基本資料維護',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S3','BLA','帳簿列印',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S4','BLA','決算表',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S5','BLA','預算表',NULL,NULL)
+GO
+
+DELETE a_sys_nunit_item where s_system_id='BLA'
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BAC010','BLA','S0','開立收支傳票','1','FAC010',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC030','BLA','S0','開立轉帳傳票','2','FAC030',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC011','BLA','S0','修改收支傳票','3','FAC011',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC031','BLA','S0','修改轉帳傳票','4','FAC031',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC040','BLA','S0','轉帳傳票決裁','5','AC040',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC050','BLA','S0','過      帳','6','AC050',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC150','BLA','S0','查詢執行情形','7','AC150',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BACM010','BLA','S1','總分類帳彙總表','1','ACM010',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACM020','BLA','S1','收入明細表','2','ACM020',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACM030','BLA','S1','支出明細表','3','ACM030',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACM040','BLA','S1','應收款項餘額表','4','ACM040',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACM050','BLA','S1','催收款項餘額表','5','ACM050',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACM060','BLA','S1','應付款項餘額表','6','ACM060',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACM100','BLA','S1','封面','7','ACM100',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BACCNAME','BLA','S2','會計科目維護','1','ACCNAME',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACFNO','BLA','S2','號數控制檔','2','ACFNO',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPSNAME','BLA','S2','片語檔維護','3','PSNAME',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACCBG','BLA','S2','預算分配檔','4','ACCBG',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACF010','BLA','S2','傳票總帳檔','5','ACF010',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACF020','BLA','S2','傳票明細檔','6','ACF020',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACF050','BLA','S2','科目餘額檔','7','ACF050',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACF060','BLA','S2','應收付餘額檔','7','ACF060',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC050R','BLA','S2','回復過帳','8','AC050R',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC210','BLA','S2','修改沖收付數(當日收付)','9','AC210',null)
+INSERT INTO a_sys_nunit_item VALUES ('BAC220','BLA','S2','修改銀行(當日收付)','10','AC220',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACF010D','BLA','S2','未處理傳票刪除','11','ACF010D',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BACBK010','BLA','S3','普通序時帳(日計帳)','1','ACBK010',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACBK040','BLA','S3','明細分類帳','2','ACBK040',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BACY010','BLA','S4','資產負債平衡表','1','ACY010',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACY020','BLA','S4','餘絀計算表','2','ACY020',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACY030','BLA','S4','餘絀撥補表','3','ACY030',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACY170','BLA','S4','收入明細表','4','ACY170',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACY180','BLA','S4','支出明細表','5','ACY180',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACY130','BLA','S4','開帳及結帳分錄','6','ACY130',null)
+INSERT INTO a_sys_nunit_item VALUES ('BACY140','BLA','S4','年終檔案結轉下年度','7','ACY140',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BACB010','BLA','S5','資產負債預計表','1',null,null)
+INSERT INTO a_sys_nunit_item VALUES ('BACB020','BLA','S5','餘絀預計表','2',null,null)
+INSERT INTO a_sys_nunit_item VALUES ('BACB030','BLA','S5','餘絀撥補預計表','3',null,null)
+INSERT INTO a_sys_nunit_item VALUES ('BACB170','BLA','S5','收入支出明細表','4',null,null)
+INSERT INTO a_sys_nunit_item VALUES ('BACB210','BLA','S5','預算書封面','5',null,null)
+GO
+            
+  
+
+
+insert into a_sys_name values('BLP','輔健出納','13')
+GO
+
+DELETE a_sys_nunit where s_system_id='BLP'
+GO
+INSERT INTO a_sys_nunit VALUES ('S0','BLP','開帳處理',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S1','BLP','支票處理',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S2','BLP','收入處理',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S3','BLP','報表帳簿列印',NULL,NULL)
+INSERT INTO a_sys_nunit VALUES ('S4','BLP','查詢維護',NULL,NULL)
+GO
+
+DELETE a_sys_nunit_item where s_system_id='BLP'
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BPAY010','BLP','S0','每日開帳','1','PAY010',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BPAY021','BLP','S1','開支票','1','PAY021',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY022','BLP','S1','領支票','2','PAY022',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY023','BLP','S1','修改支票','3','PAY023',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY024','BLP','S1','支票作廢','4','PAY024',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BPAY030','BLP','S2','收入作業','1','PAY030',null)
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BPAY090','BLP','S3','日計表','1','PAY090',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY070','BLP','S3','現金出納登記簿列印','2','PAY070',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY080','BLP','S3','存款明細分戶帳列印','3','PAY080',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY091','BLP','S3','重印日計表','4','PAY091',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY120','BLP','S3','沖收付數列印','5','PAY120',null)
+
+GO
+INSERT INTO a_sys_nunit_item VALUES ('BPAY_PSNAME','BLP','S4','片語檔維護','1','PAY_PSNAME',null)
+INSERT INTO a_sys_nunit_item VALUES ('BCHF010','BLP','S4','支票檔維護','2','CHF010',null)
+INSERT INTO a_sys_nunit_item VALUES ('BCHF020','BLP','S4','銀行帳戶檔維護','3','CHF020',null)
+INSERT INTO a_sys_nunit_item VALUES ('BCHF030','BLP','S4','存款歷史檔維護','4','CHF030',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY_ACF010','BLP','S4','傳票總帳檔查詢','5','PAY_ACF010',null)
+INSERT INTO a_sys_nunit_item VALUES ('BPAY_ACF020','BLP','S4','傳票明細帳檔查詢','6','PAY_ACF020',null)
+GO

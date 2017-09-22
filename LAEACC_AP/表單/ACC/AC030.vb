@@ -502,7 +502,21 @@ Public Class AC030
     End Sub
 
     Private Sub vxtAccno1_Leave(sender As Object, e As EventArgs) Handles vxtAccno6.Leave, vxtAccno5.Leave, vxtAccno4.Leave, vxtAccno3.Leave, vxtAccno2.Leave, vxtAccno1.Leave
-
+        If Trim(nz(sender.text.Replace("-", ""), "")) = "" Then
+            Exit Sub
+        End If
+        'End If
+        Dim strObjectName, strAccno As String
+        sqlstr = "SELECT accname,bank FROM accname WHERE ACCNO = '" & Trim(sender.text.Replace("-", "")) & "'"
+        tempdataset = openmember(DNS_ACC, "accname", sqlstr)
+        If tempdataset.Tables("accname").Rows.Count <= 0 Then
+            MsgBox("無此科目")
+            sender.Focus()
+        Else
+            strObjectName = sender.name
+            FindControl(Me, "lblaccname" & Mid(strObjectName, 9, 1)).Text = tempdataset.Tables("accname").Rows(0).Item(0)
+        End If
+        tempdataset = Nothing
     End Sub
 
     Private Sub btnCopy1_Click(sender As Object, e As EventArgs) Handles btnCopy1.Click

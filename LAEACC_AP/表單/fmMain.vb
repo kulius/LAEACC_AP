@@ -142,17 +142,24 @@ Public Class fmMain
         Dim CHUNIT As String = 所屬單位
         Dim CHDNS_ACC As String = ""
         Dim CHDNS_FUND As String = ""
+        Dim CHDNS_BUIL As String = ""
+        Dim CHDNS_DB As String = ""
         If InStr(1, sender.text, "退撫") Then
-            CHDNS_ACC = INI_Read("CONFIG", "SET", CHUNIT + "_ACC")
             CHDNS_FUND = INI_Read("CONFIG", "SET", CHUNIT + "_FUND")
             INI_Write("CONFIG", "SET", "DNS_ACC", CHDNS_FUND)
+            CHDNS_DB = "FUNDDB"
+        ElseIf InStr(1, sender.text, "輔健") Then
+            CHDNS_BUIL = INI_Read("CONFIG", "SET", CHUNIT + "_BUIL")
+            INI_Write("CONFIG", "SET", "DNS_ACC", CHDNS_BUIL)
+            CHDNS_DB = "BUILDB"
         Else
             CHDNS_ACC = INI_Read("CONFIG", "SET", CHUNIT + "_ACC")
-            CHDNS_FUND = INI_Read("CONFIG", "SET", CHUNIT + "_FUND")
             INI_Write("CONFIG", "SET", "DNS_ACC", CHDNS_ACC)
+            CHDNS_DB = "ACCDB"
         End If
 
         DNS_ACC = INI_Read("CONFIG", "SET", "DNS_ACC")
+        txtDate.Text = "目前連結資料庫：" + CHDNS_DB
 
         Me.MenuStrip.Items.Clear()
 

@@ -108,12 +108,14 @@ Public Class fmLogin
         Dim CHDNS_SYS As String = ""
         Dim CHDNS_AUTH As String = ""
         Dim CHDNS_FUND As String = ""
+        Dim CHDNS_BUIL As String = ""
 
         If CHUNIT <> "" Then
             CHDNS_ACC = INI_Read("CONFIG", "SET", CHUNIT + "_ACC")
             CHDNS_SYS = INI_Read("CONFIG", "SET", CHUNIT + "_SYS")
             CHDNS_AUTH = INI_Read("CONFIG", "SET", CHUNIT + "_AUTH")
             CHDNS_FUND = INI_Read("CONFIG", "SET", CHUNIT + "_FUND")
+            CHDNS_BUIL = INI_Read("CONFIG", "SET", CHUNIT + "_BUIL")
             fmMain.FIRM = CHUNIT
             fmMain.FIRMCODE = ""
         Else
@@ -125,6 +127,7 @@ Public Class fmLogin
         INI_Write("CONFIG", "SET", "DNS_ACC", CHDNS_ACC)
         INI_Write("CONFIG", "SET", "DNS_AUTH", CHDNS_AUTH)
         INI_Write("CONFIG", "SET", "DNS_FUND", CHDNS_FUND)
+        INI_Write("CONFIG", "SET", "DNS_BUIL", CHDNS_BUIL)
 
         fmMain.FIRM = 所屬單位.Text
         fmMain.FIRMCODE = ""
