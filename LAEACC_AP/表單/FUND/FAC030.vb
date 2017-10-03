@@ -1005,11 +1005,16 @@ Public Class FAC030
         allDoc.DefaultPageSettings.Landscape = True
 
         For I = 0 To tempdataset.Tables("ac010s").Rows.Count - 1
-            doc = GetTransSlipDoc()   '取得空白的轉帳傳票   at printslip.vb
+            '目前系統為一般、退撫、撫建
+            Dim strTable As String = ""
+            If DNS_ACC.IndexOf("FUND") > 0 Or DNS_ACC.IndexOf("fund") > 0 Then strTable = "職員退休撫卹基金"
+            If DNS_ACC.IndexOf("BUIL") > 0 Or DNS_ACC.IndexOf("buil") > 0 Then strTable = "輔建基金"
+
+            doc = GetTransSlipDoc(orgName, strTable)   '取得空白的轉帳傳票   at printslip.vb
             page = doc.GetPage(0)
             allDoc.InsertDocument(doc) '將空白的轉帳傳票加入總文件
             '設定空白收入傳票上的機關名稱
-            page.GetText("機關名稱").Text = orgName
+            'page.GetText("機關名稱").Text = orgName & strTable
             page.GetText("轉帳種類").Text = IIf(tempdataset.Tables("ac010s").Rows(I)("kind") = "3", "借 方", "貸 方")
             '設定第0個table中,與製票相關的屬性
             page.GetTable(0).GetText("轉帳年").Text = FormatNumber(GetYear(tempdataset.Tables("ac010s").Rows(I)("date_1")), 0)

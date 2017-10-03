@@ -148,7 +148,7 @@ Public Class fmMain
             CHDNS_FUND = INI_Read("CONFIG", "SET", CHUNIT + "_FUND")
             INI_Write("CONFIG", "SET", "DNS_ACC", CHDNS_FUND)
             CHDNS_DB = "FUNDDB"
-        ElseIf InStr(1, sender.text, "輔健") Then
+        ElseIf InStr(1, sender.text, "輔建") Then
             CHDNS_BUIL = INI_Read("CONFIG", "SET", CHUNIT + "_BUIL")
             INI_Write("CONFIG", "SET", "DNS_ACC", CHDNS_BUIL)
             CHDNS_DB = "BUILDB"

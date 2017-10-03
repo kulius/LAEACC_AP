@@ -871,12 +871,18 @@ Public Class AC010
             Exit Sub
         End If
 
+        '目前系統為一般、退撫、撫建
+        Dim strTable As String = ""
+        If DNS_ACC.IndexOf("FUND") > 0 Or DNS_ACC.IndexOf("fund") > 0 Then strTable = "職員退休撫卹基金"
+        If DNS_ACC.IndexOf("BUIL") > 0 Or DNS_ACC.IndexOf("buil") > 0 Then strTable = "輔建基金"
+
         '取得空白的收入傳票
-        If sKind = "1" Then doc = GetIncomeSlipDoc()
-        If sKind = "2" Then doc = GetPaySlipDoc()
+        If sKind = "1" Then doc = GetIncomeSlipDoc(orgName, strTable)
+        If sKind = "2" Then doc = GetPaySlipDoc(orgName, strTable)
         page = doc.GetPage(0)
+
         '設定空白收入傳票上的機關名稱
-        page.GetText("機關名稱").Text = orgName
+        'page.GetText("機關名稱").Text = orgName & strTable
         Select Case intCopy
             Case 1
                 page.GetText("正副本").Text = "正本"

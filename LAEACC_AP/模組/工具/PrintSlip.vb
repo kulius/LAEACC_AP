@@ -3,7 +3,7 @@ Imports JBC.Printing
 
 Public Module PrintSlip
     '此函式產生一個空白的收入傳票報表
-    Public Function GetIncomeSlipDoc() As FPDocument
+    Public Function GetIncomeSlipDoc(ByVal strOrg As String, Optional strTable As String = "") As FPDocument
 
         Dim doc As New FPDocument("收入傳票")
         doc.DefaultFont = New Font("新細明體", 12)   '新細明體  標楷體
@@ -16,10 +16,10 @@ Public Module PrintSlip
         Dim timesOfBaseWidth As Integer = 4
 
         '機關名稱
-        Dim org As New FPText("測試農田水利會")
-        org.Name = "機關名稱"
+        Dim org As New FPText(strOrg & strTable)
+        org.Name = strOrg & strTable
         org.Font.Name = "標楷體"
-        org.Font.Size = 20
+        org.Font.Size = 20 - Len(strTable)
         org.SetTextColor(defaultColor)
         org.X = 78
         'org.HAlignment = FPAlignment.Center
@@ -31,7 +31,7 @@ Public Module PrintSlip
         orgLine.SetLineColor(defaultColor)
         orgLine.X1 = 78
         orgLine.Y1 = org.Y + orgSize.Height + 0.5
-        orgLine.X2 = orgLine.X1 + orgSize.Width + 23
+        orgLine.X2 = orgLine.X1 + orgSize.Width + 1
         orgLine.Y2 = orgLine.Y1
 
         '傳票種類
@@ -245,7 +245,7 @@ Public Module PrintSlip
         page.Add(slip)
         page.Add(slipLine1)
         page.Add(slipLine2)
-        page.Add(copykind)
+        page.Add(copyKind)
         page.Add(table0)
         page.Add(table1)
         page.Add(table2)
@@ -258,7 +258,7 @@ Public Module PrintSlip
     End Function
 
     '此函式產生一個空白的支出傳票報表
-    Public Function GetPaySlipDoc() As FPDocument
+    Public Function GetPaySlipDoc(ByVal strOrg As String, Optional strTable As String = "") As FPDocument
 
         Dim doc As New FPDocument("支出傳票")
         doc.DefaultFont = New Font("新細明體", 12)
@@ -271,10 +271,10 @@ Public Module PrintSlip
         Dim timesOfBaseWidth As Integer = 4
 
         '機關名稱
-        Dim org As New FPText("測試農田水利會")
-        org.Name = "機關名稱"
+        Dim org As New FPText(strOrg & strTable)
+        org.Name = strOrg & strTable
         org.Font.Name = "標楷體"
-        org.Font.Size = 20
+        org.Font.Size = 20 - Len(strTable)
         org.SetTextColor(defaultColor)
         org.X = 78
         'org.HAlignment = FPAlignment.Center
@@ -286,7 +286,7 @@ Public Module PrintSlip
         orgLine.SetLineColor(defaultColor)
         orgLine.X1 = 78
         orgLine.Y1 = org.Y + orgSize.Height + 0.5
-        orgLine.X2 = orgLine.X1 + orgSize.Width + 23
+        orgLine.X2 = orgLine.X1 + orgSize.Width + 1
         orgLine.Y2 = orgLine.Y1
 
         '傳票種類
@@ -521,7 +521,7 @@ Public Module PrintSlip
 
 
     '此函式產生一個空白的轉帳傳票報表
-    Public Function GetTransSlipDoc() As FPDocument
+    Public Function GetTransSlipDoc(ByVal strOrg As String, Optional strTable As String = "") As FPDocument
 
         Dim doc As New FPDocument("轉帳傳票")
         doc.DefaultFont = New Font("新細明體", 12)
@@ -534,10 +534,10 @@ Public Module PrintSlip
         Dim timesOfBaseWidth As Integer = 4
 
         '機關名稱
-        Dim org As New FPText("測試農田水利會")
-        org.Name = "機關名稱"
+        Dim org As New FPText(strOrg & strTable)
+        org.Name = strOrg & strTable
         org.Font.Name = "標楷體"
-        org.Font.Size = 20
+        org.Font.Size = 20 - Len(strTable)
         org.SetTextColor(defaultColor)
         org.X = 78
         'org.HAlignment = FPAlignment.Center
@@ -549,7 +549,7 @@ Public Module PrintSlip
         orgLine.SetLineColor(defaultColor)
         orgLine.X1 = 78
         orgLine.Y1 = org.Y + orgSize.Height + 0.5
-        orgLine.X2 = orgLine.X1 + orgSize.Width + 23
+        orgLine.X2 = orgLine.X1 + orgSize.Width + 1
         orgLine.Y2 = orgLine.Y1
 
         '傳票種類

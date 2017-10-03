@@ -755,12 +755,19 @@ Public Class FAC010
             Exit Sub
         End If
 
+        '目前系統為一般、退撫、撫建
+        Dim strTable As String = ""
+        If DNS_ACC.IndexOf("FUND") > 0 Or DNS_ACC.IndexOf("fund") > 0 Then strTable = "職員退休撫卹基金"
+        If DNS_ACC.IndexOf("BUIL") > 0 Or DNS_ACC.IndexOf("buil") > 0 Then strTable = "輔建基金"
+
         '取得空白的收入傳票
-        If sKind = "1" Then doc = GetIncomeSlipDoc()
-        If sKind = "2" Then doc = GetPaySlipDoc()
+        If sKind = "1" Then doc = GetIncomeSlipDoc(orgName, strTable)
+        If sKind = "2" Then doc = GetPaySlipDoc(orgName, strTable)
         page = doc.GetPage(0)
+
         '設定空白收入傳票上的機關名稱
-        page.GetText("機關名稱").Text = orgName
+        'page.GetText("機關名稱").Text = orgName & strTable
+
         '設定第0個table中,與製票相關的屬性
         page.GetTable(0).GetText("製票年").Text = FormatNumber(GetYear(tempdataset.Tables("ac010s").Rows(0)("date_1")), 0)
         page.GetTable(0).GetText("製票月").Text = Month(tempdataset.Tables("ac010s").Rows(0)("date_1"))

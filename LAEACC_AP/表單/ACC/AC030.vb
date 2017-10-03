@@ -822,12 +822,18 @@ Public Class AC030
             Exit Sub
         End If
 
+        '目前系統為一般、退撫、撫建
+        Dim strTable As String = ""
+        If DNS_ACC.IndexOf("FUND") > 0 Or DNS_ACC.IndexOf("fund") > 0 Then strTable = "職員退休撫卹基金"
+        If DNS_ACC.IndexOf("BUIL") > 0 Or DNS_ACC.IndexOf("buil") > 0 Then strTable = "輔建基金"
+
         '取得空白的收入傳票
-        If sKind = "1" Then doc = GetIncomeSlipDoc()
-        If sKind = "2" Then doc = GetPaySlipDoc()
+        If sKind = "1" Then doc = GetIncomeSlipDoc(orgName, strTable)
+        If sKind = "2" Then doc = GetPaySlipDoc(orgName, strTable)
         page = doc.GetPage(0)
+
         '設定空白收入傳票上的機關名稱
-        page.GetText("機關名稱").Text = orgName
+        'page.GetText("機關名稱").Text = orgName & strTable
         Select Case intCopy
             Case 1
                 page.GetText("正副本").Text = "正本"
@@ -836,6 +842,7 @@ Public Class AC030
             Case 0
                 page.GetText("正副本").Text = ""
         End Select
+
         '設定第0個table中,與製票相關的屬性
         page.GetTable(0).GetText("製票年").Text = FormatNumber(Year(tempdataset.Tables("ac010s").Rows(0)("date_1")), 0)
         page.GetTable(0).GetText("製票月").Text = Month(tempdataset.Tables("ac010s").Rows(0)("date_1"))
@@ -1165,11 +1172,11 @@ Public Class AC030
         allDoc.DefaultPageSettings.Landscape = True
 
         For I = 0 To tempdataset.Tables("ac010s").Rows.Count - 1
-            doc = GetTransSlipDoc()   '取得空白的轉帳傳票
+            doc = GetTransSlipDoc(orgName)   '取得空白的轉帳傳票
             page = doc.GetPage(0)
             allDoc.InsertDocument(doc) '將空白的轉帳傳票加入總文件
             '設定空白收入傳票上的機關名稱
-            page.GetText("機關名稱").Text = orgName
+            'page.GetText("機關名稱").Text = orgName
             page.GetText("轉帳種類").Text = IIf(tempdataset.Tables("ac010s").Rows(I)("kind") = "3", "借 方", "貸 方")
             Select Case intcopy
                 Case 1

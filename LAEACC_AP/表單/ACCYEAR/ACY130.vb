@@ -179,11 +179,11 @@ Public Class ACY130
         Dim intPage As Integer = 0
         For I = 0 To 999
             intPage += 1
-            doc = GetTransSlipDoc()   '取得空白的轉帳傳票
+            doc = GetTransSlipDoc(orgName)   '取得空白的轉帳傳票
             page = doc.GetPage(0)
             allDoc.InsertDocument(doc) '將空白的轉帳傳票加入總文件
             '設定空白收入傳票上的機關名稱
-            page.GetText("機關名稱").Text = orgName
+            'page.GetText("機關名稱").Text = orgName
             page.GetText("轉帳種類").Text = IIf(strDC = "1", "借 方", "貸 方")
             '設定第0個table中,與製票相關的屬性
             page.GetTable(0).GetText("轉帳年").Text = FormatNumber(GetYear(sdate) - 1911, 0)

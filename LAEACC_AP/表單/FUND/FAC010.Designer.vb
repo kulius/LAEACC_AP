@@ -1370,8 +1370,8 @@ Partial Class FAC010
         Me.TabControl1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
-
     End Sub
+
     Friend WithEvents lblDate1 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnCopy5 As System.Windows.Forms.Button

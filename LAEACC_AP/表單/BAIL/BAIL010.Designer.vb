@@ -447,12 +447,12 @@ Partial Class BAIL010
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label2.Location = New System.Drawing.Point(159, 9)
+        Me.Label2.Location = New System.Drawing.Point(151, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 23)
+        Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 40
         Me.Label2.Text = "工程代號"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label8
         '
@@ -517,9 +517,9 @@ Partial Class BAIL010
         Me.TabPage1.Controls.Add(Me.txtCop)
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.PictureBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 26)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(760, 447)
+        Me.TabPage1.Size = New System.Drawing.Size(760, 450)
         Me.TabPage1.TabIndex = 0
         '
         'chk_dtpDateE
@@ -668,7 +668,7 @@ Partial Class BAIL010
         'StatusBar1
         '
         Me.StatusBar1.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.StatusBar1.Location = New System.Drawing.Point(0, 425)
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 428)
         Me.StatusBar1.Name = "StatusBar1"
         Me.StatusBar1.Size = New System.Drawing.Size(760, 22)
         Me.StatusBar1.TabIndex = 61
@@ -693,8 +693,9 @@ Partial Class BAIL010
         Me.dtpKind3crE.Size = New System.Drawing.Size(120, 27)
         Me.dtpKind3crE.TabIndex = 59
         '
-        'FRMBAIL010
+        'BAIL010
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 611)
         Me.Controls.Add(Me.btnInq)
@@ -702,7 +703,8 @@ Partial Class BAIL010
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnEnd)
         Me.Controls.Add(Me.TabControl1)
-        Me.Name = "FRMBAIL010"
+        Me.Location = New System.Drawing.Point(0, 0)
+        Me.Name = "BAIL010"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

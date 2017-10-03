@@ -429,9 +429,9 @@ Partial Class BAIL020
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.dtgBail)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 26)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(760, 432)
+        Me.TabPage2.Size = New System.Drawing.Size(760, 435)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "多筆瀏覽"
         '
@@ -516,12 +516,12 @@ Partial Class BAIL020
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Label2.Location = New System.Drawing.Point(157, 9)
+        Me.Label2.Location = New System.Drawing.Point(147, 10)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 23)
+        Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 44
         Me.Label2.Text = "工程代號"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TabControl1
         '
@@ -555,9 +555,9 @@ Partial Class BAIL020
         Me.TabPage1.Controls.Add(Me.txtCop)
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.PictureBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 26)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(760, 432)
+        Me.TabPage1.Size = New System.Drawing.Size(760, 435)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "單筆編輯"
         '
@@ -730,7 +730,7 @@ Partial Class BAIL020
         'StatusBar1
         '
         Me.StatusBar1.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.StatusBar1.Location = New System.Drawing.Point(0, 410)
+        Me.StatusBar1.Location = New System.Drawing.Point(0, 413)
         Me.StatusBar1.Name = "StatusBar1"
         Me.StatusBar1.Size = New System.Drawing.Size(760, 22)
         Me.StatusBar1.TabIndex = 62
@@ -760,6 +760,7 @@ Partial Class BAIL020
         '
         'BAIL020
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 611)
         Me.Controls.Add(Me.RecMove1)
@@ -768,6 +769,7 @@ Partial Class BAIL020
         Me.Controls.Add(Me.txtInqEngno)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TabControl1)
+        Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "BAIL020"
         CType(Me.dtgBail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
