@@ -3,6 +3,7 @@
     Dim LoadAfter As Boolean
     Dim UpdSqlValue As String, InsField, InsValue As String
     Public Event TransJob(ByVal JobName As String, ByVal JobPara As String)
+
     Public Property Setds() As BindingManagerBase
         Get
 

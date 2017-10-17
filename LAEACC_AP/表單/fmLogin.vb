@@ -203,7 +203,7 @@ Public Class fmLogin
 
             '因單位電腦原設定關係，需改變為西元曆
             Select Case INI_Read("BASIC", "LOGIN", "FIRM")
-                Case "彰化", "石門", "苗栗", "測試"
+                Case "彰化", "桃園", "石門", "苗栗", "測試"
                     Call EngCalendar() '將日曆改為西元年
             End Select
 

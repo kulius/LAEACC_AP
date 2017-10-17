@@ -99,7 +99,7 @@
         txtBooks.Text = bm.Current("books")
     End Sub
 
-    Sub transjob(ByVal JobName As String, ByVal JobPara As String)
+    Sub transjob(ByVal JobName As String, ByVal JobPara As String) Handles RecMove1.TransJob
         Dim LastPos As Integer = bm.Position
         Select Case JobName
             Case "刪除記錄"
@@ -247,5 +247,9 @@
         Else
             sender.text = FormatNumber(ValComa(sender.text), 2)
         End If
+    End Sub
+
+    Private Sub RecMove1_Load(sender As Object, e As EventArgs) Handles RecMove1.Load
+
     End Sub
 End Class

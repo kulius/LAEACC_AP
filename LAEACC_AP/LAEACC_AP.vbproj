@@ -31,7 +31,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>93</ApplicationRevision>
+    <ApplicationRevision>100</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -945,6 +945,12 @@
     <Compile Include="表單\FUND\FAC030.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="表單\FUND\FAC050.Designer.vb">
+      <DependentUpon>FAC050.vb</DependentUpon>
+    </Compile>
+    <Compile Include="表單\FUND\FAC050.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="表單\PAY\PAY025.Designer.vb">
       <DependentUpon>PAY025.vb</DependentUpon>
     </Compile>
@@ -1524,6 +1530,9 @@
     <EmbeddedResource Include="表單\FUND\FAC030.resx">
       <DependentUpon>FAC030.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="表單\FUND\FAC050.resx">
+      <DependentUpon>FAC050.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="表單\PAY\CHF010.resx">
       <DependentUpon>CHF010.vb</DependentUpon>
     </EmbeddedResource>
@@ -1623,7 +1632,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="INI\CONFIG.ini">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="INI\VERIFY.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

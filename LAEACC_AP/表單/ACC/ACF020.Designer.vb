@@ -565,7 +565,7 @@ Partial Class ACF020
         Me.TabPage2.Controls.Add(Me.txtKind)
         Me.TabPage2.Location = New System.Drawing.Point(4, 26)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(925, 467)
+        Me.TabPage2.Size = New System.Drawing.Size(925, 466)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "單筆明細"
         '
@@ -942,7 +942,7 @@ Partial Class ACF020
         Me.TabPage3.Controls.Add(Me.GroupBox3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 26)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(925, 467)
+        Me.TabPage3.Size = New System.Drawing.Size(925, 466)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "條件設定"
         '
@@ -1071,24 +1071,25 @@ Partial Class ACF020
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.RecMove1)
-        Me.GroupBox5.Location = New System.Drawing.Point(12, 559)
+        Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBox5.Location = New System.Drawing.Point(0, 565)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(933, 56)
+        Me.GroupBox5.Size = New System.Drawing.Size(984, 59)
         Me.GroupBox5.TabIndex = 29
         Me.GroupBox5.TabStop = False
         '
         'RecMove1
         '
-        Me.RecMove1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.RecMove1.Dock = System.Windows.Forms.DockStyle.Top
         Me.RecMove1.FilesPara = Nothing
         Me.RecMove1.GenInsFunc = "() values ()"
         Me.RecMove1.genupdfunc = ""
-        Me.RecMove1.Location = New System.Drawing.Point(3, 7)
-        Me.RecMove1.Margin = New System.Windows.Forms.Padding(7, 8, 7, 8)
+        Me.RecMove1.Location = New System.Drawing.Point(3, 21)
+        Me.RecMove1.Margin = New System.Windows.Forms.Padding(9, 11, 9, 11)
         Me.RecMove1.Name = "RecMove1"
         Me.RecMove1.Setds = Nothing
         Me.RecMove1.Setpos = 0
-        Me.RecMove1.Size = New System.Drawing.Size(927, 46)
+        Me.RecMove1.Size = New System.Drawing.Size(978, 46)
         Me.RecMove1.TabIndex = 29
         '
         'ACF020

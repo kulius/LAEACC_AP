@@ -168,7 +168,7 @@ INSERT INTO a_sys_nunit_item VALUES ('FAC030','FDA','S0','開立轉帳傳票','2
 INSERT INTO a_sys_nunit_item VALUES ('FAC011','FDA','S0','修改收支傳票','3',null,null)
 INSERT INTO a_sys_nunit_item VALUES ('FAC031','FDA','S0','修改轉帳傳票','4',null,null)
 INSERT INTO a_sys_nunit_item VALUES ('FAC040','FDA','S0','轉帳傳票決裁','5','AC040',null)
-INSERT INTO a_sys_nunit_item VALUES ('FAC050','FDA','S0','過      帳','6','AC050',null)
+INSERT INTO a_sys_nunit_item VALUES ('FAC050','FDA','S0','過      帳','6',null,null)
 INSERT INTO a_sys_nunit_item VALUES ('FAC150','FDA','S0','查詢執行情形','7','AC150',null)
 GO
 INSERT INTO a_sys_nunit_item VALUES ('FACM010','FDA','S1','總分類帳彙總表','1','ACM010',null)
@@ -252,7 +252,8 @@ INSERT INTO a_sys_nunit_item VALUES ('FPAY_ACF020','FDP','S4','傳票明細帳�
 GO
 
 --20170922 加入退撫會計及出納選單
-insert into a_sys_name values('BLA','輔健會計','12')
+DELETE a_sys_name where s_system_id='BLA'
+insert into a_sys_name values('BLA','輔建會計','12')
 GO
 
 DELETE a_sys_nunit where s_system_id='BLA'
@@ -316,8 +317,8 @@ GO
             
   
 
-
-insert into a_sys_name values('BLP','輔健出納','13')
+DELETE a_sys_name where s_system_id='BLP'
+insert into a_sys_name values('BLP','輔建出納','13')
 GO
 
 DELETE a_sys_nunit where s_system_id='BLP'

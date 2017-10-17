@@ -43,7 +43,7 @@ Public Class BAIL060
         Dim dr, dr1 As DataRow
         Try
             sql = "SELECT unit_id, unit_name FROM Auth_Unit ORDER BY  unit_id"
-            ds = openmember("stafconn", "auth_unit", sql)
+            ds = openmember(DNS_AUTH, "auth_unit", sql)
 
             dr = ds.Tables(0).NewRow
             dr.Item(0) = "0010"
