@@ -140,14 +140,18 @@ Public Class BAIL060
                     End If
 
                     '取得所屬單位
-                    Dim j As Integer
-                    For j = 0 To ds.Tables(0).Rows.Count - 1
-                        If Not IsDBNull(mydataset.Tables("BAILF010").Rows(intI).Item("unit")) Then
-                            If mydataset.Tables("BAILF010").Rows(intI).Item("unit") = ds.Tables(0).Rows(j).Item("unit_id") Then
-                                mydataset.Tables("BAILF010").Rows(intI).Item("unit") = ds.Tables(0).Rows(j).Item("unit_name")
+                    Try
+                        Dim j As Integer
+                        For j = 0 To ds.Tables(0).Rows.Count - 1
+                            If Not IsDBNull(mydataset.Tables("BAILF010").Rows(intI).Item("unit")) Then
+                                If mydataset.Tables("BAILF010").Rows(intI).Item("unit") = ds.Tables(0).Rows(j).Item("unit_id") Then
+                                    mydataset.Tables("BAILF010").Rows(intI).Item("unit") = ds.Tables(0).Rows(j).Item("unit_name")
+                                End If
                             End If
-                        End If
-                    Next
+                        Next
+                    Catch ex As Exception
+
+                    End Try
                     '---------------------------------------------------------------------------
                     mydatasetInq.Clear()
                 End If

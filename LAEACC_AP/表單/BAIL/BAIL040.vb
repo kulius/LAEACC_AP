@@ -1,4 +1,5 @@
 ﻿Public Class BAIL040
+   
     Dim LoadAfter, Dirty As Boolean
     Private disabledBackBrush As Brush
     Private disabledTextBrush As Brush
@@ -169,7 +170,7 @@
     End Sub
 
 
-    Private Sub dtg1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dtg1.Click
+    Private Sub dtg1_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim selectedCell As System.Windows.Forms.DataGridCell
         selectedCell = dtg1.CurrentCell
         Dim selectedItem As Object
@@ -184,7 +185,7 @@
         End If
     End Sub
 
-    Private Sub dtg1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles dtg1.DoubleClick
+    Private Sub dtg1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim selectedCell As System.Windows.Forms.DataGridCell
         selectedCell = dtg1.CurrentCell
         Dim selectedItem As Object
@@ -202,4 +203,5 @@
     Private Sub btnEnd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEnd.Click
         Me.Close()
     End Sub
+
 End Class
