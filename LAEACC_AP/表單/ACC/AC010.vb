@@ -7,7 +7,7 @@ Public Class AC010
     Dim LoadAfter, Dirty As Boolean
     Dim sqlstr As String
     Dim bmS, bmT As BindingManagerBase, strAccno4 As String
-    Dim myDatasetS, myDatasetT, mydataset, tempdataset, psDataset, accnoDataset As DataSet
+    Dim myDatasetS, myDatasetT, mydataset, tempdataset, psDataset, accnoDataset, bankdataset As DataSet
     Dim ac010kind As String
     Dim strObject As String
     Dim DNS_ACC As String = INI_Read("CONFIG", "SET", "DNS_ACC")
@@ -29,6 +29,26 @@ Public Class AC010
         End If
         If TransPara.TransP("UnitTitle").indexof("彰化") >= 0 Then btnIntCopy.Visible = False '彰化傳票印一份botton不顯示
 
+        Dim sqlstr As String
+        Dim i As Integer
+
+        If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+            txtArea.Visible = True
+            cboArea.Visible = True
+            lblArea.Visible = True
+
+            '管理處combobox
+            sqlstr = "SELECT area,area + areaname  as carea FROM AREA"
+            mydataset = openmember("", "area", sqlstr)
+            If mydataset.Tables("area").Rows.Count = 0 Then
+                cboArea.Text = "尚無管理處代號"
+            Else
+                cboArea.DataSource = mydataset.Tables("area")
+                cboArea.DisplayMember = "carea"  '顯示欄位
+                cboArea.ValueMember = "area"     '欄位值
+            End If
+        End If
+
         LoadAfter = True
         TabControl1.Visible = False
         dtpDate.Value = TransPara.TransP("UserDate")
@@ -37,8 +57,7 @@ Public Class AC010
         '    dtpDate.Value = CStr(Year(Now) - 1) + "/12/31"
         'End If
         '將所有銀行置combobox   
-        Dim sqlstr As String
-        Dim i As Integer
+
         sqlstr = "SELECT bank,bank + bankname + str(balance+day_income-day_pay-unpay,14) as cbank FROM chf020"
         mydataset = openmember(DNS_ACC, "chf020", sqlstr)
         If mydataset.Tables("chf020").Rows.Count = 0 Then
@@ -70,6 +89,7 @@ Public Class AC010
             cboAccno.ValueMember = "accno"     '欄位值
         End If
 
+
         dtgTarget.AutoGenerateColumns = False
         dtgSource.AutoGenerateColumns = False
 
@@ -90,6 +110,21 @@ Public Class AC010
         If rdbFile3.Checked Then sFile = "3"
         '傳票總類(1收2支)
         sKind = IIf(rdbKind1.Checked, "1", "2")
+
+        If sKind = "1" Then
+            txtArea.Visible = False
+            cboArea.Visible = False
+            lblArea.Visible = False
+            txtArea.Text = ""
+        Else
+            If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+                txtArea.Visible = True
+                cboArea.Visible = True
+                lblArea.Visible = True
+            End If
+
+        End If
+
 
         lblYear.Text = Format(sYear, "000")
         If sFile = "1" Then lblFile.Text = "請輸入請購編號"
@@ -227,7 +262,7 @@ Public Class AC010
         Call clsScreen()
         Dim SumAmt As Decimal = 0
         Dim intI As Integer
-        Dim strI, strRemark, sqlstr, sbank, strAccno As String
+        Dim strI, strRemark, sqlstr, sbank, sArea, strAccno As String
         Dim tempdataset As DataSet
 
         bmT.Position = 0
@@ -311,10 +346,12 @@ Public Class AC010
         '設定銀行
         bmT.Position = 0
         sbank = ""
+        sArea = ""
         sqlstr = "SELECT bank FROM accname WHERE ACCNO = '" & Trim(Mid(bmT.Current("accno"), 1, 16)) & "'"
         tempdataset = openmember(DNS_ACC, "accname", sqlstr)
         If nz(tempdataset.Tables("accname").Rows(0).Item(0), "").ToString.Trim() <> "" Then
             sbank = nz(tempdataset.Tables("accname").Rows(0).Item(0), "").ToString.Trim()
+            sArea = nz(tempdataset.Tables("accname").Rows(0).Item(1), "")
             'Else
             '    sbank = dbGetSingleRow(DNS_ACC, "ACF010", "BANK", "ACCYEAR = '" & GetYear(dtpDate.Value) & "'", "autono DESC")
         End If
@@ -346,6 +383,16 @@ Public Class AC010
         'If Trim(sbank) = "" And TransPara.TransP("UnitTitle").indexof("公") >= 0 Then
         '    cboBank.SelectedValue = "04"
         'End If
+        If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+            cboBank.SelectedValue = sbank    '設定科目銀行選定值
+            txtBank.Text = sbank
+
+            If Trim(sArea) <> "" Then    '設定科目管理處選定值
+                cboArea.SelectedValue = sArea
+                txtArea.Text = sArea
+            End If
+        End If
+
 
         tempdataset = Nothing
         lblDate1.Text = dtpDate.Value.ToShortDateString
@@ -581,6 +628,7 @@ Public Class AC010
         Dim AryOther() = {"", "", "", "", ""}
         Dim AryQty() = {"", "", "", "", ""}
         Dim tempdataset As DataSet
+        Dim oldPaySeq As Integer = 0
 
         '防呆
         If cboBank.SelectedValue = "" Then MsgBox("※銀行帳號未選擇※", MsgBoxStyle.Exclamation) : Exit Sub
@@ -683,6 +731,20 @@ Public Class AC010
             sqlstr = "DELETE acf020 where accyear=" & sYear & " and kind='" & sKind & "' and no_1_no=" & txtOldNo.Text
             retstr = runsql(mastconn, sqlstr)
             If retstr <> "sqlok" Then MsgBox("ACF020刪除失敗" & sqlstr)
+
+            If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+                '檢查是否已印過匯款單  oldpayseq=0 未印 oldpayseq>0 已印    99/2/22
+                sqlstr = "select * from transpay where accyear=" & sYear & " and no_1_no=" & txtOldNo.Text
+                tempdataset = openmember("", "transpay", sqlstr)
+                If tempdataset.Tables("transpay").Rows.Count > 0 Then
+                    oldPaySeq = tempdataset.Tables("transpay").Rows(0).Item("payseq")
+                    sqlstr = "delete from transpay where accyear=" & sYear & " and no_1_no=" & txtOldNo.Text
+                    retstr = runsql(mastconn, sqlstr)
+                Else
+                    oldPaySeq = 0
+                End If
+            End If
+
         End If
 
         '寫入資料表acf010傳票總帳檔
@@ -710,6 +772,14 @@ Public Class AC010
             Else
                 strDc = "2"      '收入傳票1項為貸方,支出傳票時9項為貸方
             End If
+
+            If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+                If oldPaySeq > 0 Then  '表示有列印匯款單
+                    GenInsSql("payseq", oldPaySeq, "N")
+                End If
+            End If
+
+
             GenInsSql("dc", strDc, "T")
             If intI = 1 Then
                 strAccno = Trim(vxtAccno1.Text.Replace("-", ""))
@@ -725,6 +795,14 @@ Public Class AC010
             GenInsSql("remark", Trim(txtRemark1.Text), "U")   '摘要
             GenInsSql("amt", SumAmt, "N")
             GenInsSql("act_amt", SumAmt - Val(txtSubAmt.Text), "N")
+
+            If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+                If sKind = "2" Then
+                    GenInsSql("area", txtArea.Text, "T")    'GenInsSql("area", cboArea.SelectedValue, "T")
+                End If
+            End If
+
+
             GenInsSql("bank", cboBank.SelectedValue, "T")
             GenInsSql("books", " ", "T")                 '過帳碼
             sqlstr = "insert into acf010 " & GenInsFunc
@@ -780,6 +858,27 @@ Public Class AC010
                 End If
                 Exit Sub
             End If
+            If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+                If oldPaySeq > 0 And Trim(txtArea.Text) <> "" Then    '修改傳票其之前已列印過匯款單
+                    GenInsSql("accyear", sYear, "N")
+                    GenInsSql("date_1", strdate1, "D")
+                    GenInsSql("payseq", oldPaySeq, "N")
+                    GenInsSql("no_1_no", intNo, "N")
+                    GenInsSql("item", CType(intI + 2, String), "T")
+                    GenInsSql("bank", txtBank.Text, "T")
+                    GenInsSql("area", txtArea.Text, "T")
+                    GenInsSql("remark", AryRemark(intI), "U")
+                    If intI = 0 Then
+                        GenInsSql("act_amt", AryAmt(intI) - Val(txtSubAmt.Text), "N") '有沖付數由第一項明細扣
+                    Else
+                        GenInsSql("act_amt", AryAmt(intI), "N")
+                    End If
+                    sqlstr = "insert into transpay " & GenInsFunc
+                    retstr = runsql(mastconn, sqlstr)
+                End If
+            End If
+            
+
         Next
 
         '回寫編號至傳票來源
@@ -955,6 +1054,22 @@ Public Class AC010
         sKind = IIf(rdbKind3.Checked, "1", "2")
         If sKind = "1" Then TabPage2.BackColor = System.Drawing.Color.RosyBrown 'Thistle 'MistyRose
         If sKind = "2" Then TabPage2.BackColor = System.Drawing.Color.DarkSeaGreen
+
+        If sKind = "1" Then
+            txtArea.Visible = False   '收入傳票不需管理處
+            cboArea.Visible = False
+            lblArea.Visible = False
+            txtArea.Text = ""
+        Else
+            If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+                txtArea.Visible = True
+                cboArea.Visible = True
+                lblArea.Visible = True
+            End If
+
+        End If
+
+
         Dim SumAmt As Decimal = 0
         Dim intI As Integer
         Dim strI, sqlstr As String
@@ -978,6 +1093,14 @@ Public Class AC010
         End If
         lblDate1.Text = tempdataset.Tables("ac010s").Rows(0)("date_1")         '製票日期
         cboBank.SelectedValue = tempdataset.Tables("ac010s").Rows(0)("bank")   '設定科目銀行選定值
+        '嘉南水利會
+        If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+            txtBank.Text = cboBank.SelectedValue
+            cboArea.SelectedValue = tempdataset.Tables("ac010s").Rows(0)("area")   '設定科目管理處選定值
+            txtArea.Text = cboArea.SelectedValue
+        End If
+
+
         txtSubAmt.Text = tempdataset.Tables("ac010s").Rows(0)("amt") - tempdataset.Tables("ac010s").Rows(0)("act_amt")
         txtRemark1.Text = tempdataset.Tables("ac010s").Rows(0)("remark")
         vxtAccno1.Text = tempdataset.Tables("ac010s").Rows(0)("accno")
@@ -1145,5 +1268,27 @@ Public Class AC010
             FindControl(Me, "lblOtherName" & Mid(strObjectName, 9, 1)).Text = tempdataset.Tables("accname").Rows(0).Item(0)
         End If
         tempdataset = Nothing
+    End Sub
+
+    Private Sub txtArea_TextChanged(sender As Object, e As EventArgs) Handles txtArea.TextChanged
+
+    End Sub
+
+    Private Sub txtArea_KeyUp(sender As Object, e As KeyEventArgs) Handles txtArea.KeyUp
+        If Len(txtArea.Text) = 2 Then
+            cboArea.SelectedValue = txtArea.Text
+            btnFinish.Focus()
+        End If
+    End Sub
+
+    Private Sub txtBank_KeyUp(sender As Object, e As KeyEventArgs) Handles txtBank.KeyUp
+        If Len(txtBank.Text) = 2 Then
+            cboBank.SelectedValue = txtBank.Text
+            If sKind = "1" Then '收入傳票
+                btnFinish.Focus()
+            Else
+                SendKeys.Send("{TAB}")
+            End If
+        End If
     End Sub
 End Class

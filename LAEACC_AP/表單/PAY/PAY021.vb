@@ -1,12 +1,12 @@
 ﻿Imports CHIA.CheckPrint
 Public Class PAY021
-    Dim sDate, sqlstr, sBank, retstr As String   '開票日
-    Dim sYear, intTemp, intI As Integer
+    Dim sDate, sqlstr, sBank, retstr, errFlag As String   '開票日
+    Dim sYear, intTemp, intI, intQ As Integer
     Dim intChkForm As Integer = 1
     Dim mydsS As DataSet
     Dim LoadAfter, Dirty As Boolean
     Dim bm As BindingManagerBase
-    Dim myDatasetS, mydataset, psDataSet As DataSet
+    Dim myDatasetS, mydataset, psDataSet, dsSeq As DataSet
     Dim arrayNo As String
     Dim intCnt As Integer = 0
     'Friend WithEvents RecMove1 As pay.RecMove '定義傳票筆數
@@ -42,6 +42,18 @@ Public Class PAY021
             cboName.SelectionLength = 60
         End If
         txtNo1.Focus()
+
+        If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+            GroupBox1.Visible = True
+            Label17.Visible = True
+            lblAreaName.Visible = True
+            lblarea.Visible = True
+        Else
+            GroupBox1.Visible = False
+            Label17.Visible = False
+            lblAreaName.Visible = False
+            lblarea.Visible = False
+        End If
     End Sub
 
     Private Sub btnSureNo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSureNo.Click
@@ -90,6 +102,12 @@ Public Class PAY021
         End If
         lblNo1.Text = mydsS.Tables("acf010t").Rows(0).Item("no_1_no")
         lblBank.Text = mydsS.Tables("acf010t").Rows(0).Item("bank")
+        If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+            lblarea.Text = nz(mydsS.Tables("acf010t").Rows(0).Item("area"), "")
+            lblAreaName.Text = nz(mydsS.Tables("acf010t").Rows(0).Item("areaname"), "")
+        End If
+
+
         lblAct_Amt.Text = FormatNumber(mydsS.Tables("acf010t").Rows(0).Item("act_amt"), 0)
         lblRemark.Text = Trim(mydsS.Tables("acf010t").Rows(0).Item("remark"))
         If intCnt = 0 Then    '第一筆
@@ -182,6 +200,13 @@ Public Class PAY021
         nr("remark") = lblRemark.Text
         nr("act_amt") = ValComa(lblAct_Amt.Text)
         nr("bank") = lblBank.Text
+
+        If TransPara.TransP("UnitTitle").indexof("嘉南") >= 0 Then
+            nr("area") = lblarea.Text
+            nr("areaname") = lblAreaName.Text
+        End If
+
+
         myDatasetS.Tables("acf010s").Rows.Add(nr)                          '增行至source grid
         lblTotAmt.Text = FormatNumber(ValComa(lblTotAmt.Text) + ValComa(lblAct_Amt.Text), 0)
         lblTotNo.Text = FormatNumber(intCnt, 0)
@@ -332,5 +357,26 @@ Public Class PAY021
 
     Private Sub btnBack_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBack.Click
         TabControl1.SelectedIndex = 0
+    End Sub
+
+    Private Sub btnSurePaySeq_Click(sender As Object, e As EventArgs) Handles btnSurePaySeq.Click
+        intQ = 0 '匯款單傳票張數
+        sqlstr = "SELECT no_1_no FROM transpay where accyear=" & sYear & _
+                 " and payseq=" & txtPaySeq.Text & " and bank='" & txtBank.Text & _
+                 "' and area='" & txtArea.Text & "' and item='2' order by no_1_no"
+        dsSeq = openmember("", "transpay", sqlstr)
+        With dsSeq.Tables("transpay")
+            If .Rows.Count <= 0 Then
+                MsgBox("無此資料")
+                Exit Sub
+            End If
+            For intQ = 0 To .Rows.Count - 1
+                txtNo1.Text = nz(.Rows(intQ).Item("no_1_no"), "")
+                Call btnSureNo_Click(New System.Object, New System.EventArgs)
+                If errFlag <> "N" Then
+                    Exit Sub
+                End If
+            Next
+        End With
     End Sub
 End Class

@@ -113,7 +113,7 @@ Partial Class ACCNAME
         '
         Me.vxtEndNo.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.vxtEndNo.Location = New System.Drawing.Point(386, 4)
-        Me.vxtEndNo.Mask = "#-####-##-##-#######-#"
+        Me.vxtEndNo.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtEndNo.Name = "vxtEndNo"
         Me.vxtEndNo.Size = New System.Drawing.Size(168, 27)
         Me.vxtEndNo.TabIndex = 125
@@ -122,7 +122,7 @@ Partial Class ACCNAME
         '
         Me.vxtStartNo.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.vxtStartNo.Location = New System.Drawing.Point(133, 2)
-        Me.vxtStartNo.Mask = "#-####-##-##-#######-#"
+        Me.vxtStartNo.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtStartNo.Name = "vxtStartNo"
         Me.vxtStartNo.Size = New System.Drawing.Size(185, 27)
         Me.vxtStartNo.TabIndex = 124
@@ -305,7 +305,7 @@ Partial Class ACCNAME
         '
         Me.vxtBook.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.vxtBook.Location = New System.Drawing.Point(160, 320)
-        Me.vxtBook.Mask = "#-####-##-##-#######-#"
+        Me.vxtBook.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtBook.Name = "vxtBook"
         Me.vxtBook.Size = New System.Drawing.Size(185, 27)
         Me.vxtBook.TabIndex = 126
@@ -314,7 +314,7 @@ Partial Class ACCNAME
         '
         Me.vxtAccno.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.vxtAccno.Location = New System.Drawing.Point(160, 40)
-        Me.vxtAccno.Mask = "#-####-##-##-#######-#"
+        Me.vxtAccno.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtAccno.Name = "vxtAccno"
         Me.vxtAccno.Size = New System.Drawing.Size(185, 27)
         Me.vxtAccno.TabIndex = 125
@@ -792,7 +792,7 @@ Partial Class ACCNAME
         '
         Me.vxtAccnoEnd.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.vxtAccnoEnd.Location = New System.Drawing.Point(208, 113)
-        Me.vxtAccnoEnd.Mask = "#-####-##-##-#######-#"
+        Me.vxtAccnoEnd.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtAccnoEnd.Name = "vxtAccnoEnd"
         Me.vxtAccnoEnd.Size = New System.Drawing.Size(185, 27)
         Me.vxtAccnoEnd.TabIndex = 127
@@ -801,7 +801,7 @@ Partial Class ACCNAME
         '
         Me.vxtAccnoStart.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.vxtAccnoStart.Location = New System.Drawing.Point(208, 56)
-        Me.vxtAccnoStart.Mask = "#-####-##-##-#######-#"
+        Me.vxtAccnoStart.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtAccnoStart.Name = "vxtAccnoStart"
         Me.vxtAccnoStart.Size = New System.Drawing.Size(185, 27)
         Me.vxtAccnoStart.TabIndex = 126
@@ -904,6 +904,7 @@ Partial Class ACCNAME
         '
         'ACCNAME
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 611)
         Me.Controls.Add(Me.vxtEndNo)
@@ -914,6 +915,7 @@ Partial Class ACCNAME
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.RecMove1)
+        Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "ACCNAME"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

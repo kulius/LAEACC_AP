@@ -325,4 +325,5 @@ Public Class BAILF030
     Private Sub DataGrid1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles DataGrid1.DoubleClick
         TabControl1.SelectedIndex = 1
     End Sub
+
 End Class

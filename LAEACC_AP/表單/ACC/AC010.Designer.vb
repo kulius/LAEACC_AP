@@ -22,8 +22,8 @@ Partial Class AC010
     '請不要使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rdbKind2 = New System.Windows.Forms.RadioButton()
@@ -157,6 +157,10 @@ Partial Class AC010
         Me.lblDate1 = New System.Windows.Forms.Label()
         Me.lblNowNO = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtBank = New System.Windows.Forms.TextBox()
+        Me.txtArea = New System.Windows.Forms.TextBox()
+        Me.cboArea = New System.Windows.Forms.ComboBox()
+        Me.lblArea = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.gbxCreate.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -514,9 +518,9 @@ Partial Class AC010
         'scuseamt
         '
         Me.scuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Format = "###,###,##0.##"
-        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle11.Format = "###,###,##0.##"
+        Me.scuseamt.DefaultCellStyle = DataGridViewCellStyle11
         Me.scuseamt.HeaderText = "金額"
         Me.scuseamt.Name = "scuseamt"
         Me.scuseamt.Width = 120
@@ -632,9 +636,9 @@ Partial Class AC010
         'dcuseamt
         '
         Me.dcuseamt.DataPropertyName = "useamt"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "###,###,##0.##"
-        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Format = "###,###,##0.##"
+        Me.dcuseamt.DefaultCellStyle = DataGridViewCellStyle12
         Me.dcuseamt.HeaderText = "金額"
         Me.dcuseamt.Name = "dcuseamt"
         '
@@ -659,6 +663,10 @@ Partial Class AC010
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.PaleGreen
+        Me.TabPage2.Controls.Add(Me.lblArea)
+        Me.TabPage2.Controls.Add(Me.txtBank)
+        Me.TabPage2.Controls.Add(Me.txtArea)
+        Me.TabPage2.Controls.Add(Me.cboArea)
         Me.TabPage2.Controls.Add(Me.btnOther)
         Me.TabPage2.Controls.Add(Me.btnPs6)
         Me.TabPage2.Controls.Add(Me.btnPs5)
@@ -1105,9 +1113,9 @@ Partial Class AC010
         'cboBank
         '
         Me.cboBank.FormattingEnabled = True
-        Me.cboBank.Location = New System.Drawing.Point(301, 457)
+        Me.cboBank.Location = New System.Drawing.Point(336, 457)
         Me.cboBank.Name = "cboBank"
-        Me.cboBank.Size = New System.Drawing.Size(340, 24)
+        Me.cboBank.Size = New System.Drawing.Size(305, 24)
         Me.cboBank.TabIndex = 44
         Me.cboBank.TabStop = False
         '
@@ -1117,7 +1125,7 @@ Partial Class AC010
         Me.Label12.ForeColor = System.Drawing.Color.Blue
         Me.Label12.Location = New System.Drawing.Point(241, 461)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(108, 16)
+        Me.Label12.Size = New System.Drawing.Size(54, 20)
         Me.Label12.TabIndex = 47
         Me.Label12.Text = "銀行"
         '
@@ -1492,6 +1500,44 @@ Partial Class AC010
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "製票日期："
         '
+        'txtBank
+        '
+        Me.txtBank.Font = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.txtBank.Location = New System.Drawing.Point(282, 455)
+        Me.txtBank.MaxLength = 2
+        Me.txtBank.Name = "txtBank"
+        Me.txtBank.Size = New System.Drawing.Size(48, 30)
+        Me.txtBank.TabIndex = 84
+        '
+        'txtArea
+        '
+        Me.txtArea.Font = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.txtArea.Location = New System.Drawing.Point(701, 453)
+        Me.txtArea.MaxLength = 2
+        Me.txtArea.Name = "txtArea"
+        Me.txtArea.Size = New System.Drawing.Size(48, 30)
+        Me.txtArea.TabIndex = 85
+        Me.txtArea.Visible = False
+        '
+        'cboArea
+        '
+        Me.cboArea.Location = New System.Drawing.Point(755, 456)
+        Me.cboArea.Name = "cboArea"
+        Me.cboArea.Size = New System.Drawing.Size(193, 24)
+        Me.cboArea.TabIndex = 83
+        Me.cboArea.Visible = False
+        '
+        'lblArea
+        '
+        Me.lblArea.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.lblArea.ForeColor = System.Drawing.Color.Blue
+        Me.lblArea.Location = New System.Drawing.Point(647, 457)
+        Me.lblArea.Name = "lblArea"
+        Me.lblArea.Size = New System.Drawing.Size(48, 24)
+        Me.lblArea.TabIndex = 100
+        Me.lblArea.Text = "管理處"
+        Me.lblArea.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'AC010
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -1663,4 +1709,8 @@ Partial Class AC010
     Friend WithEvents btnOther As System.Windows.Forms.Button
     Friend WithEvents btnClose As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents txtBank As System.Windows.Forms.TextBox
+    Friend WithEvents txtArea As System.Windows.Forms.TextBox
+    Friend WithEvents cboArea As System.Windows.Forms.ComboBox
+    Friend WithEvents lblArea As System.Windows.Forms.Label
 End Class

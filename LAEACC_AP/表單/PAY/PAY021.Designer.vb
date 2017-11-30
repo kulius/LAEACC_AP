@@ -69,12 +69,24 @@ Partial Class PAY021
         Me.txtNo1 = New System.Windows.Forms.TextBox()
         Me.btnSure = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.RecMove1 = New LAEACC_AP.RecMove()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtArea = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtBank = New System.Windows.Forms.TextBox()
+        Me.txtPaySeq = New System.Windows.Forms.TextBox()
+        Me.btnSurePaySeq = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lblAreaName = New System.Windows.Forms.Label()
+        Me.lblarea = New System.Windows.Forms.Label()
         CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label3
@@ -99,7 +111,7 @@ Partial Class PAY021
         '
         'lblMsg
         '
-        Me.lblMsg.Location = New System.Drawing.Point(440, 56)
+        Me.lblMsg.Location = New System.Drawing.Point(435, 66)
         Me.lblMsg.Name = "lblMsg"
         Me.lblMsg.Size = New System.Drawing.Size(312, 23)
         Me.lblMsg.TabIndex = 33
@@ -109,7 +121,7 @@ Partial Class PAY021
         '
         Me.lblBalance.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.lblBalance.ForeColor = System.Drawing.Color.Red
-        Me.lblBalance.Location = New System.Drawing.Point(432, 464)
+        Me.lblBalance.Location = New System.Drawing.Point(427, 474)
         Me.lblBalance.Name = "lblBalance"
         Me.lblBalance.Size = New System.Drawing.Size(144, 23)
         Me.lblBalance.TabIndex = 32
@@ -119,7 +131,7 @@ Partial Class PAY021
         '
         Me.Label5.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(368, 464)
+        Me.Label5.Location = New System.Drawing.Point(363, 474)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 23)
         Me.Label5.TabIndex = 31
@@ -130,7 +142,7 @@ Partial Class PAY021
         '
         Me.lblTotAmt.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.lblTotAmt.ForeColor = System.Drawing.Color.Red
-        Me.lblTotAmt.Location = New System.Drawing.Point(656, 456)
+        Me.lblTotAmt.Location = New System.Drawing.Point(651, 466)
         Me.lblTotAmt.Name = "lblTotAmt"
         Me.lblTotAmt.Size = New System.Drawing.Size(104, 23)
         Me.lblTotAmt.TabIndex = 30
@@ -151,7 +163,7 @@ Partial Class PAY021
         Me.txtChkNo.Location = New System.Drawing.Point(120, 120)
         Me.txtChkNo.MaxLength = 10
         Me.txtChkNo.Name = "txtChkNo"
-        Me.txtChkNo.Size = New System.Drawing.Size(112, 29)
+        Me.txtChkNo.Size = New System.Drawing.Size(112, 25)
         Me.txtChkNo.TabIndex = 10
         '
         'btnExit
@@ -203,7 +215,7 @@ Partial Class PAY021
         Me.btnSureTR.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSureTR.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.btnSureTR.ForeColor = System.Drawing.Color.Yellow
-        Me.btnSureTR.Location = New System.Drawing.Point(440, 8)
+        Me.btnSureTR.Location = New System.Drawing.Point(771, 4)
         Me.btnSureTR.Name = "btnSureTR"
         Me.btnSureTR.Size = New System.Drawing.Size(120, 40)
         Me.btnSureTR.TabIndex = 38
@@ -215,7 +227,7 @@ Partial Class PAY021
         '
         Me.lblTotNo.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.lblTotNo.ForeColor = System.Drawing.Color.Red
-        Me.lblTotNo.Location = New System.Drawing.Point(648, 480)
+        Me.lblTotNo.Location = New System.Drawing.Point(643, 490)
         Me.lblTotNo.Name = "lblTotNo"
         Me.lblTotNo.Size = New System.Drawing.Size(104, 23)
         Me.lblTotNo.TabIndex = 37
@@ -225,7 +237,7 @@ Partial Class PAY021
         '
         Me.Label4.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(584, 480)
+        Me.Label4.Location = New System.Drawing.Point(579, 490)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(64, 23)
         Me.Label4.TabIndex = 36
@@ -236,7 +248,7 @@ Partial Class PAY021
         '
         Me.DataGrid1.DataMember = ""
         Me.DataGrid1.HeaderForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGrid1.Location = New System.Drawing.Point(0, 104)
+        Me.DataGrid1.Location = New System.Drawing.Point(-5, 114)
         Me.DataGrid1.Name = "DataGrid1"
         Me.DataGrid1.Size = New System.Drawing.Size(768, 352)
         Me.DataGrid1.TabIndex = 34
@@ -295,7 +307,7 @@ Partial Class PAY021
         '
         Me.Label18.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Red
-        Me.Label18.Location = New System.Drawing.Point(584, 456)
+        Me.Label18.Location = New System.Drawing.Point(579, 466)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(64, 23)
         Me.Label18.TabIndex = 29
@@ -304,7 +316,7 @@ Partial Class PAY021
         '
         'Label12
         '
-        Me.Label12.Location = New System.Drawing.Point(24, 56)
+        Me.Label12.Location = New System.Drawing.Point(19, 66)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(64, 23)
         Me.Label12.TabIndex = 24
@@ -314,7 +326,7 @@ Partial Class PAY021
         'lblAct_Amt
         '
         Me.lblAct_Amt.ForeColor = System.Drawing.Color.Red
-        Me.lblAct_Amt.Location = New System.Drawing.Point(224, 56)
+        Me.lblAct_Amt.Location = New System.Drawing.Point(219, 66)
         Me.lblAct_Amt.Name = "lblAct_Amt"
         Me.lblAct_Amt.Size = New System.Drawing.Size(112, 23)
         Me.lblAct_Amt.TabIndex = 21
@@ -322,7 +334,7 @@ Partial Class PAY021
         '
         'Label16
         '
-        Me.Label16.Location = New System.Drawing.Point(152, 56)
+        Me.Label16.Location = New System.Drawing.Point(147, 66)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(64, 23)
         Me.Label16.TabIndex = 20
@@ -332,7 +344,7 @@ Partial Class PAY021
         'lblRemark
         '
         Me.lblRemark.ForeColor = System.Drawing.Color.Red
-        Me.lblRemark.Location = New System.Drawing.Point(96, 80)
+        Me.lblRemark.Location = New System.Drawing.Point(91, 90)
         Me.lblRemark.Name = "lblRemark"
         Me.lblRemark.Size = New System.Drawing.Size(592, 23)
         Me.lblRemark.TabIndex = 19
@@ -340,7 +352,7 @@ Partial Class PAY021
         '
         'Label15
         '
-        Me.Label15.Location = New System.Drawing.Point(24, 80)
+        Me.Label15.Location = New System.Drawing.Point(19, 90)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(64, 23)
         Me.Label15.TabIndex = 18
@@ -350,7 +362,7 @@ Partial Class PAY021
         'lblBank
         '
         Me.lblBank.ForeColor = System.Drawing.Color.Red
-        Me.lblBank.Location = New System.Drawing.Point(392, 56)
+        Me.lblBank.Location = New System.Drawing.Point(387, 66)
         Me.lblBank.Name = "lblBank"
         Me.lblBank.Size = New System.Drawing.Size(40, 23)
         Me.lblBank.TabIndex = 17
@@ -358,7 +370,7 @@ Partial Class PAY021
         '
         'label14
         '
-        Me.label14.Location = New System.Drawing.Point(336, 56)
+        Me.label14.Location = New System.Drawing.Point(331, 66)
         Me.label14.Name = "label14"
         Me.label14.Size = New System.Drawing.Size(56, 23)
         Me.label14.TabIndex = 16
@@ -370,7 +382,7 @@ Partial Class PAY021
         Me.txtRemark.Location = New System.Drawing.Point(120, 216)
         Me.txtRemark.MaxLength = 60
         Me.txtRemark.Name = "txtRemark"
-        Me.txtRemark.Size = New System.Drawing.Size(616, 29)
+        Me.txtRemark.Size = New System.Drawing.Size(616, 25)
         Me.txtRemark.TabIndex = 12
         '
         'Label9
@@ -399,7 +411,7 @@ Partial Class PAY021
         Me.txtCode6.Location = New System.Drawing.Point(896, 352)
         Me.txtCode6.MaxLength = 1
         Me.txtCode6.Name = "txtCode6"
-        Me.txtCode6.Size = New System.Drawing.Size(32, 29)
+        Me.txtCode6.Size = New System.Drawing.Size(32, 25)
         Me.txtCode6.TabIndex = 27
         Me.txtCode6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -408,7 +420,7 @@ Partial Class PAY021
         Me.txtCode5.Location = New System.Drawing.Point(896, 296)
         Me.txtCode5.MaxLength = 1
         Me.txtCode5.Name = "txtCode5"
-        Me.txtCode5.Size = New System.Drawing.Size(32, 29)
+        Me.txtCode5.Size = New System.Drawing.Size(32, 25)
         Me.txtCode5.TabIndex = 25
         Me.txtCode5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -417,7 +429,7 @@ Partial Class PAY021
         Me.txtCode4.Location = New System.Drawing.Point(896, 240)
         Me.txtCode4.MaxLength = 1
         Me.txtCode4.Name = "txtCode4"
-        Me.txtCode4.Size = New System.Drawing.Size(32, 29)
+        Me.txtCode4.Size = New System.Drawing.Size(32, 25)
         Me.txtCode4.TabIndex = 23
         Me.txtCode4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -426,14 +438,14 @@ Partial Class PAY021
         Me.txtCode3.Location = New System.Drawing.Point(896, 184)
         Me.txtCode3.MaxLength = 1
         Me.txtCode3.Name = "txtCode3"
-        Me.txtCode3.Size = New System.Drawing.Size(32, 29)
+        Me.txtCode3.Size = New System.Drawing.Size(32, 25)
         Me.txtCode3.TabIndex = 21
         Me.txtCode3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblNo1
         '
         Me.lblNo1.ForeColor = System.Drawing.Color.Red
-        Me.lblNo1.Location = New System.Drawing.Point(96, 56)
+        Me.lblNo1.Location = New System.Drawing.Point(91, 66)
         Me.lblNo1.Name = "lblNo1"
         Me.lblNo1.Size = New System.Drawing.Size(40, 23)
         Me.lblNo1.TabIndex = 25
@@ -444,7 +456,7 @@ Partial Class PAY021
         Me.cboName.Location = New System.Drawing.Point(120, 168)
         Me.cboName.MaxDropDownItems = 20
         Me.cboName.Name = "cboName"
-        Me.cboName.Size = New System.Drawing.Size(464, 28)
+        Me.cboName.Size = New System.Drawing.Size(464, 25)
         Me.cboName.Sorted = True
         Me.cboName.TabIndex = 30
         '
@@ -514,9 +526,9 @@ Partial Class PAY021
         Me.TabPage2.Controls.Add(Me.txtCode3)
         Me.TabPage2.Controls.Add(Me.txtCode2)
         Me.TabPage2.Controls.Add(Me.cboName)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 26)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(768, 503)
+        Me.TabPage2.Size = New System.Drawing.Size(976, 581)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "開立支票"
         Me.TabPage2.ToolTipText = "由來源傳票,完成後並列印支票"
@@ -526,7 +538,7 @@ Partial Class PAY021
         Me.txtChkname.Location = New System.Drawing.Point(120, 168)
         Me.txtChkname.MaxLength = 50
         Me.txtChkname.Name = "txtChkname"
-        Me.txtChkname.Size = New System.Drawing.Size(448, 29)
+        Me.txtChkname.Size = New System.Drawing.Size(448, 25)
         Me.txtChkname.TabIndex = 11
         '
         'txtCode2
@@ -534,7 +546,7 @@ Partial Class PAY021
         Me.txtCode2.Location = New System.Drawing.Point(896, 128)
         Me.txtCode2.MaxLength = 1
         Me.txtCode2.Name = "txtCode2"
-        Me.txtCode2.Size = New System.Drawing.Size(32, 29)
+        Me.txtCode2.Size = New System.Drawing.Size(32, 25)
         Me.txtCode2.TabIndex = 19
         Me.txtCode2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -561,9 +573,9 @@ Partial Class PAY021
         Me.btnSure.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSure.Font = New System.Drawing.Font("新細明體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.btnSure.ForeColor = System.Drawing.Color.Yellow
-        Me.btnSure.Location = New System.Drawing.Point(344, 8)
+        Me.btnSure.Location = New System.Drawing.Point(599, 7)
         Me.btnSure.Name = "btnSure"
-        Me.btnSure.Size = New System.Drawing.Size(80, 40)
+        Me.btnSure.Size = New System.Drawing.Size(91, 40)
         Me.btnSure.TabIndex = 3
         Me.btnSure.Text = "開立支票"
         Me.btnSure.UseVisualStyleBackColor = False
@@ -572,6 +584,10 @@ Partial Class PAY021
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.lblarea)
+        Me.TabPage1.Controls.Add(Me.Label17)
+        Me.TabPage1.Controls.Add(Me.lblAreaName)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.RecMove1)
         Me.TabPage1.Controls.Add(Me.btnSureTR)
         Me.TabPage1.Controls.Add(Me.lblTotNo)
@@ -596,11 +612,24 @@ Partial Class PAY021
         Me.TabPage1.Controls.Add(Me.txtNo1)
         Me.TabPage1.Controls.Add(Me.btnSure)
         Me.TabPage1.Font = New System.Drawing.Font("新細明體", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 26)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(976, 578)
+        Me.TabPage1.Size = New System.Drawing.Size(976, 581)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "來源傳票"
+        '
+        'RecMove1
+        '
+        Me.RecMove1.FilesPara = Nothing
+        Me.RecMove1.Font = New System.Drawing.Font("新細明體", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.RecMove1.GenInsFunc = "() values ()"
+        Me.RecMove1.genupdfunc = ""
+        Me.RecMove1.Location = New System.Drawing.Point(-6, 467)
+        Me.RecMove1.Name = "RecMove1"
+        Me.RecMove1.Setds = Nothing
+        Me.RecMove1.Setpos = 0
+        Me.RecMove1.Size = New System.Drawing.Size(377, 29)
+        Me.RecMove1.TabIndex = 39
         '
         'TabControl1
         '
@@ -613,23 +642,120 @@ Partial Class PAY021
         Me.TabControl1.Size = New System.Drawing.Size(984, 611)
         Me.TabControl1.TabIndex = 9
         '
-        'RecMove1
+        'GroupBox1
         '
-        Me.RecMove1.FilesPara = Nothing
-        Me.RecMove1.Font = New System.Drawing.Font("新細明體", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.RecMove1.GenInsFunc = "() values ()"
-        Me.RecMove1.genupdfunc = ""
-        Me.RecMove1.Location = New System.Drawing.Point(-1, 457)
-        Me.RecMove1.Name = "RecMove1"
-        Me.RecMove1.Setds = Nothing
-        Me.RecMove1.Setpos = 0
-        Me.RecMove1.Size = New System.Drawing.Size(377, 29)
-        Me.RecMove1.TabIndex = 39
+        Me.GroupBox1.Controls.Add(Me.txtArea)
+        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.txtBank)
+        Me.GroupBox1.Controls.Add(Me.txtPaySeq)
+        Me.GroupBox1.Controls.Add(Me.btnSurePaySeq)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Location = New System.Drawing.Point(353, 4)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(240, 58)
+        Me.GroupBox1.TabIndex = 46
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "由匯款單輸入"
+        '
+        'txtArea
+        '
+        Me.txtArea.Location = New System.Drawing.Point(128, 32)
+        Me.txtArea.MaxLength = 2
+        Me.txtArea.Name = "txtArea"
+        Me.txtArea.Size = New System.Drawing.Size(36, 25)
+        Me.txtArea.TabIndex = 44
+        '
+        'Label13
+        '
+        Me.Label13.Location = New System.Drawing.Point(112, 16)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(56, 23)
+        Me.Label13.TabIndex = 48
+        Me.Label13.Text = "管理處"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtBank
+        '
+        Me.txtBank.Location = New System.Drawing.Point(72, 32)
+        Me.txtBank.MaxLength = 2
+        Me.txtBank.Name = "txtBank"
+        Me.txtBank.Size = New System.Drawing.Size(36, 25)
+        Me.txtBank.TabIndex = 43
+        '
+        'txtPaySeq
+        '
+        Me.txtPaySeq.Location = New System.Drawing.Point(8, 32)
+        Me.txtPaySeq.MaxLength = 5
+        Me.txtPaySeq.Name = "txtPaySeq"
+        Me.txtPaySeq.Size = New System.Drawing.Size(48, 25)
+        Me.txtPaySeq.TabIndex = 42
+        '
+        'btnSurePaySeq
+        '
+        Me.btnSurePaySeq.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnSurePaySeq.Font = New System.Drawing.Font("新細明體", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.btnSurePaySeq.ForeColor = System.Drawing.Color.Red
+        Me.btnSurePaySeq.Location = New System.Drawing.Point(176, 24)
+        Me.btnSurePaySeq.Name = "btnSurePaySeq"
+        Me.btnSurePaySeq.Size = New System.Drawing.Size(56, 32)
+        Me.btnSurePaySeq.TabIndex = 45
+        Me.btnSurePaySeq.Text = " 確定"
+        Me.btnSurePaySeq.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.Location = New System.Drawing.Point(8, 16)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(40, 23)
+        Me.Label6.TabIndex = 44
+        Me.Label6.Text = "序號"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label8
+        '
+        Me.Label8.Location = New System.Drawing.Point(72, 16)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(40, 23)
+        Me.Label8.TabIndex = 46
+        Me.Label8.Text = "銀行"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("新細明體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Label17.Location = New System.Drawing.Point(417, 88)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(48, 23)
+        Me.Label17.TabIndex = 47
+        Me.Label17.Text = "管理處"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblAreaName
+        '
+        Me.lblAreaName.ForeColor = System.Drawing.Color.Red
+        Me.lblAreaName.Location = New System.Drawing.Point(521, 88)
+        Me.lblAreaName.Name = "lblAreaName"
+        Me.lblAreaName.Size = New System.Drawing.Size(120, 23)
+        Me.lblAreaName.TabIndex = 48
+        Me.lblAreaName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblarea
+        '
+        Me.lblarea.ForeColor = System.Drawing.Color.Red
+        Me.lblarea.Location = New System.Drawing.Point(465, 87)
+        Me.lblarea.Name = "lblarea"
+        Me.lblarea.Size = New System.Drawing.Size(40, 23)
+        Me.lblarea.TabIndex = 49
+        Me.lblarea.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PAY021
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.ClientSize = New System.Drawing.Size(984, 611)
         Me.Controls.Add(Me.TabControl1)
+        Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "PAY021"
         CType(Me.DataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
@@ -637,6 +763,8 @@ Partial Class PAY021
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -692,5 +820,16 @@ Partial Class PAY021
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents RecMove1 As LAEACC_AP.RecMove
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents lblAreaName As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtArea As System.Windows.Forms.TextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents txtBank As System.Windows.Forms.TextBox
+    Friend WithEvents txtPaySeq As System.Windows.Forms.TextBox
+    Friend WithEvents btnSurePaySeq As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents lblarea As System.Windows.Forms.Label
 
 End Class

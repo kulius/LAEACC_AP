@@ -270,7 +270,7 @@ Partial Class ACBK120
         '
         Me.txtNo.Location = New System.Drawing.Point(306, 185)
         Me.txtNo.Name = "txtNo"
-        Me.txtNo.Size = New System.Drawing.Size(40, 29)
+        Me.txtNo.Size = New System.Drawing.Size(40, 25)
         Me.txtNo.TabIndex = 42
         Me.txtNo.Text = "1"
         '
@@ -354,21 +354,22 @@ Partial Class ACBK120
         'vxtEAccno
         '
         Me.vxtEAccno.Location = New System.Drawing.Point(306, 132)
-        Me.vxtEAccno.Mask = "#-####-##-##-#######-#"
+        Me.vxtEAccno.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtEAccno.Name = "vxtEAccno"
-        Me.vxtEAccno.Size = New System.Drawing.Size(179, 29)
+        Me.vxtEAccno.Size = New System.Drawing.Size(179, 25)
         Me.vxtEAccno.TabIndex = 70
         '
         'vxtSAccno
         '
         Me.vxtSAccno.Location = New System.Drawing.Point(306, 84)
-        Me.vxtSAccno.Mask = "#-####-##-##-#######-#"
+        Me.vxtSAccno.Mask = "a-aaaa-aa-aa-aaaaaaa-a"
         Me.vxtSAccno.Name = "vxtSAccno"
-        Me.vxtSAccno.Size = New System.Drawing.Size(179, 29)
+        Me.vxtSAccno.Size = New System.Drawing.Size(179, 25)
         Me.vxtSAccno.TabIndex = 69
         '
         'ACBK120
         '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(984, 611)
         Me.Controls.Add(Me.vxtEAccno)
@@ -385,6 +386,7 @@ Partial Class ACBK120
         Me.Controls.Add(Me.BtnPrint)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.StatusBar1)
+        Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "ACBK120"
         CType(Me.nudEmonth, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudEyear, System.ComponentModel.ISupportInitialize).EndInit()
