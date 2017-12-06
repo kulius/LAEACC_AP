@@ -67,6 +67,8 @@ Public Class AC010
             cboBank.DisplayMember = "cbank"  '顯示欄位
             cboBank.ValueMember = "bank"     '欄位值
         End If
+
+
         '將單位片語置combobox   
         sqlstr = "SELECT psstr  FROM psname where left(unit,3)='050' order by psstr"
         psDataset = openmember(DNS_ACC, "psname", sqlstr)
@@ -78,8 +80,20 @@ Public Class AC010
             cboRemark.ValueMember = "psstr"     '欄位值
             cboRemark.SelectionLength = 60
         End If
+
+
         '將科目置combobox
-        sqlstr = "SELECT accno, left(accno+space(17),17)+accname as accname FROM accname where belong<>'B' and outyear=0 order by accno"
+        sqlstr = "SELECT accno, left(accno+space(17),17)+accname as accname"
+        sqlstr &= " FROM accname"
+        sqlstr &= " where outyear=0"
+
+        Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+            Case "石門"
+            Case Else : sqlstr &= " and belong<>'B'"
+        End Select
+
+        sqlstr &= " order by accno"
+
         accnoDataset = openmember(DNS_ACC, "accname", sqlstr)
         If accnoDataset.Tables("accname").Rows.Count = 0 Then
             cboAccno.Text = "尚無可請購科目"

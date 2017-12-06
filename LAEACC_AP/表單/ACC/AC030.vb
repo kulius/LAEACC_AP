@@ -67,6 +67,10 @@ Public Class AC030
         '將科目置combobox
         sqlstr = "SELECT accno, left(accno+space(17),17)+accname as accname FROM accname"
         sqlstr &= " where outyear=0"
+        Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+            Case "石門"
+            Case Else : sqlstr &= " and belong<>'B'"
+        End Select
         sqlstr &= " order by accno"
 
         accnoDataset = openmember(DNS_ACC, "accname", sqlstr)
@@ -890,7 +894,6 @@ Public Class AC030
         printer.Document = doc
         If TransPara.TransP("Print") = "Preview" Then printer.IsAutoShowPrintPreviewDialog = True
         printer.Print()
-
     End Sub
 
     Private Sub btnOldNo_Click(sender As Object, e As EventArgs) Handles btnOldNo.Click
@@ -1084,7 +1087,14 @@ Public Class AC030
                 End If
             End If
 
-            sqlstr = "SELECT accno FROM accname WHERE belong<>'B' AND ACCNO LIKE '" & strAccno & "%'"
+            sqlstr = "SELECT accno FROM accname"
+            sqlstr &= " WHERE 1=1"
+            sqlstr &= " AND ACCNO LIKE '" & strAccno & "%'"
+            Select Case INI_Read("BASIC", "LOGIN", "FIRM")
+                Case "石門"
+                Case Else : sqlstr &= " AND belong<>'B'"
+            End Select
+
             tempdataset = openmember(DNS_ACC, "accname", sqlstr)
             If tempdataset.Tables("accname").Rows.Count = 0 Then
                 MsgBox("無此科目")

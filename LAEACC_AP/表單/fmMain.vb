@@ -124,8 +124,6 @@ Public Class fmMain
         Me.CBShipPrint.SelectedIndex = Me.CBShipPrint.FindString(TransPara.TransP("ShipPrint"))
         Me.CBDefaultPrint.SelectedIndex = Me.CBDefaultPrint.FindString(TransPara.TransP("DefaultPrint"))
 
-
-
         FirstBt.PerformClick()
     End Sub
     Private Sub fmMain_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
